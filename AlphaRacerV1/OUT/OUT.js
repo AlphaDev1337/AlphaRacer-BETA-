@@ -1027,7 +1027,7 @@
 
         let lbl = document.createElement('h1');
         lbl.style.fontSize = "150%";
-        lbl.innerHTML = "Customize UltraType";
+        lbl.innerHTML = "AlphaRacer Settings";
         inner.appendChild(lbl);
 
         let outerBotOn = document.createElement('div');
