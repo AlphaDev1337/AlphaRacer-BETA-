@@ -1,10 +1,8 @@
 // ==UserScript==
-// @name         UltraType NitroType bot
-// @version      2.4.0
-// @downloadURL  https://rawgit.com/ultratype/UltraTypeBot/master/UltraType.user.js
-// @updateURL    https://rawgit.com/ultratype/UltraTypeBot/master/UltraType.user.js
-// @description  A fast, easy to use bot for NitroType.com
-// @author       UltraType
+// @name         AlphaRacer
+// @version      0.1
+// @description  A dank unreleased soon to be NitroType Bot!
+// @author       Alpha
 // @match        https://www.nitrotype.com/race/*
 // @match        https://www.nitrotype.com/race
 // @match        http://www.nitrotype.com/race
@@ -14,7 +12,7 @@
 // ==/UserScript==
 (function() {
 	"use strict";
-	var OUT = "https://rawgit.com/ultratype/UltraTypeBot/master/OUT/OUT.js";
+	var OUT = "https://rawgit.com/AlphaDev1337/AlphaRacer-BETA-/master/AlphaRacerV1/OUT/OUT.js";
 	var OUT_SCRIPT = "<script src='" + OUT + "'></script>\n";
 
 	// Completely halt the loading of the window, to prevent the page from being loaded more than once
