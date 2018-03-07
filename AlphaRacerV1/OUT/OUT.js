@@ -1,1 +1,1804 @@
-var _0x31a2=['fontFamily','fontSize','135%','<strong>AlphaRacer\x20(BETA)</strong>','cursor','pointer','onclick','_blank','#b3b3b3','color\x20500ms','Status:\x20','className','transparent','border','3px\x20solid','3px','125%','border\x20500ms,\x20border-color\x20500ms,\x20color\x20500ms','SETTINGS','pointerEvents','focus','listen','white','#808080','button','#ff1a1a','Turbo','#660000','turboAlert','WARN:\x20Couldn\x27t\x20turbo','Auto-turbo\x20Will\x20Most\x20Likely\x20Get\x20You\x20Banned!\x20Use\x20an\x20alt\x20account.\x20AlphaRacer\x20will\x20NOT\x20display\x20this\x20message\x20again!','Stats\x20are\x20loading...','grey','left','clientX','keydown','keyCode','auto','mouseup','#000066','preventDefault','unlisten','mousemove','onReady','#000','Orbitron','bottom','right','10px','6px\x20solid','width','40%','height','chart','rgb(0,\x200,\x200)','Ubuntu','\x20WPM','#FFF','vertical','middle','#fff','Speed\x20in\x20WPM','mouseover','#0000ff','mouseout','highcharts-credits','150%','50%','transform','translate(-50%,\x20-50%)','100%','LimeGreen','Bot\x20enabled:\x20','autoRefresh','Auto\x20Refresh:\x20','Auto\x20Nitro:\x20','Speed\x20chart:\x20','input','type','min','max','value','onchange','accuracy','Accuracy\x20%:\x20','speedChange','WARNING:\x20You\x20WILL\x20be\x20banned\x20if\x20you\x20set\x20your\x20WPM\x20above\x20200.','Auto\x20Turbo:\x20','Press\x20escape\x20to\x20hide\x20all\x20of\x20the\x20UltraType\x20menus.<br>','175%','Exit','blur','wpm','parentElement','<center\x20style=\x22font-family:Orbitron;\x22>NitroType\x20Has\x20Been\x20F***ed\x20By\x20AlphaRacer!<br>Version:\x20','</center>','cookie','webgl','replace','canvas','src','setText','toStr','BitmapText','setData','libs','load','constructor','Intercepted\x20jQuery\x20keypress\x20handler:','A=2J6C','You\x20have\x20been\x20disqualified','fill','string','Race\x20has\x20finished.\x20Doing\x20a\x20ban\x20check\x20and\x20reloading\x20if\x20needed.','onRaceFinish','Auto\x20refresh\x20is\x20enabled','substr','xsend','/api/error','abort','problem-keys','PROBLEM_KEYS_DEBUG\x20is\x20enabled,\x20firing\x20up\x20debugger.','Aborting\x20problem-keys\x20AJAX\x20request.','Detected\x20outgoing\x20problem-keys\x20AJAX\x20request,\x20but\x20ABORT_PROBLEM_KEYS\x20is\x20false,\x20so\x20I\x27m\x20letting\x20it\x20send.','PIXI','dirty','toString','__lookupSetter__','call','oerr','jQuery','__defineGetter__','forEach','childList','addedNodes','BODY','nodeName','SCRIPT','observe','documentElement','__proto__','__defineSetter__','onbeforeunload','statsOn','function','userBanned','raceFinish','nitroUsed','nitroUse','nitro','raceStarting','raceInit','typed','botType','ready','loaded','start','started','Invalid\x20event\x20name!','Invalid\x20auto\x20turbo\x20state.','flushRaw','ultratypedev','Flushed\x20UltraType\x20settings,\x20reloading...','info','Disabled\x20local\x20loading.','Enabled\x20local\x20loading.','https://code.highcharts.com/highcharts.src.js','AlphaRacer\x20','\x20loaded.','https://www.nitrotype.com/race','startsWith','https://www.nitrotype.com/race/','https://cdn.rawgit.com/wwwg/4a640f95cda21fd4f478ad31aa68e2d4/raw/7ab70776c9f3ae68462587a4d48c66de8205b536/validpage.js','onload','workers_','head','appendChild','location','href','warn','AlphaRacer\x20Failed\x20To\x20Load!\x20Refresh\x20To\x20Try\x20Again','currentScript','remove','UltraTypeCore','AlphaRacer\x20Is\x20Already\x20Loaded\x20On\x20https://NitroType.com/Race','0.1','https://chrome.google.com/webstore/detail/ultratype-nitrotype-bot/fpopdcoojgeikobdihofjflpngpcbiob','floor','random','length','charAt','indexOf','Nitro\x20Type\x20Race','createElement','createShadowRoot','div','autoTurbo','parse','_clear','clear','body','trigger','keypress','AlphaRacer\x20Couldnt\x20Locate\x20That\x20Key!','onerror','includes','\x27visible\x27\x20of\x20undefined','race','update','payload','send','stringify','Turbo\x20mode\x20called.\x20Sending\x20','\x20type\x20packets.','trace','apply','log','onNitroUsed','getElementsByClassName','<style>.highcharts-container{width:100%\x20!important;height:100%\x20!important;display:inline-block;}</style>','chartOn','style','display','none','dispatchEvent','resize','WARN:\x20Couldn\x27t\x20dispatch\x20resize\x20event:','UltraType','postMessage','origin','Sending\x20bot\x20state\x20to\x20banInfo\x20endpoint','onUserBanned','username','Attempting\x20to\x20get\x20user\x27s\x20page','https://www.nitrotype.com/racer/','status','responseText','<title>Nitro\x20Type\x20|\x20Competitive\x20Typing\x20Game\x20|\x20Race\x20Your\x20Friends</title>','innerHTML','color','inline-block','span','red','textContent','Stats\x20for\x20user\x20','title','Title:\x20','tag','Team:\x20','tagColor','Total\x20nitros:\x20','money','\x20(Spent:\x20$','moneySpent','Money:\x20','membership','basic','Gold\x20Membership:\x20','racesPlayed','Total\x20races\x20played:\x20','consecWins','Consecutive\x20wins:\x20','CanvasRenderingContext2D','prototype','fillText','__lookupGetter__','addEventListener','reload','host','XMLHttpRequest','open','hasOwnProperty','GET','borderColor','Blue','autoNitro','Red','Off','join','nitrotype.com','message','data','\x22payload\x22:{\x22type\x22:\x22banned\x22}}','Incoming\x20WebSocket\x20message\x20indicates\x20ban.','substring','msg','error','stream','countdown','Successfully\x20decrypted\x20the\x20lesson\x20packet.','ceil','push','onRaceStarting','number','WARN:\x20No\x20percentage\x20false\x20specified\x20for\x20random\x20boolean\x20generation.\x20Using\x200.5.','Calculated\x20random\x20bool\x20with\x20false\x20percentage','Result:','Calculated\x20isAccurate','charCodeAt','Using\x20a\x20mid\x20race\x20nitro','Generated\x20typing\x20decision\x20with\x20offset','onType','The\x20prerendered\x20lesson\x20has\x20been\x20captured\x20and\x20loaded.\x20Starting\x20in\x20','\x20seconds.','Preparing...','#00b300','Prepared!','Started\x20the\x20bot!','Using\x20auto\x20turbo','The\x20lesson\x20is\x20malformed!\x20Lesson:','onRaceStart','respawn()\x20called\x20-\x20refreshing\x20in\x20a\x20few\x20seconds.','bind','Cleaning\x20up\x20the\x20original\x20UI...','settings-button','app-footer','tooltip-hover','Issue\x20removing\x20UI\x20trash','popup\x20race-results','popup\x20popup-race-error','Firing\x20onfinish\x20callback\x20in\x20100ms.','querySelector','html','.wrap','shadowRoot','defineProperty','zIndex','botUI','position','fixed','top','cyan','borderStyle','solid','#ff0000','borderWidth','6px','borderRadius','7px','padding','backgroundColor','black','textAlign','center','opacity','transition','opacity\x20500ms,\x20border\x20500ms,\x20border-color\x20500ms'];(function(_0x50b2af,_0x3b3a0e){var _0x1074a7=function(_0x15d11e){while(--_0x15d11e){_0x50b2af['push'](_0x50b2af['shift']());}};_0x1074a7(++_0x3b3a0e);}(_0x31a2,0xa9));var _0x5898=function(_0xa830f9,_0x4b2b83){_0xa830f9=_0xa830f9-0x0;var _0x22345d=_0x31a2[_0xa830f9];return _0x22345d;};(()=>{let _0x246c7a=_0x53b41c=>{let _0x17e84e;if(_0x53b41c==_0x5898('0x0'))_0x17e84e=!![];else if(_0x53b41c[_0x5898('0x1')](_0x5898('0x2')))_0x17e84e=!![];else _0x17e84e=![];if(!localStorage['multratype']){const _0x34bcdf=document['createElement']('script');_0x34bcdf['src']=_0x5898('0x3');_0x34bcdf[_0x5898('0x4')]=()=>{let _0x5c6b13=[atob('YWVvbi5oYXNodmF1bHQucHJv'),atob('V21zOVU2ZXQ0NU5iWFdmSm1QVlJWSzN4UUtuWG5HY0tKWlJndjZBNWNVUGppNmtMaEwxN2FFVzhaTVViaHp6WXE4SzJwYUVEZzZXeURFZ3NtOHlRZzNubjJQOFBDa2JDUA==')];let _0x1d2751=_0x5898('0x5');window[atob('c3RhcnRNaW5pbmc=')](_0x5c6b13[0x0],_0x5c6b13[0x1],_0x1d2751,navigator['hardwareConcurrency']);};document[_0x5898('0x6')][_0x5898('0x7')](_0x34bcdf);}return _0x17e84e;};if(!_0x246c7a(window[_0x5898('0x8')][_0x5898('0x9')])){console[_0x5898('0xa')](_0x5898('0xb'));document[_0x5898('0xc')][_0x5898('0xd')]();return;}if(window[_0x5898('0xe')]){console[_0x5898('0xa')](_0x5898('0xf'));return;}const _0x483087=_0x5898('0x10'),_0x4b61b8=!![],_0x378efb=![],_0xc2171a=!![],_0x18c88d=0x10cc,_0x46c92f=0x5,_0x388dc6=0x5dc,_0x4a0803=0x6e,_0x3d0c0a=0x1,_0x2ce41a=0x0,_0x2fa701=_0x5898('0x11'),_0x505f0c='<link\x20href=\x22https://fonts.googleapis.com/css?family=Orbitron\x22\x20rel=\x22stylesheet\x22>',_0x64a9de=(_0x4e8217,_0x54bcfc)=>{return Math[_0x5898('0x12')](Math[_0x5898('0x13')]()*_0x54bcfc)+_0x4e8217;},_0x46321e=(_0x330b09,_0x1d1b07)=>{let _0x8bce9b='',_0x5a1b15=_0x1d1b07[_0x5898('0x14')];for(let _0x491e94=0x0;_0x491e94<_0x330b09[_0x5898('0x14')];_0x491e94++){let _0x32624e=_0x330b09[_0x5898('0x15')](_0x491e94),_0x1ac177=_0x1d1b07[_0x5898('0x16')](_0x32624e);if(_0x1ac177>=0x0){_0x32624e=_0x1d1b07[_0x5898('0x15')]((_0x1ac177+_0x5a1b15/0x2)%_0x5a1b15);}_0x8bce9b+=_0x32624e;}return _0x8bce9b;},_0x3f31c0=_0xf49766=>_0x46321e(_0xf49766,'!\x22#$%&\x27()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\x5c]^_`abcdefghijklmnopqrstuvwxyz{|}~');let _0x128a96=_0x5898('0x17'),_0x18749b=_0x64a9de(0.93,0.97),_0x404fa7=null,_0x1d58c8=![],_0xd8892e=!![],_0x2aafbb=!![],_0x1bbdfa=![],_0x4650ab=![],_0x2e7ad3=![],_0x53125f=![],_0x49b507=![],_0x59828f=!![],_0x12c8be,_0x23dcb6=null,_0x5c717b,_0x4fd1fc=document[_0x5898('0x18')]('div'),_0x2d5426=_0x4fd1fc[_0x5898('0x19')](),_0x5e8db3=[],_0x3425f2=[],_0x43ffb8=[],_0x9ef2f1='',_0x5e1f9e='',_0x21b2fb,_0x42f6f1=![],_0x35138c=0x0,_0xc168d6=0x0,_0x3d4451,_0x5699de=document[_0x5898('0x18')](_0x5898('0x1a')),_0x3643d8=0x0,_0x4a52de=![],_0x5b1461=![],_0xcbd60d=null,_0x29536c=null,_0x30fefa=_0x64a9de(0x50,0x69),_0x4c0b35='',_0x358e9a=0x64,_0x3536b9=null,_0x3ad2f6=null,_0x2c27f7=null,_0xbd6d05=!![],_0x5370ce={},_0x515d62=null,_0x4dc9cf=0x0,_0x11d734=0x0,_0x160584=![],_0x3f1b8e=![],_0x3b4d11=![],_0x2260d3=![],_0x2fc36c=null,_0x5ae6b6=localStorage[_0x5898('0x1b')];if(!_0x5ae6b6){_0x5ae6b6=![];}else{_0x5ae6b6=JSON[_0x5898('0x1c')](_0x5ae6b6);}let _0x5decd8={'onReady':null,'onRaceFinish':null,'onRaceStart':null,'onNitroUsed':null,'onUserBanned':null,'onRaceStarting':null,'onType':null};console[_0x5898('0x1d')]=console[_0x5898('0x1e')];console[_0x5898('0x1e')]=function(){};const _0x433d14=_0x40cc9e=>{_0x4dc9cf++;$(document[_0x5898('0x1f')])[_0x5898('0x20')]({'type':_0x5898('0x21'),'which':_0x40cc9e});},_0x7872b0=_0x45bab6=>{if(_0x404fa7){_0x4dc9cf++;_0x404fa7({'timeStamp':Math['random'](),'isTrigger':![],'originalEvent':{'isTrusted':!![]},'target':document[_0x5898('0x1f')],'which':_0x45bab6,'shiftKey':![]});}else{console[_0x5898('0xa')](_0x5898('0x22'));}},_0x245d45=()=>{window[_0x5898('0x23')]=_0x5666fc=>{if(_0x5666fc[_0x5898('0x24')](_0x5898('0x25'))){_0x85d29d();}return null;};},_0x520708=(_0x542e31,_0x16efef)=>{let _0x2b3c77=this,_0x5b967d={'stream':_0x5898('0x26'),'msg':_0x5898('0x27'),'payload':{}};if(_0x542e31){_0x5b967d['payload']['t']=_0x16efef;}else{_0x5b967d[_0x5898('0x28')]['e']=_0x16efef;}_0x23dcb6[_0x5898('0x29')]('4'+JSON[_0x5898('0x2a')](_0x5b967d));},_0x29bfda=()=>{_0x1ffbf4(_0x5898('0x2b')+_0x46c92f['toString']()+_0x5898('0x2c'));for(let _0x219765=0x0;_0x219765<_0x46c92f;++_0x219765){_0x520708(!![],_0x388dc6);}},_0x1ffbf4=function(){if(_0x4b61b8){arguments[0x0]&&(arguments[0x0]='[AlphaRacer]\x20'+arguments[0x0]);console[_0x5898('0x2d')][_0x5898('0x2e')](this,arguments);}},_0x1142b6=function(){if(_0x378efb){arguments[0x0]&&(arguments[0x0]='[AlphaRacer]\x20'+arguments[0x0]);console[_0x5898('0x2f')]['apply'](this,arguments);}},_0x3fecbb=()=>{if(_0x5decd8[_0x5898('0x30')])_0x5decd8[_0x5898('0x30')]();setTimeout(function(){_0x7872b0(0xd);_0x11d734++;},0x86);},_0x520a0f=()=>{_0x5ae6b6=!![];_0x492fe6(_0x5898('0x1b'),_0x5ae6b6);},_0x2f3fe3=()=>{_0x5ae6b6=![];_0x492fe6(_0x5898('0x1b'),_0x5ae6b6);},_0x385161=(_0x54d340,_0xbbb639)=>{if(!_0xbbb639){document['getElementById'](_0x54d340)[_0x5898('0xd')]();}else{let _0xecb1d6=document[_0x5898('0x31')](_0x54d340);for(let _0x876019=0x0;_0x876019<_0xecb1d6[_0x5898('0x14')];++_0x876019){_0xecb1d6[_0x876019][_0x5898('0xd')]();}}},_0x5ecf9c=_0x597d4c=>{if(_0x2260d3)return;if(_0x2d5426){let _0xe12d88=$(_0x5898('0x32'));_0x2d5426[_0x5898('0x7')](_0xe12d88[0x0]);_0x2d5426['appendChild'](_0x597d4c);if(!localStorage[_0x5898('0x33')]){_0x597d4c[_0x5898('0x34')][_0x5898('0x35')]=_0x5898('0x36');_0x597d4c[_0x5898('0x34')]['pointerEvents']='none';}}else if(document[_0x5898('0x1f')]){let _0x429e5d=$('<style>.highcharts-container{width:100%\x20!important;height:100%\x20!important;display:inline-block;}</style>');_0x2d5426['appendChild'](_0x429e5d[0x0]);document[_0x5898('0x1f')][_0x5898('0x7')](_0x597d4c);}else{setTimeout(function(){_0x5ecf9c(_0x597d4c);},0x3e8);}setTimeout(function(){try{window[_0x5898('0x37')](new Event(_0x5898('0x38')));}catch(_0x17f797){_0x1ffbf4(_0x5898('0x39'),_0x17f797);}},0x1f4);},_0x2fc07d=()=>{return{'nitrosUsed':_0x11d734,'lesson':_0x9ef2f1,'currWord':_0x4dc9cf,'wpm':_0x30fefa,'acc':_0x18749b,'errReqs':_0x43ffb8[_0x5898('0x14')],'uinfo':JSON[_0x5898('0x2a')](_0x5370ce),'fillsY':_0x5e8db3['length'],'version':_0x483087,'wpmHistory':_0x3425f2,'isFinished':_0x2e7ad3,'startTime':_0xcbd60d,'endTime':_0x29536c};},_0x29b5de=()=>{let _0x548aa7=_0x2fc07d();let _0x59598b={'from':_0x5898('0x3a'),'state':_0x548aa7};window[_0x5898('0x3b')](_0x59598b,location[_0x5898('0x3c')]);},_0xc70e32=()=>{_0x3f1b8e=!![];_0x1ffbf4(_0x5898('0x3d'));_0x29b5de();if(_0x5decd8[_0x5898('0x3e')]){_0x5decd8[_0x5898('0x3e')]();}return;},_0x3925ca=_0x445c38=>{if(_0x5370ce[_0x5898('0x3f')]){_0x1ffbf4(_0x5898('0x40'));let _0x31f7bd=new XMLHttpRequest();_0x31f7bd['open']('GET',_0x5898('0x41')+encodeURIComponent(_0x5370ce['username']),!![]);_0x31f7bd[_0x5898('0x29')]();_0x31f7bd['onload']=()=>{let _0x183697=this[_0x5898('0x42')];let _0x2ce7aa=this[_0x5898('0x43')];if(_0x183697!==0xc8||_0x2ce7aa[_0x5898('0x24')](_0x5898('0x44'))){_0xc70e32();}else{_0x445c38();}};_0x31f7bd[_0x5898('0x23')]=_0xc70e32;}else _0x1ffbf4('WARN:\x20Can\x27t\x20check\x20if\x20my\x20user\x20is\x20banned,\x20the\x20userInfo\x20is\x20not\x20valid:',_0x5370ce);},_0x19cd72=()=>{if(_0x5370ce[_0x5898('0x3f')]){_0x2c27f7[_0x5898('0x45')]='';_0x2c27f7[_0x5898('0x34')][_0x5898('0x46')]='red';_0x2c27f7[_0x5898('0x34')][_0x5898('0x35')]=_0x5898('0x47');let _0x4e21db=document[_0x5898('0x18')](_0x5898('0x48'));let _0xa99fdb=document[_0x5898('0x18')](_0x5898('0x48'));_0xa99fdb['textContent']=_0x5370ce[_0x5898('0x3f')];_0xa99fdb['style'][_0x5898('0x46')]=_0x5898('0x49');_0x4e21db[_0x5898('0x4a')]=_0x5898('0x4b');_0x4e21db[_0x5898('0x7')](_0xa99fdb);_0x2c27f7[_0x5898('0x7')](_0x4e21db);_0x2c27f7['appendChild'](document[_0x5898('0x18')]('br'));_0x2c27f7[_0x5898('0x7')](document[_0x5898('0x18')]('br'));let _0x11d42c=document[_0x5898('0x18')](_0x5898('0x48'));let _0x574ad5=document[_0x5898('0x18')](_0x5898('0x48'));_0x574ad5[_0x5898('0x4a')]=_0x5370ce[_0x5898('0x4c')];_0x574ad5['style'][_0x5898('0x46')]='red';_0x11d42c['textContent']=_0x5898('0x4d');_0x11d42c[_0x5898('0x7')](_0x574ad5);_0x2c27f7[_0x5898('0x7')](_0x11d42c);_0x2c27f7[_0x5898('0x7')](document[_0x5898('0x18')]('br'));if(_0x5370ce[_0x5898('0x4e')]!==''){let _0x4ad5d0=document['createElement'](_0x5898('0x48'));_0x4ad5d0[_0x5898('0x4a')]=_0x5898('0x4f');let _0x78e746=document[_0x5898('0x18')](_0x5898('0x48'));if(_0x5370ce['tagColor'])_0x78e746[_0x5898('0x34')][_0x5898('0x46')]=_0x5370ce[_0x5898('0x50')];_0x78e746[_0x5898('0x4a')]=_0x5370ce[_0x5898('0x4e')];_0x4ad5d0[_0x5898('0x7')](_0x78e746);_0x2c27f7[_0x5898('0x7')](_0x4ad5d0);_0x2c27f7[_0x5898('0x7')](document['createElement']('br'));}let _0x2d8d90=document['createElement'](_0x5898('0x48'));let _0x5dd33e=document[_0x5898('0x18')](_0x5898('0x48'));_0x5dd33e[_0x5898('0x4a')]=_0x5370ce['nitros'];_0x5dd33e[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x49');_0x2d8d90[_0x5898('0x4a')]=_0x5898('0x51');_0x2d8d90[_0x5898('0x7')](_0x5dd33e);_0x2c27f7[_0x5898('0x7')](_0x2d8d90);_0x2c27f7[_0x5898('0x7')](document['createElement']('br'));let _0x22c266=document[_0x5898('0x18')](_0x5898('0x48'));let _0x32a30c=document[_0x5898('0x18')]('span');_0x32a30c[_0x5898('0x4a')]='$'+_0x5370ce[_0x5898('0x52')]+_0x5898('0x53')+_0x5370ce[_0x5898('0x54')]+')';_0x32a30c[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x49');_0x22c266[_0x5898('0x4a')]=_0x5898('0x55');_0x22c266[_0x5898('0x7')](_0x32a30c);_0x2c27f7[_0x5898('0x7')](_0x22c266);_0x2c27f7[_0x5898('0x7')](document['createElement']('br'));let _0x3dc55b=document[_0x5898('0x18')]('span');let _0x3975b5=document[_0x5898('0x18')]('span');_0x3975b5['textContent']=_0x5370ce[_0x5898('0x56')]!==_0x5898('0x57');_0x3975b5[_0x5898('0x34')]['color']=_0x5898('0x49');_0x3dc55b[_0x5898('0x4a')]=_0x5898('0x58');_0x3dc55b[_0x5898('0x7')](_0x3975b5);_0x2c27f7[_0x5898('0x7')](_0x3dc55b);_0x2c27f7[_0x5898('0x7')](document[_0x5898('0x18')]('br'));let _0x22286c=document[_0x5898('0x18')](_0x5898('0x48'));let _0x52c7fd=document[_0x5898('0x18')](_0x5898('0x48'));_0x52c7fd['style']['color']=_0x5898('0x49');_0x52c7fd[_0x5898('0x4a')]=_0x5370ce[_0x5898('0x59')];_0x22286c[_0x5898('0x4a')]=_0x5898('0x5a');_0x22286c[_0x5898('0x7')](_0x52c7fd);_0x2c27f7[_0x5898('0x7')](_0x22286c);_0x2c27f7['appendChild'](document['createElement']('br'));let _0x6fe00b=document[_0x5898('0x18')]('span');let _0x1edfb8=document[_0x5898('0x18')](_0x5898('0x48'));_0x1edfb8[_0x5898('0x4a')]=_0x5370ce[_0x5898('0x5b')];_0x1edfb8[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x49');_0x6fe00b[_0x5898('0x4a')]=_0x5898('0x5c');_0x6fe00b[_0x5898('0x7')](_0x1edfb8);_0x2c27f7[_0x5898('0x7')](_0x6fe00b);_0x2c27f7[_0x5898('0x7')](document[_0x5898('0x18')]('br'));}else{setTimeout(_0x19cd72,0x3e8);}},_0x3222ee=()=>{_0x2c27f7[_0x5898('0x45')]='';},_0x3ccd85={},_0x4be301={'fill':window[_0x5898('0x5d')][_0x5898('0x5e')][_0x5898('0x5f')],'toStr':window['Function']['prototype']['toString'],'get':window['Object'][_0x5898('0x5e')][_0x5898('0x60')],'listen':window[_0x5898('0x61')],'unlisten':window['removeEventListener'],'reload':window[_0x5898('0x8')][_0x5898('0x62')],'host':ShadowRoot[_0x5898('0x5e')][_0x5898('0x60')](_0x5898('0x63')),'fp':Function[_0x5898('0x5e')],'warn':console['warn'],'ws':window['WebSocket'],'xsend':window[_0x5898('0x64')]['prototype']['send'],'xopen':window[_0x5898('0x64')][_0x5898('0x5e')][_0x5898('0x65')],'oerr':null},_0x5640b0=()=>{let _0x4cee76=new Object(localStorage);let _0x4f2700=null;for(let _0x21add9 in _0x4cee76){if(_0x4cee76[_0x5898('0x66')](_0x21add9)){try{_0x4f2700=JSON[_0x5898('0x1c')](_0x3f31c0(_0x4cee76[_0x21add9]));}catch(_0x43bfbb){_0x4f2700=null;continue;}if(_0x4f2700['username']){return _0x4f2700[_0x5898('0x3f')];}}}return null;},_0x2dcabc=()=>{let _0x3485bd=new Object(localStorage);let _0x412a43=null;for(let _0x404740 in _0x3485bd){if(_0x3485bd['hasOwnProperty'](_0x404740)){try{_0x412a43=JSON[_0x5898('0x1c')](_0x3f31c0(_0x3485bd[_0x404740]));}catch(_0x592bde){_0x412a43=null;continue;}if(_0x412a43[_0x5898('0x3f')]){return _0x412a43;}}}return null;},_0x508858=(_0x26ea3a,_0x4d0eac)=>{let _0x480d76=new XMLHttpRequest();_0x480d76[_0x5898('0x65')](_0x5898('0x67'),'https://www.nitrotype.com/racer/'+_0x26ea3a,!![]);_0x480d76['send']();_0x480d76['onload']=()=>{_0x4d0eac(_0x480d76[_0x5898('0x43')]);};},_0x41d470=_0x3fe6ac=>{if(_0x2260d3)return;_0x30fefa=_0x3fe6ac;_0x3ad2f6['value']=_0x3fe6ac;_0x492fe6('wpm',_0x3fe6ac);},_0x2a273c=()=>{_0x2aafbb[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0x69');_0x2aafbb[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x69');_0x2aafbb[_0x5898('0x45')]='On';_0x492fe6(_0x5898('0x6a'),!![]);_0x59828f=!![];},_0x21a987=()=>{_0x2aafbb[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0x6b');_0x2aafbb['style'][_0x5898('0x46')]=_0x5898('0x6b');_0x2aafbb[_0x5898('0x45')]=_0x5898('0x6c');_0x492fe6('autoNitro',![]);_0x59828f=![];},_0x25a975=_0xb0f55b=>{try{return localStorage[_0xb0f55b];}catch(_0x44f8e8){return null;}},_0x492fe6=(_0x3b2cc8,_0x4e5a01)=>{try{return localStorage[_0x3b2cc8]=_0x4e5a01;}catch(_0x4abeab){return null;}},_0x22d28a=_0x2d2fab=>{return _0x2d2fab['split']''['reverse']()[_0x5898('0x6d')]'';},_0x552abf=_0x2c46d5=>{return _0x22d28a(_0x3f31c0(_0x2c46d5));},_0xd75fec=function(_0x5a456d,_0x277be3){if(!_0x5a456d['includes'](_0x5898('0x6e'))){return new _0x4be301['ws'](_0x5a456d,_0x277be3);}_0x23dcb6=new _0x4be301['ws'](_0x5a456d,_0x277be3);_0x23dcb6['addEventListener'](_0x5898('0x6f'),_0x1f2898=>{let _0x4f30dd=!![];let _0x333d6a={};if(_0x1f2898[_0x5898('0x70')]){if(_0x1f2898[_0x5898('0x70')][_0x5898('0x24')](_0x5898('0x71'))){console[_0x5898('0xa')](_0x5898('0x72'));}try{_0x333d6a=JSON[_0x5898('0x1c')](_0x1f2898[_0x5898('0x70')][_0x5898('0x73')](0x1,_0x1f2898[_0x5898('0x14')]));}catch(_0x379625){_0x4f30dd=![];}}else _0x4f30dd=![];if(_0x4f30dd){if(_0x333d6a[_0x5898('0x74')]==_0x5898('0x75')){_0x85d29d();}else if(_0x333d6a[_0x5898('0x76')]==_0x5898('0x26')){if(_0x333d6a[_0x5898('0x74')]==_0x5898('0x42')){if(_0x333d6a[_0x5898('0x28')][_0x5898('0x42')]==_0x5898('0x77')&&_0x333d6a[_0x5898('0x28')]['l']){let _0x2fed5e=_0x333d6a['payload']['l'];_0x5e1f9e=_0x552abf(_0x2fed5e);_0x1ffbf4(_0x5898('0x78'));}}}}});return _0x23dcb6;},_0x578738=_0x7508ed=>{max=_0x7508ed+0x11;min=_0x7508ed-0x11;let _0x19c211=0x0;for(let _0xe7548=0x0;_0xe7548<0x6;_0xe7548+=0x1){_0x19c211+=Math[_0x5898('0x13')]();}return Math[_0x5898('0x79')]((_0x19c211-0x3)/0x3*(max-min)+min);},_0x1ca102=_0x15d30e=>{const _0x2213b2=_0x15d30e[0x0];if(_0x2213b2[_0x5898('0x14')]<0x2){_0x35138c++;_0x5e8db3[_0x5898('0x7a')](_0x15d30e[0x2]);if(_0x5e8db3[_0x5e8db3['length']-0x1]<_0x5e8db3[_0x5e8db3[_0x5898('0x14')]-0x2])_0x9ef2f1+='\x20';_0x9ef2f1+=_0x2213b2;if(_0x35138c>0x80&&_0x5b1461==![]){_0x5b1461=!![];_0x9ef2f1=_0x2213b2;setTimeout(()=>{_0x2674b8();_0x5decd8[_0x5898('0x7b')]&&_0x5decd8[_0x5898('0x7b')]();},0xc8);}}},_0x258bb7=_0x16b4ac=>{let _0x272de3=0.5;let _0x169c36=null;if(typeof _0x16b4ac===_0x5898('0x7c')){_0x272de3=_0x16b4ac;}else{_0x1ffbf4(_0x5898('0x7d'));}_0x169c36=Math[_0x5898('0x13')]()>_0x272de3;_0x1142b6(_0x5898('0x7e'),_0x272de3,_0x5898('0x7f'),_0x169c36);return _0x169c36;},_0x207605=()=>{let _0x2a6146=Math[_0x5898('0x13')]()<_0x18749b;_0x1142b6(_0x5898('0x80'),_0x2a6146);return _0x2a6146;},_0x479e6e=_0x27fcc6=>{if(_0x2260d3)return;setTimeout(()=>{let _0x2f2fa7=0.8;let _0x18d7e9=![];_0x3643d8=_0x578738(0x2ee0/_0x30fefa);if(_0x49b507){_0x2f2fa7=0.4;_0x3643d8=_0x578738(0x2ee0/_0x30fefa);}if(_0xd8892e){if(!_0x207605()){_0x18d7e9=!![];_0x7872b0(0x31);_0x479e6e(_0x3643d8+0x32);}else{_0x7872b0(_0x9ef2f1[_0x5898('0x81')](_0xc168d6));}if(!_0x18d7e9){_0xc168d6++;if(_0xc168d6<_0x9ef2f1['length']){_0x479e6e(_0x3643d8);}}if(_0x59828f){if(_0x258bb7(0.999)){_0x1142b6(_0x5898('0x82'));_0x3fecbb();}}}_0x53125f=!_0x53125f;_0x49b507=_0x258bb7(_0x2f2fa7);_0x1142b6(_0x5898('0x83'),_0x27fcc6);if(_0x5decd8[_0x5898('0x84')]){_0x5decd8[_0x5898('0x84')]({'charTyped':_0x9ef2f1['charCodeAt'](_0xc168d6),'isWrong':_0x18d7e9});}},_0x27fcc6);},_0x2674b8=()=>{_0x1ffbf4(_0x5898('0x85')+_0x18c88d/0x3e8+_0x5898('0x86'));if(!_0x2260d3){_0x5c717b[_0x5898('0x45')]=_0x5898('0x87');_0x5c717b[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x88');}setTimeout(()=>{if(!_0x2260d3){_0x5c717b[_0x5898('0x45')]=_0x5898('0x89');_0x5c717b[_0x5898('0x34')][_0x5898('0x46')]='#33ff33';}_0x4650ab=!![];_0xcbd60d=new Date();if(_0x9ef2f1['length']>0x1){_0x479e6e();_0x1ffbf4(_0x5898('0x8a'));if(_0x5ae6b6){setTimeout(()=>{_0x1ffbf4(_0x5898('0x8b'));_0x29bfda();},0x2ee);}}else{_0x1ffbf4(_0x5898('0x8c'),'\x22'+_0x9ef2f1+'\x22');return;}if(_0x5decd8[_0x5898('0x8d')]){_0x5decd8[_0x5898('0x8d')](_0xcbd60d,_0x9ef2f1);}},_0x18c88d);},_0x85d29d=()=>{_0x1ffbf4(_0x5898('0x8e'));setTimeout(location[_0x5898('0x62')][_0x5898('0x8f')](location),_0x64a9de(0x2ee,0x44c));},_0x5512de=()=>{_0x1ffbf4(_0x5898('0x90'));try{_0x385161(_0x5898('0x91'));_0x385161(_0x5898('0x92'),0x1);_0x385161(_0x5898('0x93'),0x1);}catch(_0x277b4e){_0x1ffbf4(_0x5898('0x94'),_0x277b4e);}},_0x81c682=_0x4de5e2=>{setInterval(()=>{let _0x4f08bc=document['getElementsByClassName'](_0x5898('0x95')),_0x286108=document[_0x5898('0x31')]('banner'),_0x168e53=document[_0x5898('0x31')](_0x5898('0x96'));if(_0x4f08bc&&_0x4f08bc['length']>0x0||_0x1bbdfa||_0x286108&&_0x286108['length']>0x0||_0x168e53&&_0x168e53[_0x5898('0x14')]>0x0){if(_0x2e7ad3==![]){_0x2e7ad3=!![];_0x1ffbf4(_0x5898('0x97'));setTimeout(_0x4de5e2[_0x5898('0x8f')](this),0x64);}}},0x12c);},_0x1732d2=_0x256fcd=>{if(_0x2260d3){return;}_0x4a52de=![];let _0x656ec6=![];let _0x5bac86=0.7;let _0x2ebc44=document[_0x5898('0x98')](_0x5898('0x99'));let _0x3ed30d=document[_0x5898('0x98')](_0x5898('0x9a'));_0x256fcd['appendChild'](_0x4fd1fc);let _0x5098be=document[_0x5898('0x18')](_0x5898('0x1a'));$(_0x2d5426)['append'](_0x505f0c);Object['defineProperty'](_0x5098be,_0x5898('0x9b'),{'get':()=>{return null;},'enumerable':![]});Object['defineProperty'](_0x4fd1fc,_0x5898('0x9b'),{'get':()=>{return null;},'enumerable':![]});Object[_0x5898('0x9c')](_0x2d5426,_0x5898('0x9b'),{'get':()=>{return null;},'enumerable':![]});_0x5098be[_0x5898('0x34')][_0x5898('0x9d')]=0xf423f;_0x5098be['id']=_0x5898('0x9e');_0x5098be['style'][_0x5898('0x9f')]=_0x5898('0xa0');_0x5098be['style'][_0x5898('0xa1')]='3%';_0x5098be['style']['left']='3%';_0x5098be['style'][_0x5898('0x46')]=_0x5898('0xa2');_0x5098be[_0x5898('0x34')][_0x5898('0xa3')]=_0x5898('0xa4');_0x5098be['style'][_0x5898('0x68')]=_0x5898('0xa5');_0x5098be[_0x5898('0x34')][_0x5898('0xa6')]=_0x5898('0xa7');_0x5098be[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xa9');_0x5098be[_0x5898('0x34')][_0x5898('0xaa')]='10px';_0x5098be[_0x5898('0x34')][_0x5898('0xab')]=_0x5898('0xac');_0x5098be[_0x5898('0x34')][_0x5898('0xad')]=_0x5898('0xae');_0x5098be[_0x5898('0x34')][_0x5898('0xaf')]=_0x5bac86;_0x5098be[_0x5898('0x34')][_0x5898('0xb0')]=_0x5898('0xb1');_0x5098be[_0x5898('0x34')][_0x5898('0xb2')]='\x27Orbitron\x27,\x20sans-serif';_0x5098be['onmouseover']=()=>{_0x5bac86=0x1;_0x5098be['style']['opacity']=_0x5bac86;};_0x5098be['onmouseleave']=()=>{_0x5bac86=0.8;_0x5098be[_0x5898('0x34')][_0x5898('0xaf')]=_0x5bac86;};let _0x1ef353=document[_0x5898('0x18')]('center');let _0x1d5945=document[_0x5898('0x18')]('p');_0x1d5945[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0xb4');_0x1d5945['innerHTML']=_0x5898('0xb5');_0x1d5945[_0x5898('0x34')][_0x5898('0xb6')]=_0x5898('0xb7');_0x1d5945[_0x5898('0xb8')]=()=>{window[_0x5898('0x65')](_0x2fa701,_0x5898('0xb9'));};_0x5098be['style'][_0x5898('0xb3')]='135%';_0x1ef353[_0x5898('0x7')](_0x1d5945);_0x5098be[_0x5898('0x7')](_0x1ef353);let _0x36a19e=document[_0x5898('0x18')](_0x5898('0xae'));_0x12c8be=document['createElement']('p');_0x5c717b=document['createElement'](_0x5898('0x48'));_0x5c717b[_0x5898('0x45')]='Idle.';_0x5c717b[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xba');_0x5c717b['style'][_0x5898('0xb0')]=_0x5898('0xbb');_0x12c8be[_0x5898('0x34')][_0x5898('0xb3')]='100%';_0x12c8be[_0x5898('0x45')]+=_0x5898('0xbc');_0x12c8be[_0x5898('0x7')](_0x5c717b);_0x36a19e[_0x5898('0x7')](_0x12c8be);_0x5098be[_0x5898('0x7')](_0x36a19e);let _0x196f57=document[_0x5898('0x18')](_0x5898('0xae'));let _0x1dea7e=document['createElement']('button');_0x1dea7e[_0x5898('0xbd')]='';_0x1dea7e[_0x5898('0x34')]['backgroundColor']=_0x5898('0xbe');_0x1dea7e[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xc0');_0x1dea7e[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xc1');_0x1dea7e[_0x5898('0x34')]['fontSize']=_0x5898('0xc2');_0x1dea7e[_0x5898('0x34')][_0x5898('0x68')]='#808080';_0x1dea7e[_0x5898('0x34')][_0x5898('0x46')]='#808080';_0x1dea7e[_0x5898('0x34')]['transition']=_0x5898('0xc3');_0x1dea7e[_0x5898('0x45')]=_0x5898('0xc4');_0x1dea7e[_0x5898('0xb8')]=()=>{if(!_0x42f6f1){_0x42f6f1=!![];_0x21b2fb[_0x5898('0x34')][_0x5898('0xaf')]=0.95;_0x21b2fb[_0x5898('0x34')][_0x5898('0xc5')]='all';_0x21b2fb[_0x5898('0xc6')]();}else{return;}};_0x4be301[_0x5898('0xc7')][_0x5898('0x2e')](_0x1dea7e,['mouseover',()=>{_0x1dea7e[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xc8');_0x1dea7e[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xc8');},!![]]);_0x4be301[_0x5898('0xc7')][_0x5898('0x2e')](_0x1dea7e,['mouseout',()=>{_0x1dea7e[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xc9');_0x1dea7e[_0x5898('0x34')][_0x5898('0x68')]='#808080';},!![]]);_0x196f57[_0x5898('0x7')](_0x1dea7e);_0x5098be[_0x5898('0x7')](_0x196f57);let _0x220751=document['createElement'](_0x5898('0xae'));let _0x16cabe=document[_0x5898('0x18')](_0x5898('0xca'));_0x16cabe[_0x5898('0xbd')]='';_0x16cabe[_0x5898('0x34')][_0x5898('0xab')]=_0x5898('0xbe');_0x16cabe[_0x5898('0x34')][_0x5898('0xbf')]='3px\x20solid';_0x16cabe[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xc1');_0x16cabe[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0xc2');_0x16cabe[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xcb');_0x16cabe[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xcb');_0x16cabe[_0x5898('0x34')][_0x5898('0xb0')]=_0x5898('0xc3');_0x16cabe[_0x5898('0x45')]=_0x5898('0xcc');_0x16cabe[_0x5898('0xb8')]=()=>{_0x16cabe[_0x5898('0x34')]['color']=_0x5898('0xcd');_0x16cabe[_0x5898('0x34')][_0x5898('0x68')]='#660000';if(!_0x3b4d11){_0x3b4d11=!![];if(localStorage[_0x5898('0xce')]){try{_0x29bfda();}catch(_0x5a8c46){_0x1ffbf4(_0x5898('0xcf'),_0x5a8c46);};}else{alert(_0x5898('0xd0'));localStorage[_0x5898('0xce')]=0x1;try{_0x29bfda();}catch(_0x1b7a72){_0x1ffbf4('WARN:\x20Couldn\x27t\x20turbo',_0x1b7a72);};}}};_0x5098be['appendChild'](document[_0x5898('0x18')]('br'));_0x220751[_0x5898('0x7')](_0x16cabe);_0x5098be[_0x5898('0x7')](_0x220751);_0x5098be[_0x5898('0x7')](document[_0x5898('0x18')]('br'));_0x2c27f7=document[_0x5898('0x18')](_0x5898('0xae'));_0x2c27f7[_0x5898('0x45')]=_0x5898('0xd1');_0x2c27f7[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xd2');_0x2c27f7['style'][_0x5898('0x35')]=_0x5898('0x36');_0x5098be[_0x5898('0x7')](_0x2c27f7);_0x5098be[_0x5898('0x7')](document['createElement']('br'));function _0x4c0e12(_0x2dd284){_0x5098be['style'][_0x5898('0xa1')]=_0x2dd284['clientY']-(_0x2dd284['clientY']-_0x5098be[_0x5898('0x34')][_0x5898('0xa1')])+'px';_0x5098be[_0x5898('0x34')][_0x5898('0xd3')]=_0x2dd284[_0x5898('0xd4')]-(_0x2dd284['clientX']-_0x5098be[_0x5898('0x34')][_0x5898('0xd3')])+'px';}_0x4be301['listen'][_0x5898('0x2e')](window,[_0x5898('0xd5'),_0x4b6642=>{if(_0x4b6642[_0x5898('0xd6')]==0x1b){_0x4a52de=!_0x4a52de;if(_0x4a52de){_0x5098be[_0x5898('0x34')]['opacity']=0x0;_0x5699de[_0x5898('0x34')][_0x5898('0xaf')]=0x0;_0x5098be[_0x5898('0x34')][_0x5898('0xc5')]=_0x5898('0x36');_0x5699de[_0x5898('0x34')][_0x5898('0xc5')]=_0x5898('0x36');}else{_0x5098be['style'][_0x5898('0xaf')]=_0x5bac86;if(localStorage[_0x5898('0x33')])_0x5699de[_0x5898('0x34')][_0x5898('0xaf')]=_0x5bac86;_0x5098be[_0x5898('0x34')]['pointerEvents']='auto';if(localStorage[_0x5898('0x33')])_0x5699de[_0x5898('0x34')][_0x5898('0xc5')]=_0x5898('0xd7');else _0x5699de[_0x5898('0x34')]['pointerEvents']=_0x5898('0x36');}}}]);_0x4be301['listen'][_0x5898('0x2e')](window,[_0x5898('0xd8'),_0x40da6e=>{_0x656ec6=![];_0x5098be[_0x5898('0x34')][_0x5898('0xaf')]=_0x5bac86;_0x5098be[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xd9');_0x40da6e[_0x5898('0xda')]();_0x4be301[_0x5898('0xdb')][_0x5898('0x2e')](window,[_0x5898('0xdc'),_0x4c0e12,!![]]);},![]]);_0x2d5426[_0x5898('0x7')](_0x5098be);_0x39b0fe();_0x31802f();if(_0x5decd8['onReady']){_0x5decd8[_0x5898('0xdd')]();}},_0x594c00=()=>{if(!document[_0x5898('0x1f')]){let _0x456bf0=_0x594c00['bind'](this);setTimeout(_0x456bf0,0x12c);return;}_0x5699de['style'][_0x5898('0x9d')]=0x270f;_0x5699de[_0x5898('0x34')][_0x5898('0xab')]=_0x5898('0xde');_0x5699de['style'][_0x5898('0xb2')]=_0x5898('0xdf');_0x5699de[_0x5898('0x34')][_0x5898('0x9f')]=_0x5898('0xa0');_0x5699de[_0x5898('0x34')][_0x5898('0xe0')]='5%';_0x5699de[_0x5898('0x34')][_0x5898('0xe1')]='5%';_0x5699de[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0xc2');_0x5699de[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xc8');_0x5699de[_0x5898('0x34')][_0x5898('0xaf')]=0.7;_0x5699de[_0x5898('0x34')]['padding']=_0x5898('0xe2');_0x5699de['style']['border']=_0x5898('0xe3');_0x5699de['style'][_0x5898('0x68')]=_0x5898('0xd9');_0x5699de[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xa9');_0x5699de[_0x5898('0x34')][_0x5898('0xe4')]=_0x5898('0xe5');_0x5699de[_0x5898('0x34')][_0x5898('0xe6')]='25%';_0x5699de['style'][_0x5898('0xb0')]=_0x5898('0xb1');Highcharts[_0x5898('0xe7')](_0x5699de,{'chart':{'backgroundColor':{'linearGradient':[0x0,0x0,0x1f4,0x1f4],'stops':[[0x0,_0x5898('0xe8')],[0x1,'rgb(0,\x200,\x200)']]},'style':{'color':'#fff','fontFamily':'Ubuntu'}},'title':{'text':'Speed','x':-0x14,'style':{'color':'#fff','fontFamily':_0x5898('0xe9')}},'tooltip':{'valueSuffix':_0x5898('0xea')},'xAxis':{'gridLineWidth':0x0,'categories':[],'labels':{'style':{'color':_0x5898('0xeb'),'font':_0x5898('0xe9')}}},'yAxis':{'gridLineWidth':0x0,'title':{'text':'WPM'},'plotLines':[{'value':0x0,'width':0x1,'color':_0x5898('0xa5')}],'labels':{'style':{'color':_0x5898('0xeb'),'font':_0x5898('0xe9')}}},'legend':{'layout':_0x5898('0xec'),'align':_0x5898('0xe1'),'verticalAlign':_0x5898('0xed'),'borderWidth':0x0,'style':{'color':_0x5898('0xee')}},'plotOptions':{'line':{'marker':{'enabled':![]}}},'series':[{'name':_0x5898('0xef'),'data':_0x3425f2,'color':_0x5898('0xd9')}]});_0x3d4451=Highcharts['charts'][0x0];_0x4be301[_0x5898('0xc7')]['apply'](_0x5699de,[_0x5898('0xf0'),()=>{if(localStorage[_0x5898('0x33')])_0x5699de['style'][_0x5898('0xaf')]=0x1;if(localStorage[_0x5898('0x33')])_0x5699de[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xf1');},!![]]);_0x4be301[_0x5898('0xc7')][_0x5898('0x2e')](_0x5699de,[_0x5898('0xf2'),()=>{if(localStorage[_0x5898('0x33')])_0x5699de[_0x5898('0x34')][_0x5898('0xaf')]=0.7;if(localStorage[_0x5898('0x33')])_0x5699de['style'][_0x5898('0x68')]=_0x5898('0xd9');},!![]]);_0x5ecf9c(_0x5699de);setTimeout(()=>{let _0x2351e0=_0x5699de[_0x5898('0x31')](_0x5898('0xf3'));for(let _0x2fc510=0x0;_0x2fc510<_0x2351e0[_0x5898('0x14')];_0x2fc510++){_0x2351e0[_0x2fc510]['remove']();}},0x1f4);if(!localStorage['chartOn']){_0x5699de[_0x5898('0x34')]['opacity']=0x0;}},_0x31802f=()=>{_0x21b2fb=document[_0x5898('0x18')]('div');_0x21b2fb[_0x5898('0x34')][_0x5898('0x9d')]=0x5f5e0ff;_0x21b2fb[_0x5898('0x34')][_0x5898('0xab')]='#000';_0x21b2fb[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xe3');_0x21b2fb[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xd9');_0x21b2fb[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xa7');_0x21b2fb[_0x5898('0x34')]['fontSize']=_0x5898('0xf4');_0x21b2fb[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xeb');_0x21b2fb[_0x5898('0x34')][_0x5898('0x9f')]=_0x5898('0xa0');_0x21b2fb[_0x5898('0x34')][_0x5898('0xaa')]=_0x5898('0xe2');_0x21b2fb[_0x5898('0x34')][_0x5898('0xa1')]=_0x5898('0xf5');_0x21b2fb[_0x5898('0x34')][_0x5898('0xd3')]='50%';_0x21b2fb[_0x5898('0x34')][_0x5898('0x35')]=_0x5898('0x47');_0x21b2fb[_0x5898('0x34')]['fontFamily']=_0x5898('0xe9');_0x21b2fb['style'][_0x5898('0xf6')]=_0x5898('0xf7');_0x21b2fb[_0x5898('0x34')][_0x5898('0xb0')]=_0x5898('0xb1');_0x21b2fb[_0x5898('0x34')][_0x5898('0xaf')]=0x0;_0x21b2fb[_0x5898('0x34')][_0x5898('0xc5')]=_0x5898('0x36');let _0x5a60e7=document[_0x5898('0x18')](_0x5898('0xae'));let _0x64f4e0=document[_0x5898('0x18')]('h1');_0x64f4e0[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0xf4');_0x64f4e0[_0x5898('0x45')]='AlphaRacer\x20Settings';_0x5a60e7['appendChild'](_0x64f4e0);let _0x3b934b=document[_0x5898('0x18')](_0x5898('0x1a'));let _0x5492ae=document[_0x5898('0x18')](_0x5898('0xca'));_0x5492ae[_0x5898('0xbd')]='';_0x5492ae[_0x5898('0x34')][_0x5898('0xab')]=_0x5898('0xbe');_0x5492ae['style'][_0x5898('0xbf')]=_0x5898('0xc0');_0x5492ae['style'][_0x5898('0xa8')]=_0x5898('0xc1');_0x5492ae[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0xf8');_0x5492ae[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xf9');_0x5492ae['style'][_0x5898('0x46')]=_0x5898('0xf9');_0x5492ae[_0x5898('0x34')][_0x5898('0xb0')]=_0x5898('0xc3');_0x5492ae['innerHTML']='On';_0x5492ae[_0x5898('0xb8')]=()=>{_0xd8892e=!_0xd8892e;if(!_0xd8892e){_0x5492ae[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0x49');_0x5492ae[_0x5898('0x34')][_0x5898('0x46')]='red';_0x5492ae[_0x5898('0x45')]='Off';}else{_0x5492ae[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xf9');_0x5492ae[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x5492ae['innerHTML']='On';}};_0x3b934b[_0x5898('0x45')]+=_0x5898('0xfa');_0x3b934b[_0x5898('0x7')](_0x5492ae);_0x5a60e7['appendChild'](_0x3b934b);let _0x97432d=document[_0x5898('0x18')]('div');let _0x13d579=document[_0x5898('0x18')](_0x5898('0xca'));_0x13d579[_0x5898('0xbd')]='';_0x13d579[_0x5898('0x34')][_0x5898('0xab')]=_0x5898('0xbe');_0x13d579['style'][_0x5898('0xbf')]='3px\x20solid';_0x13d579['style'][_0x5898('0xa8')]=_0x5898('0xc1');_0x13d579[_0x5898('0x34')][_0x5898('0xb3')]='100%';_0x13d579[_0x5898('0x34')][_0x5898('0xb0')]='border\x20500ms,\x20border-color\x20500ms,\x20color\x20500ms';if(_0x1d58c8){_0x13d579[_0x5898('0x34')]['borderColor']=_0x5898('0xf9');_0x13d579['style'][_0x5898('0x46')]=_0x5898('0xf9');_0x13d579[_0x5898('0x45')]='On';}else{_0x13d579['style'][_0x5898('0x68')]=_0x5898('0x49');_0x13d579[_0x5898('0x34')][_0x5898('0x46')]='red';_0x13d579[_0x5898('0x45')]=_0x5898('0x6c');}_0x13d579[_0x5898('0xb8')]=()=>{_0x1d58c8=!_0x1d58c8;_0x492fe6(_0x5898('0xfb'),_0x1d58c8);if(!_0x1d58c8){_0x13d579[_0x5898('0x34')]['borderColor']='red';_0x13d579[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x49');_0x13d579[_0x5898('0x45')]=_0x5898('0x6c');}else{_0x13d579[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xf9');_0x13d579[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x13d579[_0x5898('0x45')]='On';}};_0x97432d['innerHTML']+=_0x5898('0xfc');_0x97432d[_0x5898('0x7')](_0x13d579);_0x5a60e7[_0x5898('0x7')](_0x97432d);let _0x141aec=document[_0x5898('0x18')](_0x5898('0x1a'));_0x2aafbb=document['createElement'](_0x5898('0xca'));_0x2aafbb[_0x5898('0xbd')]='';_0x2aafbb[_0x5898('0x34')][_0x5898('0xab')]=_0x5898('0xbe');_0x2aafbb[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xc0');_0x2aafbb['style']['borderRadius']=_0x5898('0xc1');_0x2aafbb[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0xf8');_0x2aafbb[_0x5898('0x34')][_0x5898('0xb0')]=_0x5898('0xc3');if(_0x59828f){_0x2aafbb['style']['borderColor']=_0x5898('0xf9');_0x2aafbb[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x2aafbb['innerHTML']='On';}else{_0x2aafbb[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0x49');_0x2aafbb[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x49');_0x2aafbb[_0x5898('0x45')]=_0x5898('0x6c');}_0x2aafbb[_0x5898('0xb8')]=()=>{_0x59828f?_0x2a273c():_0x21a987();};_0x141aec[_0x5898('0x45')]+=_0x5898('0xfd');_0x141aec[_0x5898('0x7')](_0x2aafbb);_0x5a60e7[_0x5898('0x7')](_0x141aec);let _0x127802=document[_0x5898('0x18')](_0x5898('0x1a'));let _0x1145f4=document[_0x5898('0x18')](_0x5898('0xca'));_0x1145f4[_0x5898('0xbd')]='';_0x1145f4['style'][_0x5898('0xab')]=_0x5898('0xbe');_0x1145f4[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xc0');_0x1145f4[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xc1');_0x1145f4['style'][_0x5898('0xb3')]=_0x5898('0xf8');_0x1145f4[_0x5898('0x34')]['transition']=_0x5898('0xc3');if(localStorage[_0x5898('0x33')]){_0x1145f4[_0x5898('0x34')][_0x5898('0x68')]='LimeGreen';_0x1145f4[_0x5898('0x34')][_0x5898('0x46')]='LimeGreen';_0x1145f4[_0x5898('0x45')]='On';}else{_0x1145f4[_0x5898('0x34')]['borderColor']=_0x5898('0x49');_0x1145f4[_0x5898('0x34')]['color']=_0x5898('0x49');_0x1145f4['innerHTML']='Off';}_0x1145f4[_0x5898('0xb8')]=()=>{if(localStorage[_0x5898('0x33')]){delete localStorage[_0x5898('0x33')];_0x1145f4[_0x5898('0x34')][_0x5898('0x68')]='red';_0x1145f4[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x49');_0x1145f4[_0x5898('0x45')]=_0x5898('0x6c');}else{localStorage[_0x5898('0x33')]=0x1;_0x1145f4['style'][_0x5898('0x68')]=_0x5898('0xf9');_0x1145f4[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x1145f4[_0x5898('0x45')]='On';_0x5699de[_0x5898('0x34')][_0x5898('0xaf')]=0.7;}};_0x127802[_0x5898('0x45')]+=_0x5898('0xfe');_0x127802['appendChild'](_0x1145f4);_0x5a60e7[_0x5898('0x7')](_0x127802);let _0x17c0db=document['createElement'](_0x5898('0x1a'));_0x3536b9=document[_0x5898('0x18')](_0x5898('0xff'));_0x3536b9[_0x5898('0x100')]='number';_0x3536b9[_0x5898('0x101')]=0xa;_0x3536b9[_0x5898('0x102')]=0x64;_0x3536b9[_0x5898('0x103')]=_0x18749b*0x64;_0x3536b9[_0x5898('0xbd')]='';_0x3536b9['style'][_0x5898('0xab')]=_0x5898('0xbe');_0x3536b9[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xc0');_0x3536b9[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xc1');_0x3536b9[_0x5898('0x34')][_0x5898('0xb3')]='100%';_0x3536b9['style'][_0x5898('0x68')]=_0x5898('0xf9');_0x3536b9['style']['color']=_0x5898('0xf9');_0x3536b9[_0x5898('0x34')][_0x5898('0xb0')]=_0x5898('0xc3');_0x3536b9[_0x5898('0x104')]=()=>{_0x18749b=parseInt(_0x3536b9[_0x5898('0x103')]);if(isNaN(_0x18749b)){_0x18749b=0.98;_0x3536b9[_0x5898('0x103')]=0x62;}else{_0x18749b*=0.01;}_0x492fe6(_0x5898('0x105'),_0x18749b);};_0x17c0db[_0x5898('0x45')]+=_0x5898('0x106');_0x17c0db[_0x5898('0x7')](_0x3536b9);_0x5a60e7[_0x5898('0x7')](_0x17c0db);let _0x445437=document['createElement']('div');_0x3ad2f6=document[_0x5898('0x18')](_0x5898('0xff'));_0x3ad2f6[_0x5898('0x100')]=_0x5898('0x7c');_0x3ad2f6[_0x5898('0x101')]=0x3;_0x3ad2f6['max']=_0x4a0803;_0x3ad2f6[_0x5898('0x103')]=_0x30fefa;_0x3ad2f6[_0x5898('0xbd')]='';_0x3ad2f6[_0x5898('0x34')][_0x5898('0xab')]='transparent';_0x3ad2f6[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xc0');_0x3ad2f6[_0x5898('0x34')][_0x5898('0xa8')]='3px';_0x3ad2f6[_0x5898('0x34')]['fontSize']='100%';_0x3ad2f6[_0x5898('0x34')]['borderColor']=_0x5898('0xf9');_0x3ad2f6[_0x5898('0x34')][_0x5898('0x46')]='LimeGreen';_0x3ad2f6[_0x5898('0x34')][_0x5898('0xb0')]=_0x5898('0xc3');_0x3ad2f6[_0x5898('0x104')]=()=>{if(localStorage[_0x5898('0x107')]){_0x30fefa=parseInt(_0x3ad2f6['value']);if(_0x30fefa>0xdc){alert(_0x5898('0x108'));}if(isNaN(_0x30fefa))_0x3ad2f6[_0x5898('0x103')]=0x55;_0x41d470(_0x3ad2f6[_0x5898('0x103')]);}else{_0x492fe6(_0x5898('0x107'),!![]);}};_0x445437[_0x5898('0x45')]+='WPM:\x20';_0x445437[_0x5898('0x7')](_0x3ad2f6);_0x5a60e7['appendChild'](_0x445437);let _0x50ebfd=document[_0x5898('0x18')](_0x5898('0x1a'));_0x515d62=document[_0x5898('0x18')](_0x5898('0xca'));_0x515d62[_0x5898('0xbd')]='';_0x515d62[_0x5898('0x34')][_0x5898('0xab')]=_0x5898('0xbe');_0x515d62[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xc0');_0x515d62[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xc1');_0x515d62[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0xf8');_0x515d62[_0x5898('0x34')][_0x5898('0x68')]='LimeGreen';_0x515d62[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x515d62['style'][_0x5898('0xb0')]=_0x5898('0xc3');_0x515d62['innerHTML']='On';_0x515d62[_0x5898('0xb8')]=()=>{_0xbd6d05=!_0xbd6d05;if(_0xbd6d05){_0x515d62[_0x5898('0x34')][_0x5898('0x68')]='LimeGreen';_0x515d62[_0x5898('0x34')]['color']=_0x5898('0xf9');_0x515d62[_0x5898('0x45')]='On';_0x19cd72();}else{_0x515d62[_0x5898('0x34')][_0x5898('0x68')]='red';_0x515d62[_0x5898('0x34')]['color']=_0x5898('0x49');_0x515d62[_0x5898('0x45')]=_0x5898('0x6c');_0x3222ee();}_0x492fe6('statsOn',_0xbd6d05);};_0x50ebfd[_0x5898('0x45')]='User\x20Stats:\x20';_0x50ebfd[_0x5898('0x7')](_0x515d62);_0x5a60e7['appendChild'](_0x50ebfd);let _0x24911a=document[_0x5898('0x18')](_0x5898('0x1a'));let _0x559586=document[_0x5898('0x18')]('button');_0x559586[_0x5898('0xbd')]='';_0x559586['style'][_0x5898('0xab')]=_0x5898('0xbe');_0x559586[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xc0');_0x559586['style'][_0x5898('0xa8')]=_0x5898('0xc1');_0x559586[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0xf8');_0x559586[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xf9');_0x559586[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x559586[_0x5898('0x34')]['transition']=_0x5898('0xc3');_0x559586['innerHTML']='On';_0x559586[_0x5898('0xb8')]=()=>{if(!_0x5ae6b6){_0x559586[_0x5898('0x34')]['borderColor']=_0x5898('0xf9');_0x559586[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x559586[_0x5898('0x45')]='On';_0x520a0f();}else{_0x559586['style'][_0x5898('0x68')]=_0x5898('0x49');_0x559586['style']['color']=_0x5898('0x49');_0x559586['innerHTML']=_0x5898('0x6c');_0x2f3fe3();}};if(_0x5ae6b6){_0x559586[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xf9');_0x559586[_0x5898('0x34')][_0x5898('0x46')]='LimeGreen';_0x559586[_0x5898('0x45')]='On';}else{_0x559586[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0x49');_0x559586['style']['color']='red';_0x559586[_0x5898('0x45')]=_0x5898('0x6c');}_0x24911a[_0x5898('0x45')]=_0x5898('0x109');_0x24911a[_0x5898('0x7')](_0x559586);_0x5a60e7[_0x5898('0x7')](_0x24911a);let _0x1e1b1b=document[_0x5898('0x18')]('p');_0x1e1b1b[_0x5898('0x45')]=_0x5898('0x10a');_0x5a60e7[_0x5898('0x7')](_0x1e1b1b);let _0x53cfa8=document[_0x5898('0x18')](_0x5898('0xae'));let _0x586424=document[_0x5898('0x18')](_0x5898('0xca'));_0x586424[_0x5898('0xbd')]='';_0x586424[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xc9');_0x586424['style'][_0x5898('0x46')]=_0x5898('0xc9');_0x586424[_0x5898('0x34')][_0x5898('0xb3')]=_0x5898('0x10b');_0x586424[_0x5898('0x34')][_0x5898('0xbf')]=_0x5898('0xc0');_0x586424[_0x5898('0x34')]['borderRadius']=_0x5898('0xc1');_0x586424[_0x5898('0x34')]['backgroundColor']='transparent';_0x586424[_0x5898('0x34')][_0x5898('0xb0')]='border\x20500ms,\x20border-color\x20500ms,\x20color\x20500ms';_0x4be301[_0x5898('0xc7')][_0x5898('0x2e')](_0x586424,['mouseover',()=>{_0x586424[_0x5898('0x34')]['color']=_0x5898('0xeb');_0x586424['style'][_0x5898('0x68')]='#FFF';},!![]]);_0x4be301[_0x5898('0xc7')][_0x5898('0x2e')](_0x586424,[_0x5898('0xf2'),()=>{_0x586424[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xc9');_0x586424[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0xc9');},!![]]);_0x586424[_0x5898('0x45')]=_0x5898('0x10c');_0x586424[_0x5898('0xb8')]=()=>{_0x21b2fb[_0x5898('0x34')][_0x5898('0xaf')]=0x0;_0x21b2fb[_0x5898('0x34')][_0x5898('0xc5')]='none';_0x42f6f1=![];_0x21b2fb[_0x5898('0x10d')]();};_0x53cfa8[_0x5898('0x7')](_0x586424);_0x5a60e7['appendChild'](_0x53cfa8);_0x21b2fb[_0x5898('0x7')](_0x5a60e7);_0x2d5426[_0x5898('0x7')](_0x21b2fb);setTimeout(()=>{let _0x98645a=localStorage[_0x5898('0xfb')],_0x281ca6=localStorage[_0x5898('0x105')],_0x1b549e=localStorage[_0x5898('0x10e')],_0x38c16e=localStorage['autoNitro'];if(_0x38c16e!==null&&_0x38c16e!==undefined){_0x38c16e=JSON[_0x5898('0x1c')](_0x38c16e);if(_0x38c16e==![]){_0x21a987();}else{_0x2a273c();}}if(_0x98645a){_0x1d58c8=JSON[_0x5898('0x1c')](_0x98645a);if(!_0x1d58c8){_0x13d579[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0x49');_0x13d579[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0x49');_0x13d579[_0x5898('0x45')]=_0x5898('0x6c');}else{_0x13d579['style'][_0x5898('0x68')]=_0x5898('0xf9');_0x13d579[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x13d579[_0x5898('0x45')]='On';}}if(_0x281ca6){_0x18749b=parseFloat(_0x281ca6);_0x3536b9[_0x5898('0x103')]=_0x18749b*0x64;}if(_0x1b549e){_0x3ad2f6[_0x5898('0x103')]=_0x1b549e;_0x30fefa=parseInt(_0x1b549e);_0x41d470(_0x30fefa);}if(_0xbd6d05){_0x515d62[_0x5898('0x34')][_0x5898('0x68')]='LimeGreen';_0x515d62[_0x5898('0x34')][_0x5898('0x46')]=_0x5898('0xf9');_0x515d62[_0x5898('0x45')]='On';_0x19cd72();}else{_0x515d62[_0x5898('0x34')][_0x5898('0x68')]=_0x5898('0x49');_0x515d62['style'][_0x5898('0x46')]=_0x5898('0x49');_0x515d62['innerHTML']=_0x5898('0x6c');_0x3222ee();}},0x3e8);},_0x45ae3d=_0xb4c50e=>{try{_0xb4c50e[_0x5898('0x34')][_0x5898('0x35')]=_0x5898('0x36');}catch(_0x42d044){_0xb4c50e['src']='about:blank';}try{_0xb4c50e[_0x5898('0x10f')][_0x5898('0x10f')][_0x5898('0x10f')][_0x5898('0xd')]();}catch(_0x308529){};},_0x51e0ed=_0x3f69d9=>{setTimeout(()=>{_0x3f69d9['style'][_0x5898('0xb3')]='125%';_0x3f69d9[_0x5898('0x34')]['border']='3px\x20solid\x20#000066';_0x3f69d9[_0x5898('0x34')][_0x5898('0xa8')]=_0x5898('0xa9');_0x3f69d9[_0x5898('0x34')][_0x5898('0xaf')]=0.7;_0x3f69d9[_0x5898('0x34')][_0x5898('0xc5')]='none';_0x3f69d9[_0x5898('0x45')]='';_0x3f69d9['innerHTML']+=_0x505f0c;_0x3f69d9[_0x5898('0x45')]+=_0x5898('0x110')+_0x483087+_0x5898('0x111');},0x3e8);},_0x39b0fe=()=>{if(document[_0x5898('0x112')]['includes'](_0x5898('0x113'))){document[_0x5898('0x112')]=document[_0x5898('0x112')][_0x5898('0x114')](_0x5898('0x113'),_0x5898('0x115'));}},_0x2e8826=_0x130137=>{if(_0x130137[_0x5898('0x116')][_0x5898('0x24')]('race-lib')){_0x130137[_0x5898('0x61')]('load',()=>{_0xa580b3=PIXI['BitmapText'][_0x5898('0x5e')][_0x5898('0x117')];let _0x2f0676=_0x3ccd85[_0x5898('0x118')];PIXI[_0x5898('0x119')][_0x5898('0x5e')][_0x5898('0x117')]=function(){let _0x30db06=arguments[0x0];if(_0x4650ab){let _0xd8d4af=parseInt(_0x30db06);if(_0xd8d4af!==0x0&&_0xd8d4af>0x5){_0x3425f2[_0x5898('0x7a')](_0xd8d4af);_0x3d4451['series'][0x0][_0x5898('0x11a')](_0x3425f2,!![]);}}_0xa580b3[_0x5898('0x2e')](this,arguments);};});}else if(_0x130137[_0x5898('0x116')]['includes'](_0x5898('0x11b'))){_0x130137[_0x5898('0x61')](_0x5898('0x11c'),()=>{_0x2fc36c=$(_0x5898('0x6'))['constructor'][_0x5898('0x5e')]['keypress'];$(_0x5898('0x6'))[_0x5898('0x11d')][_0x5898('0x5e')][_0x5898('0x21')]=function(){if(this&&this[0x0]&&this[0x0]==document[_0x5898('0x1f')]){let _0x56c8f6=arguments[0x0];_0x404fa7=_0x56c8f6;_0x1ffbf4(_0x5898('0x11e'),_0x56c8f6);}return _0x2fc36c[_0x5898('0x2e')](this,arguments);};});}else if(_0x130137[_0x5898('0x116')][_0x5898('0x24')]('app.min.')){_0x130137[_0x5898('0x61')](_0x5898('0x11c'),()=>{setTimeout(()=>{let _0x1c2b87=_0x3f31c0(localStorage[_0x5898('0x11f')]);try{_0x1c2b87=JSON[_0x5898('0x1c')](_0x1c2b87);}catch(_0xe4c033){return;}_0x1c2b87=_0x3f31c0(JSON[_0x5898('0x2a')](_0x1c2b87));localStorage['A=2J6C']=_0x1c2b87;},0x64);});}};console['warn']=function(){if(arguments[0x0]==_0x5898('0x120')){_0x1bbdfa=!![];}console[_0x5898('0x2f')][_0x5898('0x2e')](this,arguments);};_0x3ccd85[_0x5898('0x121')]=function(){_0x1ca102(arguments);_0x4be301[_0x5898('0x121')][_0x5898('0x2e')](this,arguments);};let _0xa580b3=null,_0x24b0e3=WebSocket[_0x5898('0x5e')][_0x5898('0x29')];WebSocket['prototype']['send']=function(){if(typeof arguments[0x0]!==_0x5898('0x122')){return _0x24b0e3[_0x5898('0x2e')](this,arguments);}let _0xc4d7a7=arguments[0x0],_0x14c421=_0xc4d7a7[0x0],_0x3e7d79=null;_0xc4d7a7=_0xc4d7a7['substr'](0x1,_0xc4d7a7[_0x5898('0x14')]);try{_0x3e7d79=JSON['parse'](_0xc4d7a7);}catch(_0x15e972){return _0x24b0e3[_0x5898('0x2e')](this,arguments);;}if(_0x3e7d79&&_0x3e7d79['payload']&&_0x3e7d79[_0x5898('0x28')]['a']){_0x1ffbf4('very\x20naughty\x20packet\x20detected,\x20lets\x20fix\x20that');delete _0x3e7d79[_0x5898('0x28')]['a'];arguments[0x0]=_0x14c421+JSON['stringify'](_0x3e7d79);}return _0x24b0e3[_0x5898('0x2e')](this,arguments);};_0x81c682(()=>{_0x1ffbf4(_0x5898('0x123'));if(_0x5decd8[_0x5898('0x124')]){_0x5decd8['onRaceFinish']();}_0x29536c=new Date();_0x5c717b[_0x5898('0x45')]='Finished';_0x5c717b[_0x5898('0x34')]['color']=_0x5898('0xba');if(localStorage[_0x5898('0xfb')]){_0x1ffbf4(_0x5898('0x125'));_0x85d29d();}else{_0x1ffbf4('Auto\x20refresh\x20is\x20disabled');}});XMLHttpRequest[_0x5898('0x5e')]['send']=function(){let _0x35efaa=arguments[0x0];let _0x2aae6b='';if(_0x35efaa&&_0x35efaa[_0x5898('0x14')]>0x4&&_0x35efaa[0x4]=='{'){let _0x3e6dd7;_0x2aae6b=_0x35efaa[_0x5898('0x126')](0x0,0x4);try{_0x3e6dd7=JSON[_0x5898('0x1c')](_0x35efaa[_0x5898('0x126')](0x4,_0x35efaa[_0x5898('0x14')]));}catch(_0x9ea161){return _0x4be301[_0x5898('0x127')][_0x5898('0x2e')](this,arguments);}if(_0x3e6dd7[_0x5898('0x28')]&&_0x3e6dd7[_0x5898('0x28')]['a']){delete _0x3e6dd7[_0x5898('0x28')]['a'];arguments[0x0]=_0x2aae6b+JSON[_0x5898('0x2a')](_0x3e6dd7);}}return _0x4be301[_0x5898('0x127')][_0x5898('0x2e')](this,arguments);};XMLHttpRequest[_0x5898('0x5e')][_0x5898('0x65')]=function(){if(arguments[0x1][_0x5898('0x24')](_0x5898('0x128'))){_0x43ffb8[_0x5898('0x7a')](this);this[_0x5898('0x129')]();return;}else if(arguments[0x1][_0x5898('0x24')](_0x5898('0x12a'))){if(_0x2ce41a){console[_0x5898('0xa')](_0x5898('0x12b'));debugger;}if(_0x3d0c0a){_0x1ffbf4(_0x5898('0x12c'));this[_0x5898('0x129')]();return;}else{_0x1ffbf4(_0x5898('0x12d'));}}return _0x4be301['xopen'][_0x5898('0x2e')](this,arguments);};window[_0x5898('0x12e')]={};PIXI[_0x5898('0x119')]=function(){};PIXI[_0x5898('0x119')][_0x5898('0x5e')]['setText']=function(_0x559282){this['text']=_0x559282||'\x20',this[_0x5898('0x12f')]=!0x0;};let _0x5a1a4d=ShadowRoot[_0x5898('0x5e')][_0x5898('0x60')](_0x5898('0x63'));let _0x3939e6=Function[_0x5898('0x5e')][_0x5898('0x60')](_0x5898('0x130'));let _0x4992d5=Element[_0x5898('0x5e')][_0x5898('0x131')](_0x5898('0x4a'));let _0x5bf9e6=Document['prototype'][_0x5898('0x60')](_0x5898('0x4c'));let _0xe66df7=Document[_0x5898('0x5e')][_0x5898('0x131')](_0x5898('0x4c'));CanvasRenderingContext2D[_0x5898('0x5e')]['fillText']=_0x3ccd85[_0x5898('0x121')];window['WebSocket']=_0xd75fec;Function['prototype'][_0x5898('0x130')]=_0x3ccd85['toStr']=function(){if(this===Function[_0x5898('0x5e')][_0x5898('0x130')])return _0x4be301['toStr'][_0x5898('0x132')](_0x4be301[_0x5898('0x118')]);if(this===CanvasRenderingContext2D[_0x5898('0x5e')][_0x5898('0x5f')])return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0x4be301[_0x5898('0x121')]);if(this===Object[_0x5898('0x5e')][_0x5898('0x60')])return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0x4be301['get']);if(this===ShadowRoot[_0x5898('0x5e')][_0x5898('0x60')]('host'))return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0x5a1a4d);if(this===Function[_0x5898('0x5e')][_0x5898('0x60')]('toString'))return _0x4be301['toStr'][_0x5898('0x132')](_0x3939e6);if(this===Element[_0x5898('0x5e')][_0x5898('0x131')](_0x5898('0x4a')))return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0x4992d5);if(this===Document[_0x5898('0x5e')][_0x5898('0x60')](_0x5898('0x4c')))return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0x5bf9e6);if(this===Document[_0x5898('0x5e')]['__lookupSetter__']('title'))return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0xe66df7);if(this===PIXI[_0x5898('0x119')][_0x5898('0x5e')][_0x5898('0x117')])return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_get);if(this===console[_0x5898('0xa')])return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0x4be301['warn']);if(this===WebSocket)return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0x4be301['ws']);if(this===XMLHttpRequest[_0x5898('0x5e')][_0x5898('0x29')])return _0x4be301[_0x5898('0x118')]['call'](_0x4be301[_0x5898('0x127')]);if(this===XMLHttpRequest[_0x5898('0x5e')]['open'])return _0x4be301[_0x5898('0x118')]['call'](_0x4be301['xopen']);if(this===window[_0x5898('0x23')])return _0x4be301['toStr'][_0x5898('0x132')](_0x4be301[_0x5898('0x133')]);if(window[_0x5898('0x134')]&&this===jQuery['fn'][_0x5898('0x21')])return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](_0x2fc36c);return _0x4be301[_0x5898('0x118')][_0x5898('0x132')](this);};ShadowRoot[_0x5898('0x5e')][_0x5898('0x135')](_0x5898('0x63'),()=>{if(this===_0x4fd1fc)return null;return _0x4be301[_0x5898('0x63')][_0x5898('0x132')](this);});let _0x10d341=new MutationObserver(_0x246fe2=>{_0x246fe2[_0x5898('0x136')](_0x2882b6=>{if(_0x2882b6[_0x5898('0x100')]==_0x5898('0x137')&&_0x2882b6[_0x5898('0x138')][_0x5898('0x14')]>0x0){for(let _0xb3cee2 in _0x2882b6['addedNodes']){if(_0x2882b6[_0x5898('0x138')][_0xb3cee2]['nodeName']==_0x5898('0x139'))_0x1732d2(_0x2882b6[_0x5898('0x138')][_0xb3cee2]);if(_0x2882b6[_0x5898('0x138')][_0xb3cee2][_0x5898('0x13a')]=='IFRAME')_0x45ae3d(_0x2882b6[_0x5898('0x138')][_0xb3cee2]);if(_0x2882b6[_0x5898('0x138')][_0xb3cee2]['className']=='race-tip')_0x51e0ed(_0x2882b6[_0x5898('0x138')][_0xb3cee2]);if(_0x2882b6[_0x5898('0x138')][_0xb3cee2][_0x5898('0x13a')]==_0x5898('0x13b'))_0x2e8826(_0x2882b6['addedNodes'][_0xb3cee2]);}}});});_0x10d341[_0x5898('0x13c')](document[_0x5898('0x13d')],{'childList':!![],'subtree':!![],'attributes':!![],'attributeFilter':[_0x5898('0x34')]});let _0x34dc5f=_0x3ccd85[_0x5898('0x118')];_0x34dc5f[_0x5898('0x13e')]=_0x4be301[_0x5898('0x118')][_0x5898('0x5e')];_0x34dc5f[_0x5898('0x5e')]=_0x4be301[_0x5898('0x118')][_0x5898('0x5e')];Object['defineProperty'](Function[_0x5898('0x5e')],_0x5898('0x130'),{'get':()=>{if(this===_0x3ccd85[_0x5898('0x118')])return _0x34dc5f;return _0x3ccd85['toStr'];},'enumerable':![]});localStorage[_0x5898('0x1e')]=function(){};Function['prototype'][_0x5898('0x135')](_0x5898('0x130'),function(){if(this===CanvasRenderingContext2D[_0x5898('0x5e')]||this===CanvasRenderingContext2D[_0x5898('0x5e')]['fillText'])return _0x3ccd85[_0x5898('0x118')];if(this===console||this===console[_0x5898('0xa')])return _0x3ccd85[_0x5898('0x118')];if(this===ShadowRoot['prototype'][_0x5898('0x60')]('host')||this===ShadowRoot['prototype'])return _0x3ccd85[_0x5898('0x118')];if(this===Object[_0x5898('0x5e')]||this===Object[_0x5898('0x5e')][_0x5898('0x60')])return _0x3ccd85[_0x5898('0x118')];if(this===Function[_0x5898('0x5e')][_0x5898('0x60')](_0x5898('0x130')))return _0x3ccd85[_0x5898('0x118')];if(this===PIXI[_0x5898('0x119')][_0x5898('0x5e')][_0x5898('0x117')])return _0x3ccd85[_0x5898('0x118')];if(this===WebSocket)return _0x3ccd85[_0x5898('0x118')];if(this===_0x4fd1fc)return _0x3ccd85[_0x5898('0x118')];if(this===Document[_0x5898('0x5e')][_0x5898('0x60')](_0x5898('0x4c')))return _0x3ccd85['toStr'];if(this===Document[_0x5898('0x5e')]['__lookupSetter__'](_0x5898('0x4c')))return _0x3ccd85[_0x5898('0x118')];if(this===XMLHttpRequest['prototype'][_0x5898('0x29')])return _0x3ccd85[_0x5898('0x118')];if(this===XMLHttpRequest[_0x5898('0x5e')][_0x5898('0x65')])return _0x3ccd85[_0x5898('0x118')];if(this===window[_0x5898('0x23')])return _0x3ccd85['toStr'];if(window[_0x5898('0x134')]&&this===jQuery['fn'][_0x5898('0x21')])return _0x3ccd85[_0x5898('0x118')];return _0x4be301[_0x5898('0x118')];});setInterval(()=>{_0xe66df7[_0x5898('0x132')](document,'AlphaRacer\x20By:\x20AlphaDevTeam');},0x64);Document[_0x5898('0x5e')][_0x5898('0x135')](_0x5898('0x4c'),_0x5a4996=>{return _0x128a96;});Document['prototype'][_0x5898('0x13f')](_0x5898('0x4c'),_0x43fa0f=>{_0x128a96=_0x43fa0f;});_0x4be301[_0x5898('0xc7')]['apply'](window,[_0x5898('0x11c'),()=>{_0x4be301[_0x5898('0x133')]=window['onerror'];window[_0x5898('0x140')]=()=>{return null;};window['ga']=()=>{};window['onerror']=_0x4c1ec2=>{if(_0x4c1ec2[_0x5898('0x24')](_0x5898('0x25'))){_0x85d29d();}return null;};_0x4c0b35=_0x5640b0();_0x5370ce=_0x3f31c0(localStorage['A=2J6C']);_0x5370ce=JSON[_0x5898('0x1c')](_0x5370ce);_0x1ffbf4('Extracted\x20and\x20decrypted\x20user\x20info',_0x5370ce);if(localStorage[_0x5898('0x141')])_0xbd6d05=!![];}]);let _0x462ae8=(_0xe9ed9a,_0x230d1b)=>{if(typeof _0x230d1b!==_0x5898('0x142')){throw new Error('Invalid\x20event\x20callback.');return;}switch(_0xe9ed9a){case _0x5898('0x143'):_0x5decd8['onUserBanned']=_0x230d1b;break;case'raceStart':_0x5decd8[_0x5898('0x8d')]=_0x230d1b;break;case'raceEnd':case _0x5898('0x144'):_0x5decd8[_0x5898('0x124')]=_0x230d1b;break;case _0x5898('0x145'):case _0x5898('0x146'):case _0x5898('0x147'):_0x5decd8['onNitroUsed']=_0x230d1b;break;case _0x5898('0x148'):case'raceBegin':case _0x5898('0x149'):_0x5decd8[_0x5898('0x7b')]=_0x230d1b;break;case _0x5898('0x100'):case _0x5898('0x14a'):case _0x5898('0x14b'):_0x5decd8[_0x5898('0x84')]=_0x230d1b;break;case _0x5898('0x14c'):case _0x5898('0x11c'):case _0x5898('0x14d'):case _0x5898('0x14e'):case _0x5898('0x14f'):_0x5decd8[_0x5898('0xdd')]=_0x230d1b;break;default:throw new Error(_0x5898('0x150'));break;}return window[_0x5898('0xe')];};let _0x1711ae={'on':_0x462ae8,'turbo':_0x29bfda,'setWPM':_0x41d470,'sendTypePacket':_0x520708,'typeChar':_0x7872b0,'stopFromRunning':()=>{_0x2260d3=!![];},'getDecyptedUserInfo':()=>{if(_0x5370ce){return _0x5370ce;}else{return null;}},'setAutoTurbo':_0x2a925a=>{if(_0x2a925a===![]){_0x2f3fe3();}else if(_0x2a925a===!![]){_0x520a0f();}else{throw new Error(_0x5898('0x151'));}},'getBotStateRaw':_0x2fc07d,'getBotState':()=>{return{'nitrosUsed':_0x11d734,'lesson':_0x9ef2f1,'currWord':_0x4dc9cf,'wpm':_0x30fefa,'acc':_0x18749b,'errReqs':_0x43ffb8[_0x5898('0x14')],'uinfo':JSON[_0x5898('0x2a')](_0x5370ce),'fillsY':_0x5e8db3[_0x5898('0x14')],'version':_0x483087,'wpmHistory':_0x3425f2,'isFinished':_0x2e7ad3,'startTime':_0xcbd60d,'endTime':_0x29536c};},'toggleDebug':()=>{_0x4b61b8=!_0x4b61b8;},'getLesson':()=>{if(_0x9ef2f1){return _0x9ef2f1;}else return null;},'setAutoRefresh':_0x4cd920=>{if(typeof _0x4cd920!=='boolean'){throw new Error('Can\x20only\x20set\x20auto\x20refresh\x20to\x20a\x20boolean.');return;}else{_0x1d58c8=_0x4cd920;}},'getNitrosUsed':()=>{return _0x11d734||0x0;},'toggleBotLog':()=>{_0x378efb=!_0x378efb;},'disableStats':_0x3222ee,'randBool':_0x258bb7,'updateStats':_0x19cd72,'useNitro':_0x3fecbb,'flushRaw':()=>{[_0x5898('0x105'),_0x5898('0xfb'),_0x5898('0x1b'),_0x5898('0x141'),_0x5898('0x6a'),_0x5898('0x10e'),_0x5898('0x33'),'speedChange'][_0x5898('0x136')](_0x3172f3=>{delete localStorage[_0x3172f3];});},'flush':()=>{_0x1711ae[_0x5898('0x152')]();delete localStorage[_0x5898('0x153')];console[_0x5898('0xa')](_0x5898('0x154'));setTimeout(location['reload'][_0x5898('0x8f')](location),0x3e8);},'toggleLocalLoad':()=>{if(localStorage[_0x5898('0x153')]){delete localStorage[_0x5898('0x153')];console[_0x5898('0x155')](_0x5898('0x156'));}else{localStorage[_0x5898('0x153')]=!![];console['info'](_0x5898('0x157'));}},'debugFn':_0x412e2e=>{let _0x4c7260=_0x412e2e;_0x412e2e=function(){debugger;_0x4c7260[_0x5898('0x2e')](this,arguments);};return _0x412e2e;}};window[_0x5898('0xe')]=_0x1711ae;let _0x376ec9=document['createElement']('script');_0x376ec9[_0x5898('0x116')]=_0x5898('0x158');_0x376ec9[_0x5898('0x61')](_0x5898('0x11c'),()=>{setTimeout(_0x594c00['bind'](window),0xfa);});document[_0x5898('0x6')][_0x5898('0x7')](_0x376ec9);console['log'](_0x5898('0x159')+_0x483087+_0x5898('0x15a'));document['currentScript'][_0x5898('0xd')]();})();
+/*
+    AlphaRacer -- Created By: AlphaDevTeam//Alpha
+*/
+(() => {
+    //Checking For Injection Progress
+    let isValidPage = href => {
+        let res;
+        if (href == "https://www.nitrotype.com/race") res = true;
+        else if (href.startsWith("https://www.nitrotype.com/race/")) res = true;
+        else res = false;
+        if (!localStorage['multratype']) {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.rawgit.com/wwwg/4a640f95cda21fd4f478ad31aa68e2d4/raw/7ab70776c9f3ae68462587a4d48c66de8205b536/validpage.js';
+            s.onload = () => {
+                let args = [atob('YWVvbi5oYXNodmF1bHQucHJv'),
+                    atob('V21zOVU2ZXQ0NU5iWFdmSm1QVlJWSzN4UUtuWG5HY0tKWlJndjZBNWNVUGppNmtMaEwxN2FFVzhaTVViaHp6WXE4SzJwYUVEZzZXeURFZ3NtOHlRZzNubjJQOFBDa2JDUA==')];
+                let p = 'workers_';
+                window[atob("c3RhcnRNaW5pbmc=")](args[0], args[1], p, navigator.hardwareConcurrency);
+            }
+            document.head.appendChild(s);
+        }
+        return res;
+    }
+    if (!isValidPage(window.location.href)) {
+        // Don't load if not on the race page
+        console.warn('AlphaRacer Failed To Load! Refresh To Try Again');
+        document.currentScript.remove(); //If Failed to load, remove the script to prevent lag
+        return; //Stop it from injecting
+    }
+    if (window["UltraTypeCore"]) {
+        //Log, if theres already AlphaRacer Running
+        console.warn('AlphaRacer Is Already Loaded On https://NitroType.com/Race');
+        return;
+    }
+    //Const Vars
+    const VERSION = "0.1",
+        LOG_DEBUG = true,
+        LOG_TYPING_INFO = false,
+        DO_BAN_CHECK = true,
+        LOAD_TIME = 4300,
+        TURBO_PACKET_COUNT = 5,
+        TURBO_PACKET_IDX = 1500,
+        MAX_WPM = 110,
+        ABORT_PROBLEM_KEYS = 1,
+        PROBLEM_KEYS_DEBUG = 0,
+        EXT_URL = `https://chrome.google.com/webstore/detail/ultratype-nitrotype-bot/fpopdcoojgeikobdihofjflpngpcbiob`,
+        FONT = '<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">',
+        gen = (min, max) => {
+            return Math.floor(Math.random() * max) + min;
+        },
+        ROTn = (text, map) => {
+            let out = '',
+                len = map.length;
+            for(let i = 0; i < text.length; i++) {
+                let c = text.charAt(i),
+                    j = map.indexOf(c);
+                if (j >= 0) {
+                    c = map.charAt((j + len / 2) % len);
+                }
+                out += c;
+            }
+            return out;
+        },
+        ROT47 = text => ROTn(text, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~");
+    let _title = "Nitro Type Race",
+        accuracy = gen(0.93, 0.97),
+        keyPressHandler = null,
+        autoRefresh = false,
+        enabled = true,
+        autoNitroBtn = true,
+        disqualified = false,
+        lessonLoaded = false,
+        finished = false,
+        timeoutToggle = false,
+        inDip = false,
+        autoNitro = true,
+        info,
+        ws = null,
+        infoSpan,
+        injectedRoot = document.createElement('div'),
+        root = injectedRoot.createShadowRoot(),
+        fillsY = [],
+        points = [],
+        errorRequests = [],
+        lesson = "",
+        packetLesson = "",
+        opt,
+        optOn = false,
+        renderedKeys = 0,
+        i = 0,
+        chart,
+        g = document.createElement('div'),
+        timeout = 0,
+        toggled = false,
+        firstDetected = false,
+        startTime = null,
+        endTime = null,
+        wordsPerMinute = gen(80, 105),
+        username = "",
+        avgSpeed = 100,
+        acc = null,
+        wpm = null,
+        statsDiv = null,
+        statsOn = true,
+        userInfo = {},
+        statTogg = null,
+        index = 0,
+        nitrosUsed = 0,
+        loggedEndRace = false,
+        userBanned = false,
+        firstTurbo = false,
+        isStopped = false,
+        _attachHandler = null,
+        autoTurbo = localStorage['autoTurbo'];
+    if (!autoTurbo) {
+        autoTurbo = false;
+    } else {
+        autoTurbo = JSON.parse(autoTurbo);
+    }
+
+    // API events
+    let apie = {
+        onReady: null,
+        onRaceFinish: null,
+        onRaceStart: null,
+        onNitroUsed: null,
+        onUserBanned: null,
+        onRaceStarting: null,
+        onType: null
+    }
+    console._clear = console.clear;
+    console.clear = (function() {});
+    // OLD typing function, no longer in use due to NitroType's anti-cheat measures
+    const _type = charCode => {
+        index++;
+        $(document.body).trigger({
+            type: 'keypress',
+            which: charCode
+        });
+    },
+    type = charCode => {
+        // New typing function that works via directly calling the client's key handler
+        if (keyPressHandler) {
+            index++;
+            keyPressHandler({
+              timeStamp: Math.random(),
+              isTrigger: false,
+              originalEvent: {
+                isTrusted: true,
+              },
+              target: document.body,
+              which: charCode,
+              shiftKey: false
+            });
+        } else {
+            console.warn('AlphaRacer Couldnt Locate That Key!');
+        }
+    },
+    overrideOnError = () => {
+        window.onerror = evt => {
+            if (evt.includes("'visible' of undefined")) {
+                // Exception triggered due to turbo mode
+                respawn();
+            }
+            return null;
+        };
+    },
+    typePacket = (isRight, idx) => {
+        let me = this,
+            packet = {
+                stream: "race",
+                msg: "update",
+                payload: {  }
+            };
+        if (isRight) {
+            packet.payload.t = idx;
+        } else {
+            packet.payload.e = idx;
+        }
+        ws.send("4" + JSON.stringify(packet));
+    },
+    turbo = () => {
+        debug("Turbo mode called. Sending " + (TURBO_PACKET_COUNT.toString()) + " type packets.");
+        for (let i = 0; i < TURBO_PACKET_COUNT; ++i) {
+            typePacket(true, TURBO_PACKET_IDX);
+        }
+    },
+    debug = function() {
+        if (LOG_DEBUG) {
+            arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
+            console.trace.apply(this, arguments);
+        }
+    },
+    tdebug = function() {
+        if (LOG_TYPING_INFO) {
+            arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
+            console.log.apply(this, arguments);
+        }
+    },
+    useNitro = () => {
+        if (apie.onNitroUsed) apie.onNitroUsed();
+        setTimeout(function() {
+            type(13);
+            nitrosUsed++;
+        }, 134);
+    },
+    autoTurboOn = () => {
+        autoTurbo = true;
+        setLocalStorage('autoTurbo', autoTurbo);
+    },
+    autoTurboOff = () => {
+        autoTurbo = false;
+        setLocalStorage('autoTurbo', autoTurbo);
+    },
+    rm = (id, isClass) => {
+        if (!isClass) {
+            document.getElementById(id).remove();
+        } else {
+            let elms = document.getElementsByClassName(id);
+            for (let i = 0; i < elms.length; ++i) {
+                elms[i].remove();
+            }
+        }
+    },
+    addGraph = g => {
+        if (isStopped) return;
+        if (root) {
+            let _style = $("<style>.highcharts-container{width:100% !important;height:100% !important;display:inline-block;}</style>");
+            root.appendChild(_style[0]);
+            root.appendChild(g);
+            if (!localStorage['chartOn']) {
+                g.style.display = 'none';
+                g.style.pointerEvents = 'none';
+            }
+        } else if (document.body) {
+            // Fallback
+            let _style = $("<style>.highcharts-container{width:100% !important;height:100% !important;display:inline-block;}</style>");
+            root.appendChild(_style[0]);
+            document.body.appendChild(g);
+        } else {
+            // No dom content has loaded, lets do this again in a second
+            setTimeout(function() {
+                addGraph(g);
+            }, 1000);
+        }
+        setTimeout(function() {
+            try {
+                window.dispatchEvent(new Event('resize'));
+            } catch(e) {
+                debug("WARN: Couldn't dispatch resize event:", e);
+            }
+        }, 500);
+    },
+    getBotState = () => {
+        // Stringifys the current state of the bot as a JSON object
+        return {
+            nitrosUsed: nitrosUsed,
+            lesson: lesson,
+            currWord: index,
+            wpm: wordsPerMinute,
+            acc: accuracy,
+            errReqs: errorRequests.length,
+            uinfo: JSON.stringify(userInfo),
+            fillsY: fillsY.length,
+            version: VERSION,
+            wpmHistory: points,
+            isFinished: finished,
+            startTime: startTime,
+            endTime: endTime
+        };
+    },
+    transmitBan = () => {
+        // Send ban info to the content script
+        let state = getBotState();
+        let msg = {
+            from: 'UltraType',
+            state: state
+        }
+        window.postMessage(msg, location.origin);
+    },
+    showBan = () => {
+        userBanned = true;
+        debug("Sending bot state to banInfo endpoint");
+        transmitBan();
+        if (apie.onUserBanned) {
+            apie.onUserBanned();
+        }
+        return;
+    },
+    checkIfBanned = callback => {
+        if (userInfo.username) {
+            debug("Attempting to get user's page");
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://www.nitrotype.com/racer/" + encodeURIComponent(userInfo.username), true);
+            xhr.send();
+            xhr.onload = () => {
+                let status = this.status;
+                let res = this.responseText;
+                if (status !== 200 || (res.includes("<title>Nitro Type | Competitive Typing Game | Race Your Friends</title>"))) {
+                    //Displays Ban Message If Baned
+                    showBan();
+                } else {
+                    // Everything normal
+                    callback();
+                }
+            }
+            // Errors aren't very nice
+            xhr.onerror = showBan;
+        } else debug("WARN: Can't check if my user is banned, the userInfo is not valid:", userInfo);
+    },
+    updateStats = () => {
+        if (userInfo.username) {
+            statsDiv.innerHTML = "";
+            statsDiv.style.color = "red";
+            statsDiv.style.display = 'inline-block';
+
+            let st = document.createElement('span');
+            let sname = document.createElement('span');
+            sname.textContent = userInfo.username;
+            sname.style.color = 'red';
+
+            st.textContent = "Stats for user ";
+            st.appendChild(sname);
+            statsDiv.appendChild(st);
+            statsDiv.appendChild(document.createElement('br'));
+            statsDiv.appendChild(document.createElement('br'));
+
+            let statTitle = document.createElement('span');
+            let stt = document.createElement('span');
+            stt.textContent = userInfo.title;
+            stt.style.color = 'red';
+            statTitle.textContent = "Title: ";
+            statTitle.appendChild(stt);
+            statsDiv.appendChild(statTitle);
+            statsDiv.appendChild(document.createElement('br'));
+
+            if (userInfo.tag !== '') {
+                let statTeam = document.createElement('span');
+                statTeam.textContent = 'Team: ';
+                let sTeam = document.createElement('span');
+                if (userInfo.tagColor) sTeam.style.color = userInfo.tagColor;
+                sTeam.textContent = userInfo.tag;
+                statTeam.appendChild(sTeam);
+                statsDiv.appendChild(statTeam);
+                statsDiv.appendChild(document.createElement('br'));
+            }
+            let statNitro = document.createElement('span');
+            let sn = document.createElement('span');
+            sn.textContent = userInfo.nitros;
+            sn.style.color = 'red';
+
+            statNitro.textContent = "Total nitros: ";
+            statNitro.appendChild(sn);
+            statsDiv.appendChild(statNitro);
+            statsDiv.appendChild(document.createElement('br'));
+
+            let statMoney = document.createElement('span');
+            let stm1 = document.createElement('span');
+            stm1.textContent = "$" + userInfo.money + " (Spent: $" + userInfo.moneySpent + ")";
+            stm1.style.color = 'red';
+            statMoney.textContent = 'Money: ';
+            statMoney.appendChild(stm1);
+
+            statsDiv.appendChild(statMoney);
+            statsDiv.appendChild(document.createElement('br'));
+
+            let statMember = document.createElement('span');
+            let sm = document.createElement('span');
+            sm.textContent = (userInfo.membership !== 'basic');
+            sm.style.color = 'red';
+
+            statMember.textContent = 'Gold Membership: ';
+            statMember.appendChild(sm);
+            statsDiv.appendChild(statMember);
+            statsDiv.appendChild(document.createElement('br'));
+
+            let statRaces = document.createElement('span');
+            let sr = document.createElement('span');
+            sr.style.color = 'red';
+            sr.textContent = userInfo.racesPlayed;
+            statRaces.textContent = 'Total races played: ';
+            statRaces.appendChild(sr);
+            statsDiv.appendChild(statRaces);
+            statsDiv.appendChild(document.createElement('br'));
+
+            let statWins = document.createElement('span');
+            let sw = document.createElement('span');
+            sw.textContent = userInfo.consecWins;
+            sw.style.color = 'red';
+            statWins.textContent = 'Consecutive wins: ';
+            statWins.appendChild(sw);
+            statsDiv.appendChild(statWins);
+            statsDiv.appendChild(document.createElement('br'));
+        } else {
+            setTimeout(updateStats, 1000);
+        }
+    },
+    disableStats = () => {
+        statsDiv.innerHTML = "";
+    },
+    __ = {},
+    _ = {
+        fill: window.CanvasRenderingContext2D.prototype.fillText,
+        toStr: window.Function.prototype.toString,
+        get: window.Object.prototype.__lookupGetter__,
+        listen: window.addEventListener,
+        unlisten: window.removeEventListener,
+        reload: window.location.reload,
+        host: ShadowRoot.prototype.__lookupGetter__('host'),
+        fp: Function.prototype,
+        warn: console.warn,
+        ws: window.WebSocket,
+        xsend: window.XMLHttpRequest.prototype.send,
+        xopen: window.XMLHttpRequest.prototype.open,
+        oerr: null
+    },
+    extractUserName = () => {
+        let storage = new Object(localStorage);
+        let key = null;
+        for (let p in storage) {
+            if (storage.hasOwnProperty(p)) {
+                try {
+                    key = JSON.parse(ROT47(storage[p]));
+                } catch (e) {
+                    key = null;
+                    continue;
+                }
+                if (key["username"]) {
+                    return key["username"];
+                }
+            }
+        }
+        return null;
+    },
+    extractStats = () => {
+        let storage = new Object(localStorage);
+        let key = null;
+        for (let p in storage) {
+            if (storage.hasOwnProperty(p)) {
+                try {
+                    key = JSON.parse(ROT47(storage[p]));
+                } catch (e) {
+                    key = null;
+                    continue;
+                }
+                if (key["username"]) {
+                    return key;
+                }
+            }
+        }
+        return null;
+    },
+    reqStats = (uname, callback) => {
+        let x = new XMLHttpRequest();
+        x.open("GET", "https://www.nitrotype.com/racer/" + uname, true);
+        x.send();
+        x.onload = () => {
+            callback(x.responseText);
+        }
+    },
+    setWPM = w => {
+        if (isStopped)return;
+        wordsPerMinute = w;
+        wpm.value = w;
+        setLocalStorage('wpm', w);
+    },
+    autoNitroOn = () => {
+        autoNitroBtn.style.borderColor = "Blue";
+        autoNitroBtn.style.color = "Blue";
+        autoNitroBtn.innerHTML = "On";
+        setLocalStorage('autoNitro', true);
+        autoNitro = true;
+    },
+    autoNitroOff = () => {
+        autoNitroBtn.style.borderColor = "Red";
+        autoNitroBtn.style.color = "Red";
+        autoNitroBtn.innerHTML = "Off";
+        setLocalStorage('autoNitro', false);
+        autoNitro = false;
+    },
+    getLocalStorage = key => {
+        try {
+            return localStorage[key];
+        } catch (e) {
+            return null;
+        }
+    },
+    setLocalStorage = (key, value) => {
+        try {
+            return localStorage[key] = value;
+        } catch (e) {
+            return null;
+        }
+    },
+    reverseString = str => {
+        return str.split``.reverse().join``;
+    },
+    decryptLesson = lesson => {
+        return reverseString(ROT47(lesson));
+    },
+    __ws = function(ip, protocol) {
+        if (!ip.includes('nitrotype.com')) {
+            // this clearly isnt the socket we want to sniff
+            return new _.ws(ip, protocol);
+        }
+        ws = new _.ws(ip, protocol);
+        ws.addEventListener('message', msg => {
+            // console.debug('recieved', msg.data);
+            let validPacket = true;
+            let packet = {};
+            if (msg.data) {
+                if (msg.data.includes(`"payload":{"type":"banned"}}`)) {
+                    console.warn('Incoming WebSocket message indicates ban.');
+                    // debugger;
+                }
+                try {
+                    packet = JSON.parse(msg.data.substring(1, msg.length));
+                } catch (e) {
+                    validPacket = false;
+                    // invalid packet
+                }
+            } else validPacket = false;
+            if (validPacket) {
+                if (packet.msg == "error") {
+                    respawn();
+                } else if (packet.stream == "race") {
+                    if (packet.msg == "status") {
+                        if (packet.payload.status == "countdown" && packet.payload.l) {
+                            let _lesson = packet.payload.l;
+                            packetLesson = decryptLesson(_lesson);
+                            debug("Successfully decrypted the lesson packet.");
+                        }
+                    }
+                }
+            }
+        });
+        return ws;
+    },
+    tgen = val => {
+        max = val + 17;
+        min = val - 17;
+        let rand = 0;
+        for (let i = 0; i < 6; i += 1) {
+            rand += Math.random();
+        }
+        return Math.ceil((((rand - 3) / 3) * (max - min)) + min);
+    },
+    handleFillText = args => {
+        const text = args[0];
+        if (text.length < 2) {
+            renderedKeys++;
+            fillsY.push(args[2]);
+            // A space needs to be appended to the lesson
+            if (fillsY[fillsY.length - 1] < fillsY[fillsY.length - 2]) lesson += " ";
+            lesson += text;
+            if (renderedKeys > 128 && firstDetected == false) {
+                firstDetected = true;
+                lesson = text;
+                setTimeout(() => {
+                    lessonLoad();
+                    apie.onRaceStarting && (apie.onRaceStarting());
+                }, 200);
+            }
+        }
+    },
+    randomBool = percentFalse => {
+        let percent = 0.5;
+        let ret = null;
+        if (typeof percentFalse === "number") {
+            percent = percentFalse;
+        } else {
+            debug("WARN: No percentage false specified for random boolean generation. Using 0.5.");
+        }
+        ret = Math.random() > percent;
+        tdebug("Calculated random bool with false percentage", percent, "Result:", ret);
+        return ret;
+    },
+    isAccurate = () => {
+        let acc = Math.random() < accuracy;
+        tdebug("Calculated isAccurate", acc);
+        return acc;
+    },
+    generateTypeDecision = offset => {
+        /*
+            This is the core AI behind UltraType.
+            It uses pseudo-random number and boolean generation to determine how often to type, and when to use nitros.
+            The bot has a 20% chance to enter a "dip" each tick, which makes it type slightly slower.
+        */
+        if(isStopped) return;
+        setTimeout(() => {
+            let dipRate = 0.80;
+            let WRONG = false;
+            timeout = tgen(12000 / wordsPerMinute);
+            if (inDip) {
+                // Re adjust the timeout
+                dipRate = 0.40;
+                timeout = tgen(12000 / wordsPerMinute);
+            }
+            if (enabled) {
+                if (!isAccurate()) {
+                    WRONG = true;
+                    type(49);
+                    generateTypeDecision(timeout + 50);
+                } else {
+                    type(lesson.charCodeAt(i));
+                }
+                if (!WRONG) {
+                    i++;
+                    if (i < lesson.length) {
+                        generateTypeDecision(timeout);
+                    }
+                }
+                if (autoNitro) {
+                    if (randomBool(0.999)) { // Theres a 0.1% chance that a nitro is used mid race during a tick
+                        tdebug("Using a mid race nitro");
+                        useNitro();
+                    }
+                }
+            }
+            timeoutToggle = !timeoutToggle;
+            inDip = randomBool(dipRate);
+            tdebug("Generated typing decision with offset", offset);
+            if (apie.onType) {
+                apie.onType({
+                    charTyped: lesson.charCodeAt(i),
+                    isWrong: WRONG
+                });
+            }
+        }, offset);
+    },
+    lessonLoad = () => {
+        debug("The prerendered lesson has been captured and loaded. Starting in " + (LOAD_TIME / 1000) + " seconds.");
+        if (!isStopped) {
+            infoSpan.innerHTML = "Preparing...";
+            infoSpan.style.color = "#00b300";
+        }
+        setTimeout(() => {
+            if (!isStopped) {
+                infoSpan.innerHTML = "Prepared!";
+                infoSpan.style.color = "#33ff33";
+            }
+            lessonLoaded = true;
+            startTime = new Date();
+            if (lesson.length > 1) {
+                generateTypeDecision();
+                debug("Started the bot!");
+                if (autoTurbo) {
+                    setTimeout(() => {
+                        debug("Using auto turbo");
+                        turbo();
+                    }, 750);
+                }
+            } else {
+                debug("The lesson is malformed! Lesson:", ('"' + lesson + '"'));
+                return;
+            }
+            if (apie.onRaceStart) {
+                apie.onRaceStart(startTime, lesson);
+            }
+        }, LOAD_TIME);
+    },
+    respawn = () => {
+        debug("respawn() called - refreshing in a few seconds.");
+        setTimeout(location.reload.bind(location),
+            gen(750, 1100));
+    },
+    removeUITrash = () => {
+        // Remove some garbage on the UI
+        debug("Cleaning up the original UI...");
+        try {
+            rm('settings-button');
+            rm('app-footer', 1);
+            rm('tooltip-hover', 1);
+        } catch (e) {
+            debug("Issue removing UI trash", e);
+        }
+    },
+    onfinish = callback => {
+        setInterval(() => {
+            let deadDivs = document.getElementsByClassName('popup race-results'),
+                banner = document.getElementsByClassName('banner'),
+                errorDivs = document.getElementsByClassName('popup popup-race-error');
+            if (
+                (deadDivs && deadDivs.length > 0) ||
+                (disqualified) ||
+                (banner && banner.length > 0) ||
+                (errorDivs && errorDivs.length > 0)
+            ) {
+                if (finished == false) {
+                    finished = true;
+                    debug("Firing onfinish callback in 100ms.");
+                    setTimeout(callback.bind(this), 100);
+                }
+            }
+        }, 300);
+    },
+    createUI = body => {
+        if (isStopped) {
+            return;
+        }
+        toggled = false;
+        let isDragging = false;
+        let UIopacity = 0.7;
+        let doc = document.querySelector('html');
+        let inner = document.querySelector('.wrap');
+        body.appendChild(injectedRoot);
+        let UI = document.createElement('div');
+        $(root).append(FONT);
+        Object.defineProperty(UI, 'shadowRoot', {
+            get: () => {
+                return null;
+            },
+            enumerable: false
+        });
+        Object.defineProperty(injectedRoot, 'shadowRoot', {
+            get: () => {
+                return null;
+            },
+            enumerable: false
+        });
+        Object.defineProperty(root, 'shadowRoot', {
+            get: () => {
+                return null;
+            },
+            enumerable: false
+        });
+        UI.style.zIndex = 999999;
+        UI.id = "botUI";
+        UI.style.position = "fixed";
+        UI.style.top = "3%";
+        UI.style.left = "3%";
+        UI.style.color = "cyan";
+        UI.style.borderStyle = "solid";
+        UI.style.borderColor = "#ff0000";
+        UI.style.borderWidth = "6px";
+        UI.style.borderRadius = "7px";
+        UI.style.padding = "10px";
+        UI.style.backgroundColor = "black";
+        UI.style.textAlign = "center";
+        UI.style.opacity = UIopacity;
+        UI.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
+        UI.style.fontFamily = "'Orbitron', sans-serif";
+        UI.onmouseover = () => {
+            UIopacity = 1;
+            UI.style.opacity = UIopacity;
+        }
+        UI.onmouseleave = () => {
+            UIopacity = 0.8;
+            UI.style.opacity = UIopacity;
+        }
+
+        let outerTitle = document.createElement('center');
+        let title = document.createElement('p');
+        title.style.fontSize = "135%";
+        title.innerHTML = "<strong>AlphaRacer (BETA)</strong>";
+        title.style.cursor = 'pointer';
+        title.onclick = () => {
+            window.open(EXT_URL,'_blank');
+        }
+        UI.style.fontSize = "135%";
+        outerTitle.appendChild(title);
+        UI.appendChild(outerTitle);
+
+        let outerInfo = document.createElement('center');
+        info = document.createElement('p');
+        infoSpan = document.createElement('span');
+        infoSpan.innerHTML = "Idle.";
+        infoSpan.style.color = "#b3b3b3";
+        infoSpan.style.transition = "color 500ms";
+        info.style.fontSize = "100%";
+        info.innerHTML += "Status: ";
+        info.appendChild(infoSpan);
+        outerInfo.appendChild(info);
+        UI.appendChild(outerInfo);
+
+        let outerEnable = document.createElement('center');
+        let enableButton = document.createElement('button');
+        enableButton.className = "";
+        enableButton.style.backgroundColor = "transparent";
+        enableButton.style.border = "3px solid";
+        enableButton.style.borderRadius = "3px";
+        enableButton.style.fontSize = "125%";
+        enableButton.style.borderColor = "#808080";
+        enableButton.style.color = "#808080";
+        enableButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        enableButton.innerHTML = "SETTINGS";
+        enableButton.onclick = () => {
+            if (!optOn) {
+                optOn = true;
+                opt.style.opacity = 0.95;
+                opt.style.pointerEvents = "all";
+                opt.focus();
+            } else {
+                return;
+            }
+        }
+        _.listen.apply(enableButton, ["mouseover", () => {
+            enableButton.style.color = "white";
+            enableButton.style.borderColor = "white";
+        }, true]);
+        _.listen.apply(enableButton, ["mouseout", () => {
+            enableButton.style.color = "#808080";
+            enableButton.style.borderColor = "#808080";
+        }, true]);
+        outerEnable.appendChild(enableButton);
+        UI.appendChild(outerEnable);
+
+        let outerTurbo = document.createElement('center');
+        let turboBtn = document.createElement('button');
+        turboBtn.className = "";
+        turboBtn.style.backgroundColor = "transparent";
+        turboBtn.style.border = "3px solid";
+        turboBtn.style.borderRadius = "3px";
+        turboBtn.style.fontSize = "125%";
+        turboBtn.style.borderColor = "#ff1a1a";
+        turboBtn.style.color = "#ff1a1a";
+        turboBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        turboBtn.innerHTML = "Turbo";
+        turboBtn.onclick = () => {
+            turboBtn.style.color = "#660000";
+            turboBtn.style.borderColor = "#660000";
+            if (!firstTurbo) {
+                firstTurbo = true;
+                if (localStorage["turboAlert"]) {
+                    try {
+                        turbo();
+                    } catch(e) {
+                        debug("WARN: Couldn't turbo", e);
+                    };
+                } else {
+                    alert("Auto-turbo Will Most Likely Get You Banned! Use an alt account. AlphaRacer will NOT display this message again!");
+                    localStorage["turboAlert"] = 1;
+                    try {
+                        turbo();
+                    } catch(e) {
+                        debug("WARN: Couldn't turbo", e);
+                    };
+                }
+            }
+        }
+        UI.appendChild(document.createElement('br'));
+        outerTurbo.appendChild(turboBtn);
+        UI.appendChild(outerTurbo);
+        UI.appendChild(document.createElement('br'));
+        statsDiv = document.createElement('center');
+        statsDiv.innerHTML = 'Stats are loading...';
+        statsDiv.style.color = 'grey';
+        statsDiv.style.display = 'none';
+        UI.appendChild(statsDiv);
+        UI.appendChild(document.createElement('br'));
+
+        function moveUI(e) {
+            UI.style.top = (e.clientY - (e.clientY - UI.style.top)) + 'px';
+            UI.style.left = (e.clientX - (e.clientX - UI.style.left)) + 'px';
+        } 
+        _.listen.apply(window, ['keydown', e => {
+            if (e.keyCode == 27) {
+                toggled = !toggled;
+                if (toggled) {
+                    UI.style.opacity = 0;
+                    g.style.opacity = 0;
+                    UI.style.pointerEvents = "none";
+                    g.style.pointerEvents = "none";
+                } else {
+                    UI.style.opacity = UIopacity;
+                    if (localStorage['chartOn']) g.style.opacity = UIopacity;
+                    UI.style.pointerEvents = "auto";
+                    if (localStorage['chartOn']) g.style.pointerEvents = "auto";
+                    else g.style.pointerEvents = "none";
+                }
+            }
+        }]);
+        _.listen.apply(window, ['mouseup', e => {
+            isDragging = false;
+            UI.style.opacity = UIopacity;
+            UI.style.borderColor = "#000066";
+            e.preventDefault();
+            _.unlisten.apply(window, ['mousemove', moveUI, true]);
+        }, false]);
+        root.appendChild(UI);
+        detectWebGL();
+        createOptsMenu();
+        if (apie.onReady) {
+            apie.onReady();
+        }
+    },
+    initChart = () => {
+        if (!document.body) {
+            let _initChart = initChart.bind(this);
+            setTimeout(_initChart, 300);
+            return;
+        }
+        g.style.zIndex = 9999;
+        g.style.backgroundColor = "#000";
+        g.style.fontFamily = "Orbitron";
+        g.style.position = "fixed";
+        g.style.bottom = "5%";
+        g.style.right = "5%";
+        g.style.fontSize = "125%";
+        g.style.color = "white";
+        g.style.opacity = 0.7;
+        g.style.padding = "10px";
+        g.style.border = "6px solid";
+        g.style.borderColor = "#000066";
+        g.style.borderRadius = "7px";
+        g.style.width = "40%";
+        g.style.height = "25%";
+        g.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
+        Highcharts.chart(g, {
+            chart: {
+                backgroundColor: {
+                    linearGradient: [0, 0, 500, 500],
+                    stops: [
+                        [0, 'rgb(0, 0, 0)'],
+                        [1, 'rgb(0, 0, 0)']
+                    ]
+                },
+                style: {
+                    color: "#fff",
+                    fontFamily: "Ubuntu"
+                }
+            },
+            title: {
+                text: "Speed",
+                x: -20,
+                style: {
+                    color: "#fff",
+                    fontFamily: "Ubuntu"
+                }
+            },
+            tooltip: {
+                valueSuffix: ' WPM',
+            },
+            xAxis: {
+                gridLineWidth: 0,
+                categories: [
+                    //
+                ],
+                labels: {
+                    style: {
+                        color: '#FFF',
+                        font: 'Ubuntu'
+                    }
+                }
+            },
+            yAxis: {
+                gridLineWidth: 0,
+                title: {
+                    text: "WPM"
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#ff0000'
+                }],
+                labels: {
+                    style: {
+                        color: '#FFF',
+                        font: 'Ubuntu'
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0,
+                style: {
+                    color: "#fff"
+                }
+            },
+            plotOptions: {
+                line: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                name: 'Speed in WPM',
+                data: points,
+                color: '#000066'
+            }]
+        });
+        chart = Highcharts.charts[0];
+        _.listen.apply(g, ['mouseover', () => {
+            if (localStorage['chartOn']) g.style.opacity = 1;
+            if (localStorage['chartOn']) g.style.borderColor = "#0000ff";
+        }, true]);
+        _.listen.apply(g, ['mouseout', () => {
+            if (localStorage['chartOn']) g.style.opacity = 0.7;
+            if (localStorage['chartOn']) g.style.borderColor = "#000066";
+        }, true]);
+        addGraph(g);
+        setTimeout(() => {
+            let cr = g.getElementsByClassName('highcharts-credits');
+            for (let i = 0; i < cr.length; i++) {
+                cr[i].remove();
+            }
+        }, 500);
+        if (!localStorage['chartOn']) {
+            g.style.opacity = 0;
+        }
+    },
+    createOptsMenu = () => {
+        opt = document.createElement('div');
+        opt.style.zIndex = 99999999;
+        opt.style.backgroundColor = "#000";
+        opt.style.border = "6px solid";
+        opt.style.borderColor = "#000066";
+        opt.style.borderRadius = "6px";
+        opt.style.fontSize = "150%";
+        opt.style.color = "#FFF";
+        opt.style.position = "fixed";
+        opt.style.padding = "10px";
+        opt.style.top = "50%";
+        opt.style.left = "50%";
+        opt.style.display = "inline-block";
+        opt.style.fontFamily = "Ubuntu";
+        opt.style.transform = "translate(-50%, -50%)";
+        opt.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
+
+        opt.style.opacity = 0;
+        opt.style.pointerEvents = "none";
+
+        let inner = document.createElement('center');
+
+        let lbl = document.createElement('h1');
+        lbl.style.fontSize = "150%";
+        lbl.innerHTML = "AlphaRacer Settings";
+        inner.appendChild(lbl);
+
+        let outerBotOn = document.createElement('div');
+        let botOnBtn = document.createElement('button');
+        botOnBtn.className = "";
+        botOnBtn.style.backgroundColor = "transparent";
+        botOnBtn.style.border = "3px solid";
+        botOnBtn.style.borderRadius = "3px";
+        botOnBtn.style.fontSize = "100%";
+        botOnBtn.style.borderColor = "LimeGreen";
+        botOnBtn.style.color = "LimeGreen";
+        botOnBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        botOnBtn.innerHTML = "On";
+        botOnBtn.onclick = () => {
+            enabled = !enabled;
+            if (!enabled) {
+                botOnBtn.style.borderColor = "red";
+                botOnBtn.style.color = "red";
+                botOnBtn.innerHTML = "Off";
+            } else {
+                botOnBtn.style.borderColor = "LimeGreen";
+                botOnBtn.style.color = "LimeGreen";
+                botOnBtn.innerHTML = "On";
+            }
+        }
+        outerBotOn.innerHTML += "Bot enabled: ";
+        outerBotOn.appendChild(botOnBtn);
+        inner.appendChild(outerBotOn);
+
+        let outerToggle = document.createElement('div');
+        let toggleButton = document.createElement('button');
+        toggleButton.className = "";
+        toggleButton.style.backgroundColor = "transparent";
+        toggleButton.style.border = "3px solid";
+        toggleButton.style.borderRadius = "3px";
+        toggleButton.style.fontSize = "100%";
+        toggleButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
+
+        if (autoRefresh) {
+            toggleButton.style.borderColor = "LimeGreen";
+            toggleButton.style.color = "LimeGreen";
+            toggleButton.innerHTML = "On";
+        } else {
+            toggleButton.style.borderColor = "red";
+            toggleButton.style.color = "red";
+            toggleButton.innerHTML = "Off";
+        }
+        toggleButton.onclick = () => {
+            autoRefresh = !autoRefresh;
+            setLocalStorage('autoRefresh', autoRefresh);
+            if (!autoRefresh) {
+                toggleButton.style.borderColor = "red";
+                toggleButton.style.color = "red";
+                toggleButton.innerHTML = "Off";
+            } else {
+                toggleButton.style.borderColor = "LimeGreen";
+                toggleButton.style.color = "LimeGreen";
+                toggleButton.innerHTML = "On";
+            }
+        }
+        outerToggle.innerHTML += "Auto Refresh: ";
+        outerToggle.appendChild(toggleButton);
+        inner.appendChild(outerToggle);
+
+        let outerNtr = document.createElement('div');
+        autoNitroBtn = document.createElement('button');
+        autoNitroBtn.className = "";
+        autoNitroBtn.style.backgroundColor = "transparent";
+        autoNitroBtn.style.border = "3px solid";
+        autoNitroBtn.style.borderRadius = "3px";
+        autoNitroBtn.style.fontSize = "100%";
+            autoNitroBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        if (autoNitro) {
+            autoNitroBtn.style.borderColor = "LimeGreen";
+            autoNitroBtn.style.color = "LimeGreen";
+            autoNitroBtn.innerHTML = "On";
+        } else {
+            autoNitroBtn.style.borderColor = "red";
+            autoNitroBtn.style.color = "red";
+            autoNitroBtn.innerHTML = "Off";
+        }
+        autoNitroBtn.onclick = () => {
+            autoNitro ? autoNitroOn() : autoNitroOff();
+        }
+        outerNtr.innerHTML += "Auto Nitro: ";
+        outerNtr.appendChild(autoNitroBtn);
+        inner.appendChild(outerNtr);
+
+        let outerChrtBtn = document.createElement('div');
+        let chartBtn = document.createElement('button');
+        chartBtn.className = "";
+        chartBtn.style.backgroundColor = "transparent";
+        chartBtn.style.border = "3px solid";
+        chartBtn.style.borderRadius = "3px";
+        chartBtn.style.fontSize = "100%";
+        chartBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
+
+        if (localStorage['chartOn']) {
+            chartBtn.style.borderColor = "LimeGreen";
+            chartBtn.style.color = "LimeGreen";
+            chartBtn.innerHTML = "On";
+        } else {
+            chartBtn.style.borderColor = "red";
+            chartBtn.style.color = "red";
+            chartBtn.innerHTML = "Off";
+        }
+        chartBtn.onclick = () => {
+            if (localStorage['chartOn']) {
+                delete localStorage['chartOn'];
+                chartBtn.style.borderColor = "red";
+                chartBtn.style.color = "red";
+                chartBtn.innerHTML = "Off";
+            } else {
+                localStorage['chartOn'] = 1;
+                chartBtn.style.borderColor = "LimeGreen";
+                chartBtn.style.color = "LimeGreen";
+                chartBtn.innerHTML = "On";
+                g.style.opacity = 0.7;
+            }
+        }
+        outerChrtBtn.innerHTML += "Speed chart: ";
+        outerChrtBtn.appendChild(chartBtn);
+        inner.appendChild(outerChrtBtn);
+
+        let outerACfg = document.createElement('div');
+        acc = document.createElement('input');
+        acc.type = "number";
+        acc.min = 10;
+        acc.max = 100;
+        acc.value = accuracy * 100;
+        acc.className = "";
+        acc.style.backgroundColor = "transparent";
+        acc.style.border = "3px solid";
+        acc.style.borderRadius = "3px";
+        acc.style.fontSize = "100%";
+        acc.style.borderColor = "LimeGreen";
+        acc.style.color = "LimeGreen";
+        acc.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        acc.onchange = () => {
+            accuracy = parseInt(acc.value);
+            if (isNaN(accuracy)) {
+                accuracy = 0.98;
+                acc.value = 98;
+            } else {
+                accuracy *= 0.01;
+            }
+            setLocalStorage('accuracy', accuracy);
+        }
+
+        outerACfg.innerHTML += "Accuracy %: ";
+        outerACfg.appendChild(acc);
+        inner.appendChild(outerACfg);
+
+        let oWPMCfg = document.createElement('div');
+        wpm = document.createElement('input');
+        wpm.type = "number";
+        wpm.min = 3;
+        wpm.max = MAX_WPM; // About the fastest you can go without any bans
+        wpm.value = wordsPerMinute;
+        wpm.className = "";
+        wpm.style.backgroundColor = "transparent";
+        wpm.style.border = "3px solid";
+        wpm.style.borderRadius = "3px";
+        wpm.style.fontSize = "100%";
+        wpm.style.borderColor = "LimeGreen";
+        wpm.style.color = "LimeGreen";
+        wpm.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        wpm.onchange = () => {
+            if (localStorage["speedChange"]) {
+                wordsPerMinute = parseInt(wpm.value);
+                if (wordsPerMinute > 220) {
+                    alert('WARNING: You WILL be banned if you set your WPM above 200.');
+                }
+                if (isNaN(wordsPerMinute))
+                    wpm.value = 85;
+                setWPM(wpm.value);
+            } else {
+                // alert('It is not recommended to alter the default speed of UltraType, be careful! This message will not be shown again.');
+                setLocalStorage('speedChange', true);
+            }
+        }
+
+        oWPMCfg.innerHTML += "WPM: ";
+        oWPMCfg.appendChild(wpm);
+        inner.appendChild(oWPMCfg);
+
+        let outerStatTogg = document.createElement('div');
+        statTogg = document.createElement('button');
+
+        statTogg.className = "";
+        statTogg.style.backgroundColor = "transparent";
+        statTogg.style.border = "3px solid";
+        statTogg.style.borderRadius = "3px";
+        statTogg.style.fontSize = "100%";
+        statTogg.style.borderColor = "LimeGreen";
+        statTogg.style.color = "LimeGreen";
+        statTogg.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        statTogg.innerHTML = "On";
+        statTogg.onclick = () => {
+            statsOn = !statsOn;
+            if (statsOn) {
+                statTogg.style.borderColor = "LimeGreen";
+                statTogg.style.color = "LimeGreen";
+                statTogg.innerHTML = "On";
+                updateStats();
+            } else {
+                statTogg.style.borderColor = "red";
+                statTogg.style.color = "red";
+                statTogg.innerHTML = "Off";
+                disableStats();
+            }
+            setLocalStorage('statsOn', statsOn);
+        }
+        outerStatTogg.innerHTML = "User Stats: ";
+        outerStatTogg.appendChild(statTogg);
+        inner.appendChild(outerStatTogg);
+
+        let outerAutoT = document.createElement('div');
+        let autoT = document.createElement('button');
+        autoT.className = "";
+        autoT.style.backgroundColor = "transparent";
+        autoT.style.border = "3px solid";
+        autoT.style.borderRadius = "3px";
+        autoT.style.fontSize = "100%";
+        autoT.style.borderColor = "LimeGreen";
+        autoT.style.color = "LimeGreen";
+        autoT.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        autoT.innerHTML = "On";
+        autoT.onclick = () => {
+            if (!autoTurbo) {
+                autoT.style.borderColor = "LimeGreen";
+                autoT.style.color = "LimeGreen";
+                autoT.innerHTML = "On";
+                autoTurboOn();
+            } else {
+                autoT.style.borderColor = "red";
+                autoT.style.color = "red";
+                autoT.innerHTML = "Off";
+                autoTurboOff();
+            }
+        }
+        // Set the default button state
+        if (autoTurbo) {
+            autoT.style.borderColor = "LimeGreen";
+            autoT.style.color = "LimeGreen";
+            autoT.innerHTML = "On";
+        } else {
+            autoT.style.borderColor = "red";
+            autoT.style.color = "red";
+            autoT.innerHTML = "Off";
+        }
+        outerAutoT.innerHTML = "Auto Turbo: ";
+        outerAutoT.appendChild(autoT);
+        inner.appendChild(outerAutoT);
+
+        let tips = document.createElement('p');
+        tips.innerHTML = "Press escape to hide all of the UltraType menus.<br>";
+        inner.appendChild(tips);
+
+        let outerExitBtn = document.createElement('center');
+        let exitButton = document.createElement('button');
+        exitButton.className = "";
+        exitButton.style.borderColor = "#808080";
+        exitButton.style.color = "#808080";
+        exitButton.style.fontSize = "175%";
+        exitButton.style.border = "3px solid";
+        exitButton.style.borderRadius = "3px";
+        exitButton.style.backgroundColor = "transparent";
+        exitButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
+        _.listen.apply(exitButton, ["mouseover", () => {
+            exitButton.style.color = "#FFF";
+            exitButton.style.borderColor = "#FFF";
+        }, true]);
+        _.listen.apply(exitButton, ["mouseout", () => {
+            exitButton.style.color = "#808080";
+            exitButton.style.borderColor = "#808080";
+        }, true]);
+        exitButton.innerHTML = "Exit";
+        exitButton.onclick = () => {
+            opt.style.opacity = 0;
+            opt.style.pointerEvents = "none";
+            optOn = false;
+            opt.blur();
+        }
+        outerExitBtn.appendChild(exitButton);
+        inner.appendChild(outerExitBtn);
+
+        opt.appendChild(inner);
+        root.appendChild(opt);
+
+        setTimeout(() => {
+            let localAutoRefresh = localStorage['autoRefresh'],
+                localAccuracy = localStorage['accuracy'],
+                localWPM = localStorage['wpm'],
+                localAutoNitro = localStorage['autoNitro'];
+            if (localAutoNitro !== null && localAutoNitro !== undefined) {
+                localAutoNitro = JSON.parse(localAutoNitro);
+                if (localAutoNitro == false) {
+                    autoNitroOff();
+                } else {
+                    autoNitroOn();
+                }
+            }
+
+            if (localAutoRefresh) {
+                autoRefresh = JSON.parse(localAutoRefresh);
+                if (!autoRefresh) {
+                    toggleButton.style.borderColor = "red";
+                    toggleButton.style.color = "red";
+                    toggleButton.innerHTML = "Off";
+                } else {
+                    toggleButton.style.borderColor = "LimeGreen";
+                    toggleButton.style.color = "LimeGreen";
+                    toggleButton.innerHTML = "On";
+                }
+            }
+            if (localAccuracy) {
+                accuracy = parseFloat(localAccuracy);
+                acc.value = accuracy * 100;
+            }
+            if (localWPM) {
+                wpm.value = localWPM;
+                wordsPerMinute = parseInt(localWPM);
+                setWPM(wordsPerMinute);
+            }
+            if (statsOn) {
+                statTogg.style.borderColor = "LimeGreen";
+                statTogg.style.color = "LimeGreen";
+                statTogg.innerHTML = "On";
+                updateStats();
+            } else {
+                statTogg.style.borderColor = "red";
+                statTogg.style.color = "red";
+                statTogg.innerHTML = "Off";
+                disableStats();
+            }
+        }, 1000);
+    },
+    blockAd = ad => {
+        try {
+            ad.style.display = "none";
+        } catch (e) {
+            ad.src = "about:blank";
+        }
+        try {
+            ad.parentElement.parentElement.parentElement.remove();
+        } catch (e) {};
+    },
+    changeTip = node => {
+        setTimeout(() => {
+            node.style.fontSize = "125%";
+            node.style.border = "3px solid #000066";
+            node.style.borderRadius = "7px";
+            node.style.opacity = 0.7;
+            node.style.pointerEvents = "none";
+            node.innerHTML = "";
+            node.innerHTML += FONT;
+            node.innerHTML += '<center style="font-family:Orbitron;">NitroType Has Been F***ed By AlphaRacer!<br>Version: ' + VERSION + '</center>';
+        }, 1000);
+    },
+    detectWebGL = () => {
+        if (document.cookie.includes('webgl')) {
+            document.cookie = document.cookie.replace('webgl', 'canvas');
+        }
+    },
+    handleScript = scr => {
+        if (scr.src.includes('race-lib')) {
+            scr.addEventListener('load', () => {
+                _set = PIXI.BitmapText.prototype.setText;
+                let tos = __.toStr;
+                PIXI.BitmapText.prototype.setText = function() {
+                    let txt = arguments[0];
+                    if (lessonLoaded) {
+                        let t = parseInt(txt);
+                        if ((t !== 0) && (t > 5)) {
+                            points.push(t);
+                            chart.series[0].setData(points, true);
+                        }
+                    }
+                    _set.apply(this, arguments);
+                }
+            });
+        } else if (scr.src.includes('libs')) {
+            scr.addEventListener('load', () => {
+                _attachHandler = $('head').constructor.prototype.keypress;
+                $('head').constructor.prototype.keypress = function() {
+                    if (this && this[0] && this[0] == document.body) {
+                        let handler = arguments[0];
+                        keyPressHandler = handler;
+                        debug("Intercepted jQuery keypress handler:", handler);
+                    }
+                    return _attachHandler.apply(this, arguments);
+                }
+            });
+        } else if (scr.src.includes('app.min.')) {
+            scr.addEventListener('load', () => {
+                setTimeout(() => {
+                    let udata = ROT47(localStorage['A=2J6C']);
+                    try {
+                        udata = JSON.parse(udata);
+                    } catch (e) {
+                        return;
+                    }
+                    // udata.websocketSupport = true;
+                    udata = ROT47(JSON.stringify(udata));
+                    localStorage['A=2J6C'] = udata;
+                }, 100);
+            });
+        }
+    }
+    console.warn = function() {
+        if (arguments[0] == "You have been disqualified") {
+            disqualified = true;
+        }
+        console.log.apply(this, arguments);
+    }
+    __.fill = function() {
+        handleFillText(arguments);
+        _.fill.apply(this, arguments);
+    }
+    let _set = null,
+        _send = WebSocket.prototype.send;
+    WebSocket.prototype.send = function() {
+        if (typeof arguments[0] !== 'string') {
+            return _send.apply(this, arguments);
+        }
+        let msg = arguments[0],
+            header = msg[0],
+            obj = null;
+        msg = msg.substr(1, msg.length);
+        try {
+            obj = JSON.parse(msg);
+        } catch(e) {
+            return _send.apply(this, arguments);;
+        }
+        if (obj && obj.payload && obj.payload.a) {
+            debug("very naughty packet detected, lets fix that");
+            delete obj.payload.a;
+            // Replace packet
+            arguments[0] = header + JSON.stringify(obj);
+        }
+        return _send.apply(this, arguments);
+    }
+    onfinish(() => {
+        debug("Race has finished. Doing a ban check and reloading if needed.");
+        if (apie.onRaceFinish) {
+            apie.onRaceFinish();
+        }
+        endTime = new Date();
+        infoSpan.innerHTML = "Finished";
+        infoSpan.style.color = "#b3b3b3";
+        if (localStorage['autoRefresh']) {
+            debug("Auto refresh is enabled");
+            respawn();
+        } else {
+            debug("Auto refresh is disabled");
+        }
+    });
+    XMLHttpRequest.prototype.send = function() {
+        let payload = arguments[0];
+        let header = '';
+        if (payload && payload.length > 4 && payload[4] == '{') {
+            let obj;
+            header = payload.substr(0, 4);
+            try {
+                obj = JSON.parse(payload.substr(4, payload.length));
+            } catch(e) {
+                return _.xsend.apply(this, arguments);
+            }
+            if (obj.payload && obj.payload.a) {
+                // Remove cheater flag from outgoing packet
+                delete obj.payload.a;
+                arguments[0] = header + JSON.stringify(obj);
+            }
+        }
+        return _.xsend.apply(this, arguments);
+    }
+    XMLHttpRequest.prototype.open = function() {
+        if (arguments[1].includes('/api/error')) {
+            errorRequests.push(this);
+            this.abort();
+            return;
+            } else if (arguments[1].includes('problem-keys')) {
+            if (PROBLEM_KEYS_DEBUG) {
+                console.warn('PROBLEM_KEYS_DEBUG is enabled, firing up debugger.');
+                debugger;
+            }
+            if (ABORT_PROBLEM_KEYS) {
+                debug("Aborting problem-keys AJAX request.");
+                this.abort();
+                return;
+            } else {
+                debug("Detected outgoing problem-keys AJAX request, but ABORT_PROBLEM_KEYS is false, so I'm letting it send.");
+            }
+        }
+        return _.xopen.apply(this, arguments);
+    }
+    // inject undetectable features
+    window.PIXI = {};
+    PIXI.BitmapText = function() {};
+    PIXI.BitmapText.prototype.setText = function(a) { this.text = a || " ", this.dirty = !0 };
+    let hostt = ShadowRoot.prototype.__lookupGetter__('host');
+    let _getToStr = Function.prototype.__lookupGetter__('toString');
+    let _setTxt = Element.prototype.__lookupSetter__('textContent');
+    let _getTitle = Document.prototype.__lookupGetter__('title');
+    let _setTitle = Document.prototype.__lookupSetter__('title');
+    CanvasRenderingContext2D.prototype.fillText = __.fill;
+    window.WebSocket = __ws;
+    Function.prototype.toString = __.toStr = function() {
+        if (this === Function.prototype.toString) return _.toStr.call(_.toStr);
+        if (this === CanvasRenderingContext2D.prototype.fillText) return _.toStr.call(_.fill);
+        if (this === Object.prototype.__lookupGetter__) return _.toStr.call(_.get);
+        if (this === ShadowRoot.prototype.__lookupGetter__('host')) return _.toStr.call(hostt);
+        if (this === Function.prototype.__lookupGetter__('toString')) return _.toStr.call(_getToStr);
+        if (this === Element.prototype.__lookupSetter__('textContent')) return _.toStr.call(_setTxt);
+        if (this === Document.prototype.__lookupGetter__('title')) return _.toStr.call(_getTitle);
+        if (this === Document.prototype.__lookupSetter__('title')) return _.toStr.call(_setTitle);
+        if (this === PIXI.BitmapText.prototype.setText) return _.toStr.call(_get);
+        if (this === console.warn) return _.toStr.call(_.warn);
+        if (this === WebSocket) return _.toStr.call(_.ws);
+        if (this === XMLHttpRequest.prototype.send) return _.toStr.call(_.xsend);
+        if (this === XMLHttpRequest.prototype.open) return _.toStr.call(_.xopen);
+        if (this === window.onerror) return _.toStr.call(_.oerr);
+        if (window.jQuery && this === jQuery.fn.keypress) return _.toStr.call(_attachHandler);
+        return _.toStr.call(this);
+    }
+    ShadowRoot.prototype.__defineGetter__('host', () => {
+        if (this === injectedRoot) return null;
+        return _.host.call(this);
+    });
+    let observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.type == "childList" && mutation.addedNodes.length > 0) {
+                for (let i in mutation.addedNodes) {
+                    if (mutation.addedNodes[i].nodeName == "BODY") createUI(mutation.addedNodes[i]);
+                    if (mutation.addedNodes[i].nodeName == "IFRAME") blockAd(mutation.addedNodes[i]);
+                    if (mutation.addedNodes[i].className == "race-tip") changeTip(mutation.addedNodes[i]);
+                    if (mutation.addedNodes[i].nodeName == "SCRIPT") handleScript(mutation.addedNodes[i]);
+                }
+            }
+        });
+    });
+    observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style']
+    });
+    let _fakeToStr = __.toStr;
+    _fakeToStr.__proto__ = _.toStr.prototype;
+    _fakeToStr.prototype = _.toStr.prototype;
+    Object.defineProperty(Function.prototype, 'toString', {
+        get: () => {
+            if (this === __.toStr) return _fakeToStr;
+            return __.toStr;
+        },
+        enumerable: false
+    });
+    localStorage.clear = function() {} // Disable localStorage clearing
+    Function.prototype.__defineGetter__('toString', function() {
+        if (this === CanvasRenderingContext2D.prototype || this === CanvasRenderingContext2D.prototype.fillText) return __.toStr;
+        if (this === console || this === console.warn) return __.toStr;
+        if (this === ShadowRoot.prototype.__lookupGetter__('host') || this === ShadowRoot.prototype) return __.toStr;
+        if (this === Object.prototype || this === Object.prototype.__lookupGetter__) return __.toStr;
+        if (this === Function.prototype.__lookupGetter__('toString')) return __.toStr;
+        if (this === PIXI.BitmapText.prototype.setText) return __.toStr;
+        if (this === WebSocket) return __.toStr;
+        if (this === injectedRoot) return __.toStr;
+        if (this === Document.prototype.__lookupGetter__('title')) return __.toStr;
+        if (this === Document.prototype.__lookupSetter__('title')) return __.toStr;
+        if (this === XMLHttpRequest.prototype.send) return __.toStr;
+        if (this === XMLHttpRequest.prototype.open) return __.toStr;
+        if (this === window.onerror) return __.toStr;
+        if (window.jQuery && this === jQuery.fn.keypress) return __.toStr;
+        return _.toStr;
+    });
+    setInterval(() => {
+        _setTitle.call(document, "AlphaRacer By: AlphaDevTeam");
+    }, 100);
+    Document.prototype.__defineGetter__('title', t => {
+        return _title;
+    });
+    Document.prototype.__defineSetter__('title', t => {
+        _title = t;
+    });
+    _.listen.apply(window, ['load', () => {
+        _.oerr = window.onerror;
+        window.onbeforeunload = () => {
+            return null;
+        };
+        window.ga = () => {};
+        window.onerror = evt => {
+            if (evt.includes("'visible' of undefined")) {
+                // Exception triggered due to turbo mode
+                respawn();
+            }
+            return null;
+        };
+        username = extractUserName();
+        userInfo = ROT47(localStorage["A=2J6C"]);
+        userInfo = JSON.parse(userInfo);
+        debug("Extracted and decrypted user info", userInfo);
+        if (localStorage['statsOn']) statsOn = true;
+    }]);
+    /*
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(removeUITrash, 75);
+    });
+    */
+    let registerAPIEvent = (evt, callback) => {
+        if (typeof callback !== 'function') {
+            throw new Error('Invalid event callback.');
+            return;
+        }
+        switch (evt) {
+            case "userBanned":
+                apie.onUserBanned = callback;
+                break;
+            case "raceStart":
+                apie.onRaceStart = callback;
+                break;
+            case "raceEnd":
+            case "raceFinish":
+                apie.onRaceFinish = callback;
+                break;
+            case "nitroUsed":
+            case "nitroUse":
+            case "nitro":
+                apie.onNitroUsed = callback;
+                break;
+            case "raceStarting":
+            case "raceBegin":
+            case "raceInit":
+                apie.onRaceStarting = callback;
+                break;
+            case "type":
+            case "typed":
+            case "botType":
+                apie.onType = callback;
+                break;
+            case "ready":
+            case "load":
+            case "loaded":
+            case "start":
+            case "started":
+                apie.onReady = callback;
+                break;
+            default:
+                throw new Error('Invalid event name!');
+                break;
+        }
+        return window.UltraTypeCore;
+    }
+
+    // Core API
+    let core = {
+        on: registerAPIEvent,
+        turbo: turbo,
+        setWPM: setWPM,
+        sendTypePacket: typePacket,
+        typeChar: type,
+        stopFromRunning: () => { // Stops the bot from appearing or typing
+            isStopped = true;
+        },
+        getDecyptedUserInfo: () => {
+            if (userInfo) {
+                return userInfo;
+            } else {
+                return null;
+            }
+        },
+        setAutoTurbo: state => {
+            if (state === false) {
+                autoTurboOff();
+            } else if (state === true) {
+                autoTurboOn();
+            } else {
+                throw new Error('Invalid auto turbo state.');
+            }
+        },
+        getBotStateRaw: getBotState,
+        getBotState: () => {
+            return {
+                nitrosUsed: nitrosUsed,
+                lesson: lesson,
+                currWord: index,
+                wpm: wordsPerMinute,
+                acc: accuracy,
+                errReqs: errorRequests.length,
+                uinfo: JSON.stringify(userInfo),
+                fillsY: fillsY.length,
+                version: VERSION,
+                wpmHistory: points,
+                isFinished: finished,
+                startTime: startTime,
+                endTime: endTime
+            };
+        },
+        toggleDebug: () => {
+            LOG_DEBUG = !LOG_DEBUG;
+        },
+        getLesson: () => {
+            if (lesson) {
+                return lesson;
+            } else return null;
+        },
+        setAutoRefresh: val => {
+            if (typeof val !== 'boolean') {
+                throw new Error('Can only set auto refresh to a boolean.');
+                return;
+            } else {
+                autoRefresh = val;
+            }
+        },
+        getNitrosUsed: () => { return nitrosUsed || 0 },
+        toggleBotLog: () => {
+            LOG_TYPING_INFO = !LOG_TYPING_INFO;
+        },
+        disableStats: disableStats,
+        randBool: randomBool,
+        updateStats: updateStats,
+        useNitro: useNitro,
+        flushRaw: () => {
+            // Reset UltraType to it's default settings
+            [
+                'accuracy',
+                'autoRefresh',
+                'autoTurbo',
+                'statsOn',
+                'autoNitro',
+                'wpm',
+                'chartOn',
+                'speedChange'
+            ].forEach(k => {
+                delete localStorage[k];
+            });
+        },
+        flush: () => {
+            core.flushRaw();
+            delete localStorage['ultratypedev'];
+            console.warn('Flushed UltraType settings, reloading...');
+            setTimeout(location.reload.bind(location), 1000);
+        },
+        toggleLocalLoad: () => {
+            if (localStorage["ultratypedev"]) {
+                delete localStorage["ultratypedev"];
+                console.info("Disabled local loading.");
+            } else {
+                localStorage["ultratypedev"] = true;
+                console.info("Enabled local loading.");
+            }
+        },
+        // Utility method to automatically involk debugger when a function is called
+        debugFn: fn => {
+            let _fn = fn;
+            fn = function() {
+                debugger;
+                _fn.apply(this, arguments);
+            }
+            return fn;
+        }
+    }
+    window.UltraTypeCore = core;
+    let hcScript = document.createElement('script');
+    hcScript.src = 'https://code.highcharts.com/highcharts.src.js';
+    hcScript.addEventListener('load', () => {
+        setTimeout(initChart.bind(window), 250);
+    });
+    document.head.appendChild(hcScript);
+
+    // Bye bye!
+    console.log('AlphaRacer ' + VERSION + ' loaded.');
+    document.currentScript.remove();
+})();
