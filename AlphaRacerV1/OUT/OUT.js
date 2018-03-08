@@ -1283,7 +1283,7 @@
         inner.appendChild(outerAutoT);
 
         let tips = document.createElement('p');
-        tips.innerHTML = "Press escape to hide all of the UltraType menus.<br>";
+        tips.innerHTML = "Press "ESC" to hide AlphaRacer<br>";
         inner.appendChild(tips);
 
         let outerExitBtn = document.createElement('center');
