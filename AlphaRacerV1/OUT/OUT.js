@@ -1,8 +1,8 @@
 /*
-    AlphaRacer -- Created By: AlphaDevTeam//Alpha
+    AlphaRacer by Alpha
 */
 (() => {
-    //Checking For Injection Progress
+    // Test whether or not an href is valid for injection
     let isValidPage = href => {
         let res;
         if (href == "https://www.nitrotype.com/race") res = true;
@@ -23,16 +23,16 @@
     }
     if (!isValidPage(window.location.href)) {
         // Don't load if not on the race page
-        console.warn('AlphaRacer Failed To Load! Refresh To Try Again');
-        document.currentScript.remove(); //If Failed to load, remove the script to prevent lag
-        return; //Stop it from injecting
+        console.warn('AlphaRacer failed to load!');
+        document.currentScript.remove(); // Remove this script from the dom
+        return; // Halt execution
     }
     if (window["UltraTypeCore"]) {
-        //Log, if theres already AlphaRacer Running
-        console.warn('AlphaRacer Is Already Loaded On https://NitroType.com/Race');
+        // There's already an instance of UltraType on this page
+        console.warn('AlphaRacer has already been loaded on this page! Failed to reload');
         return;
     }
-    //Const Vars
+    //const Vars
     const VERSION = "0.1",
         LOG_DEBUG = true,
         LOG_TYPING_INFO = false,
@@ -43,7 +43,6 @@
         MAX_WPM = 110,
         ABORT_PROBLEM_KEYS = 1,
         PROBLEM_KEYS_DEBUG = 0,
-        EXT_URL = `https://chrome.google.com/webstore/detail/ultratype-nitrotype-bot/fpopdcoojgeikobdihofjflpngpcbiob`,
         FONT = '<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">',
         gen = (min, max) => {
             return Math.floor(Math.random() * max) + min;
@@ -153,7 +152,7 @@
               shiftKey: false
             });
         } else {
-            console.warn('AlphaRacer Couldnt Locate That Key!');
+            console.warn('AlphaRacer has failed to call the needed key!');
         }
     },
     overrideOnError = () => {
@@ -187,13 +186,13 @@
     },
     debug = function() {
         if (LOG_DEBUG) {
-            arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
+            arguments[0] && (arguments[0] = ("[UltraType] " + arguments[0]));
             console.trace.apply(this, arguments);
         }
     },
     tdebug = function() {
         if (LOG_TYPING_INFO) {
-            arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
+            arguments[0] && (arguments[0] = ("[UltraType] " + arguments[0]));
             console.log.apply(this, arguments);
         }
     },
@@ -297,7 +296,7 @@
                 let status = this.status;
                 let res = this.responseText;
                 if (status !== 200 || (res.includes("<title>Nitro Type | Competitive Typing Game | Race Your Friends</title>"))) {
-                    //Displays Ban Message If Baned
+                    // I'm banned!
                     showBan();
                 } else {
                     // Everything normal
@@ -751,13 +750,13 @@
 
         let outerTitle = document.createElement('center');
         let title = document.createElement('p');
-        title.style.fontSize = "135%";
+        title.style.fontSize = "130%";
         title.innerHTML = "<strong>AlphaRacer (BETA)</strong>";
         title.style.cursor = 'pointer';
         title.onclick = () => {
             window.open(EXT_URL,'_blank');
         }
-        UI.style.fontSize = "135%";
+        UI.style.fontSize = "130%";
         outerTitle.appendChild(title);
         UI.appendChild(outerTitle);
 
@@ -783,7 +782,7 @@
         enableButton.style.borderColor = "#808080";
         enableButton.style.color = "#808080";
         enableButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        enableButton.innerHTML = "SETTINGS";
+        enableButton.innerHTML = "Options";
         enableButton.onclick = () => {
             if (!optOn) {
                 optOn = true;
@@ -828,7 +827,7 @@
                         debug("WARN: Couldn't turbo", e);
                     };
                 } else {
-                    alert("Auto-turbo Will Most Likely Get You Banned! Use an alt account. AlphaRacer will NOT display this message again!");
+                    alert("Alpha doesnt reccomend that you use Turbo. It WILL get you banned!");
                     localStorage["turboAlert"] = 1;
                     try {
                         turbo();
@@ -843,7 +842,7 @@
         UI.appendChild(outerTurbo);
         UI.appendChild(document.createElement('br'));
         statsDiv = document.createElement('center');
-        statsDiv.innerHTML = 'Stats are loading...';
+        statsDiv.innerHTML = 'Finding Stats..';
         statsDiv.style.color = 'grey';
         statsDiv.style.display = 'none';
         UI.appendChild(statsDiv);
@@ -1053,7 +1052,7 @@
                 botOnBtn.innerHTML = "On";
             }
         }
-        outerBotOn.innerHTML += "Bot enabled: ";
+        outerBotOn.innerHTML += "Bot Toggled: ";
         outerBotOn.appendChild(botOnBtn);
         inner.appendChild(outerBotOn);
 
@@ -1199,7 +1198,7 @@
             if (localStorage["speedChange"]) {
                 wordsPerMinute = parseInt(wpm.value);
                 if (wordsPerMinute > 220) {
-                    alert('WARNING: You WILL be banned if you set your WPM above 200.');
+                    alert('High Risk of being banned if your WPM is 200+');
                 }
                 if (isNaN(wordsPerMinute))
                     wpm.value = 85;
@@ -1385,7 +1384,7 @@
             node.style.pointerEvents = "none";
             node.innerHTML = "";
             node.innerHTML += FONT;
-            node.innerHTML += '<center style="font-family:Orbitron;">NitroType Has Been F***ed By AlphaRacer!<br>Version: ' + VERSION + '</center>';
+            node.innerHTML += '<center style="font-family:Orbitron;">AlphaRacer<br>Version: ' + VERSION + '</center>';
         }, 1000);
     },
     detectWebGL = () => {
@@ -1605,7 +1604,7 @@
         return _.toStr;
     });
     setInterval(() => {
-        _setTitle.call(document, "AlphaRacer By: AlphaDevTeam");
+        _setTitle.call(document, "AlphaRacer by Alpha");
     }, 100);
     Document.prototype.__defineGetter__('title', t => {
         return _title;
@@ -1799,6 +1798,6 @@
     document.head.appendChild(hcScript);
 
     // Bye bye!
-    console.log('AlphaRacer ' + VERSION + ' loaded.');
+    console.log('AlphaRacer version ' + VERSION + ' loaded.');
     document.currentScript.remove();
 })();
