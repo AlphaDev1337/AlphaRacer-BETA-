@@ -3,6 +3,7 @@
 // @version      0.1
 // @description  A dank unreleased soon to be NitroType Bot!
 // @author       Alpha
+// @updateURL    https://rawgit.com/AlphaDev1337/AlphaRacer-BETA-/master/AlphaRacerV1/OUT/OUT.js
 // @match        https://www.nitrotype.com/race/*
 // @match        https://www.nitrotype.com/race
 // @match        http://www.nitrotype.com/race
