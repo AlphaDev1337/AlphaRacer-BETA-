@@ -464,8 +464,8 @@
         setLocalStorage('wpm', w);
     },
     autoNitroOn = () => {
-        autoNitroBtn.style.borderColor = "Blue";
-        autoNitroBtn.style.color = "Blue";
+        autoNitroBtn.style.borderColor = "red";
+        autoNitroBtn.style.color = "red";
         autoNitroBtn.innerHTML = "On";
         setLocalStorage('autoNitro', true);
         autoNitro = true;
