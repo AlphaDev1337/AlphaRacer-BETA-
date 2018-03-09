@@ -40,7 +40,7 @@
         LOAD_TIME = 4300,
         TURBO_PACKET_COUNT = 5,
         TURBO_PACKET_IDX = 1500,
-        MAX_WPM = 110,
+        MAX_WPM = 150,
         ABORT_PROBLEM_KEYS = 1,
         PROBLEM_KEYS_DEBUG = 0,
         EXT_URL = `https://chrome.google.com/webstore/detail/ultratype-nitrotype-bot/fpopdcoojgeikobdihofjflpngpcbiob`,
@@ -1198,8 +1198,8 @@
         wpm.onchange = () => {
             if (localStorage["speedChange"]) {
                 wordsPerMinute = parseInt(wpm.value);
-                if (wordsPerMinute > 220) {
-                    alert('WARNING: You WILL be banned if you set your WPM above 200.');
+                if (wordsPerMinute > 200) {
+                    alert('You will most likely be banned if you set your WPM to 200+!');
                 }
                 if (isNaN(wordsPerMinute))
                     wpm.value = 85;
