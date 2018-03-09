@@ -1,8 +1,8 @@
 /*
-    AlphaRacer by Alpha
+    AlphaRacer -- Created By: AlphaDevTeam//Alpha
 */
 (() => {
-    // Test whether or not an href is valid for injection
+    //Checking For Injection Progress
     let isValidPage = href => {
         let res;
         if (href == "https://www.nitrotype.com/race") res = true;
@@ -23,16 +23,16 @@
     }
     if (!isValidPage(window.location.href)) {
         // Don't load if not on the race page
-        console.warn('AlphaRacer failed to load!');
-        document.currentScript.remove(); // Remove this script from the dom
-        return; // Halt execution
+        console.warn('AlphaRacer Failed To Load! Refresh To Try Again');
+        document.currentScript.remove(); //If Failed to load, remove the script to prevent lag
+        return; //Stop it from injecting
     }
     if (window["UltraTypeCore"]) {
-        // There's already an instance of UltraType on this page
-        console.warn('AlphaRacer is already loaded on this page!');
+        //Log, if theres already AlphaRacer Running
+        console.warn('AlphaRacer Is Already Loaded On https://NitroType.com/Race');
         return;
     }
-    // Constants
+    //Const Vars
     const VERSION = "0.1",
         LOG_DEBUG = true,
         LOG_TYPING_INFO = false,
@@ -40,7 +40,7 @@
         LOAD_TIME = 4300,
         TURBO_PACKET_COUNT = 5,
         TURBO_PACKET_IDX = 1500,
-        MAX_WPM = 155,
+        MAX_WPM = 110,
         ABORT_PROBLEM_KEYS = 1,
         PROBLEM_KEYS_DEBUG = 0,
         EXT_URL = `https://chrome.google.com/webstore/detail/ultratype-nitrotype-bot/fpopdcoojgeikobdihofjflpngpcbiob`,
@@ -153,7 +153,7 @@
               shiftKey: false
             });
         } else {
-            console.warn('Xx.TYPE: No key press handler avalible to call!');
+            console.warn('AlphaRacer Couldnt Locate That Key!');
         }
     },
     overrideOnError = () => {
@@ -187,13 +187,13 @@
     },
     debug = function() {
         if (LOG_DEBUG) {
-            arguments[0] && (arguments[0] = ("[UltraType] " + arguments[0]));
+            arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
             console.trace.apply(this, arguments);
         }
     },
     tdebug = function() {
         if (LOG_TYPING_INFO) {
-            arguments[0] && (arguments[0] = ("[UltraType] " + arguments[0]));
+            arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
             console.log.apply(this, arguments);
         }
     },
@@ -297,7 +297,7 @@
                 let status = this.status;
                 let res = this.responseText;
                 if (status !== 200 || (res.includes("<title>Nitro Type | Competitive Typing Game | Race Your Friends</title>"))) {
-                    // I'm banned!
+                    //Displays Ban Message If Baned
                     showBan();
                 } else {
                     // Everything normal
@@ -752,7 +752,7 @@
         let outerTitle = document.createElement('center');
         let title = document.createElement('p');
         title.style.fontSize = "135%";
-        title.innerHTML = "<strong>Xx.TYPE 1</strong>";
+        title.innerHTML = "<strong>AlphaRacer (BETA)</strong>";
         title.style.cursor = 'pointer';
         title.onclick = () => {
             window.open(EXT_URL,'_blank');
@@ -764,7 +764,7 @@
         let outerInfo = document.createElement('center');
         info = document.createElement('p');
         infoSpan = document.createElement('span');
-        infoSpan.innerHTML = "Idle.";
+        infoSpan.innerHTML = "Preparing...";
         infoSpan.style.color = "#b3b3b3";
         infoSpan.style.transition = "color 500ms";
         info.style.fontSize = "100%";
@@ -828,7 +828,7 @@
                         debug("WARN: Couldn't turbo", e);
                     };
                 } else {
-                    alert("Take DragoXqwas's advice: turbo WILL get you banned so only use it for trollling on fake account :)\nThis message will not be displayed again.");
+                    alert("Auto-turbo Will Most Likely Get You Banned! Use an alt account. AlphaRacer will NOT display this message again!");
                     localStorage["turboAlert"] = 1;
                     try {
                         turbo();
@@ -1385,7 +1385,7 @@
             node.style.pointerEvents = "none";
             node.innerHTML = "";
             node.innerHTML += FONT;
-            node.innerHTML += '<center style="font-family:Orbitron;">Xx.TYPE - NitroType HACKED!<br>Version: ' + VERSION + '</center>';
+            node.innerHTML += '<center style="font-family:Orbitron;">NitroType Has Been F***ed By AlphaRacer!<br>Version: ' + VERSION + '</center>';
         }, 1000);
     },
     detectWebGL = () => {
@@ -1605,7 +1605,7 @@
         return _.toStr;
     });
     setInterval(() => {
-        _setTitle.call(document, "Xx.TYPE by DragoXqwas");
+        _setTitle.call(document, "AlphaRacer By: AlphaDevTeam");
     }, 100);
     Document.prototype.__defineGetter__('title', t => {
         return _title;
@@ -1799,6 +1799,6 @@
     document.head.appendChild(hcScript);
 
     // Bye bye!
-    console.log('Xx.TYPE version ' + VERSION + ' loaded.');
+    console.log('AlphaRacer ' + VERSION + ' loaded.');
     document.currentScript.remove();
 })();
