@@ -1027,7 +1027,7 @@
 
         let lbl = document.createElement('h1');
         lbl.style.fontSize = "150%";
-        lbl.innerHTML = "Customize UltraType";
+        lbl.innerHTML = "AlphaRacer Settings";
         inner.appendChild(lbl);
 
         let outerBotOn = document.createElement('div');
@@ -1284,7 +1284,7 @@
         inner.appendChild(outerAutoT);
 
         let tips = document.createElement('p');
-        tips.innerHTML = "Press escape to hide all of the UltraType menus.<br>";
+        tips.innerHTML = "Press escape to close all of ALphaRacer's Menus!<br>";
         inner.appendChild(tips);
 
         let outerExitBtn = document.createElement('center');
