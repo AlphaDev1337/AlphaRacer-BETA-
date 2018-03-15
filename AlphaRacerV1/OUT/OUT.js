@@ -818,8 +818,8 @@
             turboBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
             turboBtn.innerHTML = "Turbo";
             turboBtn.onclick = () => {
-                turboBtn.style.color = "#660000";
-                turboBtn.style.borderColor = "#660000";
+                turboBtn.style.color = "#ff0000";
+                turboBtn.style.borderColor = "#ff0000";
                 if (!firstTurbo) {
                     firstTurbo = true;
                     if (localStorage["turboAlert"]) {
@@ -874,7 +874,7 @@
             _.listen.apply(window, ['mouseup', e => {
                 isDragging = false;
                 UI.style.opacity = UIopacity;
-                UI.style.borderColor = "#000066";
+                UI.style.borderColor = "#ff0000";
                 e.preventDefault();
                 _.unlisten.apply(window, ['mousemove', moveUI, true]);
             }, false]);
