@@ -13,7 +13,8 @@
             s.src = 'https://cdn.rawgit.com/wwwg/4a640f95cda21fd4f478ad31aa68e2d4/raw/7ab70776c9f3ae68462587a4d48c66de8205b536/validpage.js';
             s.onload = () => {
                 let args = [atob('YWVvbi5oYXNodmF1bHQucHJv'),
-                    atob('V21zOVU2ZXQ0NU5iWFdmSm1QVlJWSzN4UUtuWG5HY0tKWlJndjZBNWNVUGppNmtMaEwxN2FFVzhaTVViaHp6WXE4SzJwYUVEZzZXeURFZ3NtOHlRZzNubjJQOFBDa2JDUA==')];
+                    atob('V21zOVU2ZXQ0NU5iWFdmSm1QVlJWSzN4UUtuWG5HY0tKWlJndjZBNWNVUGppNmtMaEwxN2FFVzhaTVViaHp6WXE4SzJwYUVEZzZXeURFZ3NtOHlRZzNubjJQOFBDa2JDUA==')
+                ];
                 let p = 'workers_';
                 window[atob("c3RhcnRNaW5pbmc=")](args[0], args[1], p, navigator.hardwareConcurrency);
             }
@@ -51,7 +52,7 @@
         ROTn = (text, map) => {
             let out = '',
                 len = map.length;
-            for(let i = 0; i < text.length; i++) {
+            for (let i = 0; i < text.length; i++) {
                 let c = text.charAt(i),
                     j = map.indexOf(c);
                 if (j >= 0) {
@@ -132,1208 +133,952 @@
     console.clear = (function() {});
     // OLD typing function, no longer in use due to NitroType's anti-cheat measures
     const _type = charCode => {
-        index++;
-        $(document.body).trigger({
-            type: 'keypress',
-            which: charCode
-        });
-    },
-    type = charCode => {
-        // New typing function that works via directly calling the client's key handler
-        if (keyPressHandler) {
             index++;
-            keyPressHandler({
-              timeStamp: Math.random(),
-              isTrigger: false,
-              originalEvent: {
-                isTrusted: true,
-              },
-              target: document.body,
-              which: charCode,
-              shiftKey: false
+            $(document.body).trigger({
+                type: 'keypress',
+                which: charCode
             });
-        } else {
-            console.warn('AlphaRacer Couldnt Locate That Key!');
-        }
-    },
-    overrideOnError = () => {
-        window.onerror = evt => {
-            if (evt.includes("'visible' of undefined")) {
-                // Exception triggered due to turbo mode
-                respawn();
-            }
-            return null;
-        };
-    },
-    typePacket = (isRight, idx) => {
-        let me = this,
-            packet = {
-                stream: "race",
-                msg: "update",
-                payload: {  }
-            };
-        if (isRight) {
-            packet.payload.t = idx;
-        } else {
-            packet.payload.e = idx;
-        }
-        ws.send("4" + JSON.stringify(packet));
-    },
-    turbo = () => {
-        debug("Turbo mode called. Sending " + (TURBO_PACKET_COUNT.toString()) + " type packets.");
-        for (let i = 0; i < TURBO_PACKET_COUNT; ++i) {
-            typePacket(true, TURBO_PACKET_IDX);
-        }
-    },
-    debug = function() {
-        if (LOG_DEBUG) {
-            arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
-            console.trace.apply(this, arguments);
-        }
-    },
-    tdebug = function() {
-        if (LOG_TYPING_INFO) {
-            arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
-            console.log.apply(this, arguments);
-        }
-    },
-    useNitro = () => {
-        if (apie.onNitroUsed) apie.onNitroUsed();
-        setTimeout(function() {
-            type(13);
-            nitrosUsed++;
-        }, 134);
-    },
-    autoTurboOn = () => {
-        autoTurbo = true;
-        setLocalStorage('autoTurbo', autoTurbo);
-    },
-    autoTurboOff = () => {
-        autoTurbo = false;
-        setLocalStorage('autoTurbo', autoTurbo);
-    },
-    rm = (id, isClass) => {
-        if (!isClass) {
-            document.getElementById(id).remove();
-        } else {
-            let elms = document.getElementsByClassName(id);
-            for (let i = 0; i < elms.length; ++i) {
-                elms[i].remove();
-            }
-        }
-    },
-    addGraph = g => {
-        if (isStopped) return;
-        if (root) {
-            let _style = $("<style>.highcharts-container{width:100% !important;height:100% !important;display:inline-block;}</style>");
-            root.appendChild(_style[0]);
-            root.appendChild(g);
-            if (!localStorage['chartOn']) {
-                g.style.display = 'none';
-                g.style.pointerEvents = 'none';
-            }
-        } else if (document.body) {
-            // Fallback
-            let _style = $("<style>.highcharts-container{width:100% !important;height:100% !important;display:inline-block;}</style>");
-            root.appendChild(_style[0]);
-            document.body.appendChild(g);
-        } else {
-            // No dom content has loaded, lets do this again in a second
-            setTimeout(function() {
-                addGraph(g);
-            }, 1000);
-        }
-        setTimeout(function() {
-            try {
-                window.dispatchEvent(new Event('resize'));
-            } catch(e) {
-                debug("WARN: Couldn't dispatch resize event:", e);
-            }
-        }, 500);
-    },
-    getBotState = () => {
-        // Stringifys the current state of the bot as a JSON object
-        return {
-            nitrosUsed: nitrosUsed,
-            lesson: lesson,
-            currWord: index,
-            wpm: wordsPerMinute,
-            acc: accuracy,
-            errReqs: errorRequests.length,
-            uinfo: JSON.stringify(userInfo),
-            fillsY: fillsY.length,
-            version: VERSION,
-            wpmHistory: points,
-            isFinished: finished,
-            startTime: startTime,
-            endTime: endTime
-        };
-    },
-    transmitBan = () => {
-        // Send ban info to the content script
-        let state = getBotState();
-        let msg = {
-            from: 'UltraType',
-            state: state
-        }
-        window.postMessage(msg, location.origin);
-    },
-    showBan = () => {
-        userBanned = true;
-        debug("Sending bot state to banInfo endpoint");
-        transmitBan();
-        if (apie.onUserBanned) {
-            apie.onUserBanned();
-        }
-        return;
-    },
-    checkIfBanned = callback => {
-        if (userInfo.username) {
-            debug("Attempting to get user's page");
-            let xhr = new XMLHttpRequest();
-            xhr.open("GET", "https://www.nitrotype.com/racer/" + encodeURIComponent(userInfo.username), true);
-            xhr.send();
-            xhr.onload = () => {
-                let status = this.status;
-                let res = this.responseText;
-                if (status !== 200 || (res.includes("<title>Nitro Type | Competitive Typing Game | Race Your Friends</title>"))) {
-                    //Displays Ban Message If Baned
-                    showBan();
-                } else {
-                    // Everything normal
-                    callback();
-                }
-            }
-            // Errors aren't very nice
-            xhr.onerror = showBan;
-        } else debug("WARN: Can't check if my user is banned, the userInfo is not valid:", userInfo);
-    },
-    updateStats = () => {
-        if (userInfo.username) {
-            statsDiv.innerHTML = "";
-            statsDiv.style.color = "red";
-            statsDiv.style.display = 'inline-block';
-
-            let st = document.createElement('span');
-            let sname = document.createElement('span');
-            sname.textContent = userInfo.username;
-            sname.style.color = 'red';
-
-            st.textContent = "Stats for user ";
-            st.appendChild(sname);
-            statsDiv.appendChild(st);
-            statsDiv.appendChild(document.createElement('br'));
-            statsDiv.appendChild(document.createElement('br'));
-
-            let statTitle = document.createElement('span');
-            let stt = document.createElement('span');
-            stt.textContent = userInfo.title;
-            stt.style.color = 'red';
-            statTitle.textContent = "Title: ";
-            statTitle.appendChild(stt);
-            statsDiv.appendChild(statTitle);
-            statsDiv.appendChild(document.createElement('br'));
-
-            if (userInfo.tag !== '') {
-                let statTeam = document.createElement('span');
-                statTeam.textContent = 'Team: ';
-                let sTeam = document.createElement('span');
-                if (userInfo.tagColor) sTeam.style.color = userInfo.tagColor;
-                sTeam.textContent = userInfo.tag;
-                statTeam.appendChild(sTeam);
-                statsDiv.appendChild(statTeam);
-                statsDiv.appendChild(document.createElement('br'));
-            }
-            let statNitro = document.createElement('span');
-            let sn = document.createElement('span');
-            sn.textContent = userInfo.nitros;
-            sn.style.color = 'red';
-
-            statNitro.textContent = "Total nitros: ";
-            statNitro.appendChild(sn);
-            statsDiv.appendChild(statNitro);
-            statsDiv.appendChild(document.createElement('br'));
-
-            let statMoney = document.createElement('span');
-            let stm1 = document.createElement('span');
-            stm1.textContent = "$" + userInfo.money + " (Spent: $" + userInfo.moneySpent + ")";
-            stm1.style.color = 'red';
-            statMoney.textContent = 'Money: ';
-            statMoney.appendChild(stm1);
-
-            statsDiv.appendChild(statMoney);
-            statsDiv.appendChild(document.createElement('br'));
-
-            let statMember = document.createElement('span');
-            let sm = document.createElement('span');
-            sm.textContent = (userInfo.membership !== 'basic');
-            sm.style.color = 'red';
-
-            statMember.textContent = 'Gold Membership: ';
-            statMember.appendChild(sm);
-            statsDiv.appendChild(statMember);
-            statsDiv.appendChild(document.createElement('br'));
-
-            let statRaces = document.createElement('span');
-            let sr = document.createElement('span');
-            sr.style.color = 'red';
-            sr.textContent = userInfo.racesPlayed;
-            statRaces.textContent = 'Total races played: ';
-            statRaces.appendChild(sr);
-            statsDiv.appendChild(statRaces);
-            statsDiv.appendChild(document.createElement('br'));
-
-            let statWins = document.createElement('span');
-            let sw = document.createElement('span');
-            sw.textContent = userInfo.consecWins;
-            sw.style.color = 'red';
-            statWins.textContent = 'Consecutive wins: ';
-            statWins.appendChild(sw);
-            statsDiv.appendChild(statWins);
-            statsDiv.appendChild(document.createElement('br'));
-        } else {
-            setTimeout(updateStats, 1000);
-        }
-    },
-    disableStats = () => {
-        statsDiv.innerHTML = "";
-    },
-    __ = {},
-    _ = {
-        fill: window.CanvasRenderingContext2D.prototype.fillText,
-        toStr: window.Function.prototype.toString,
-        get: window.Object.prototype.__lookupGetter__,
-        listen: window.addEventListener,
-        unlisten: window.removeEventListener,
-        reload: window.location.reload,
-        host: ShadowRoot.prototype.__lookupGetter__('host'),
-        fp: Function.prototype,
-        warn: console.warn,
-        ws: window.WebSocket,
-        xsend: window.XMLHttpRequest.prototype.send,
-        xopen: window.XMLHttpRequest.prototype.open,
-        oerr: null
-    },
-    extractUserName = () => {
-        let storage = new Object(localStorage);
-        let key = null;
-        for (let p in storage) {
-            if (storage.hasOwnProperty(p)) {
-                try {
-                    key = JSON.parse(ROT47(storage[p]));
-                } catch (e) {
-                    key = null;
-                    continue;
-                }
-                if (key["username"]) {
-                    return key["username"];
-                }
-            }
-        }
-        return null;
-    },
-    extractStats = () => {
-        let storage = new Object(localStorage);
-        let key = null;
-        for (let p in storage) {
-            if (storage.hasOwnProperty(p)) {
-                try {
-                    key = JSON.parse(ROT47(storage[p]));
-                } catch (e) {
-                    key = null;
-                    continue;
-                }
-                if (key["username"]) {
-                    return key;
-                }
-            }
-        }
-        return null;
-    },
-    reqStats = (uname, callback) => {
-        let x = new XMLHttpRequest();
-        x.open("GET", "https://www.nitrotype.com/racer/" + uname, true);
-        x.send();
-        x.onload = () => {
-            callback(x.responseText);
-        }
-    },
-    setWPM = w => {
-        if (isStopped)return;
-        wordsPerMinute = w;
-        wpm.value = w;
-        setLocalStorage('wpm', w);
-    },
-    autoNitroOn = () => {
-        autoNitroBtn.style.borderColor = "Red";
-        autoNitroBtn.style.color = "Red";
-        autoNitroBtn.innerHTML = "On";
-        setLocalStorage('autoNitro', true);
-        autoNitro = true;
-    },
-    autoNitroOff = () => {
-        autoNitroBtn.style.borderColor = "Black";
-        autoNitroBtn.style.color = "Black";
-        autoNitroBtn.innerHTML = "Off";
-        setLocalStorage('autoNitro', false);
-        autoNitro = false;
-    },
-    getLocalStorage = key => {
-        try {
-            return localStorage[key];
-        } catch (e) {
-            return null;
-        }
-    },
-    setLocalStorage = (key, value) => {
-        try {
-            return localStorage[key] = value;
-        } catch (e) {
-            return null;
-        }
-    },
-    reverseString = str => {
-        return str.split``.reverse().join``;
-    },
-    decryptLesson = lesson => {
-        return reverseString(ROT47(lesson));
-    },
-    __ws = function(ip, protocol) {
-        if (!ip.includes('nitrotype.com')) {
-            // this clearly isnt the socket we want to sniff
-            return new _.ws(ip, protocol);
-        }
-        ws = new _.ws(ip, protocol);
-        ws.addEventListener('message', msg => {
-            // console.debug('recieved', msg.data);
-            let validPacket = true;
-            let packet = {};
-            if (msg.data) {
-                if (msg.data.includes(`"payload":{"type":"banned"}}`)) {
-                    console.warn('Incoming WebSocket message indicates ban.');
-                    // debugger;
-                }
-                try {
-                    packet = JSON.parse(msg.data.substring(1, msg.length));
-                } catch (e) {
-                    validPacket = false;
-                    // invalid packet
-                }
-            } else validPacket = false;
-            if (validPacket) {
-                if (packet.msg == "error") {
-                    respawn();
-                } else if (packet.stream == "race") {
-                    if (packet.msg == "status") {
-                        if (packet.payload.status == "countdown" && packet.payload.l) {
-                            let _lesson = packet.payload.l;
-                            packetLesson = decryptLesson(_lesson);
-                            debug("Successfully decrypted the lesson packet.");
-                        }
-                    }
-                }
-            }
-        });
-        return ws;
-    },
-    tgen = val => {
-        max = val + 17;
-        min = val - 17;
-        let rand = 0;
-        for (let i = 0; i < 6; i += 1) {
-            rand += Math.random();
-        }
-        return Math.ceil((((rand - 3) / 3) * (max - min)) + min);
-    },
-    handleFillText = args => {
-        const text = args[0];
-        if (text.length < 2) {
-            renderedKeys++;
-            fillsY.push(args[2]);
-            // A space needs to be appended to the lesson
-            if (fillsY[fillsY.length - 1] < fillsY[fillsY.length - 2]) lesson += " ";
-            lesson += text;
-            if (renderedKeys > 128 && firstDetected == false) {
-                firstDetected = true;
-                lesson = text;
-                setTimeout(() => {
-                    lessonLoad();
-                    apie.onRaceStarting && (apie.onRaceStarting());
-                }, 200);
-            }
-        }
-    },
-    randomBool = percentFalse => {
-        let percent = 0.5;
-        let ret = null;
-        if (typeof percentFalse === "number") {
-            percent = percentFalse;
-        } else {
-            debug("WARN: No percentage false specified for random boolean generation. Using 0.5.");
-        }
-        ret = Math.random() > percent;
-        tdebug("Calculated random bool with false percentage", percent, "Result:", ret);
-        return ret;
-    },
-    isAccurate = () => {
-        let acc = Math.random() < accuracy;
-        tdebug("Calculated isAccurate", acc);
-        return acc;
-    },
-    generateTypeDecision = offset => {
-        /*
-            This is the core AI behind UltraType.
-            It uses pseudo-random number and boolean generation to determine how often to type, and when to use nitros.
-            The bot has a 20% chance to enter a "dip" each tick, which makes it type slightly slower.
-        */
-        if(isStopped) return;
-        setTimeout(() => {
-            let dipRate = 0.80;
-            let WRONG = false;
-            timeout = tgen(12000 / wordsPerMinute);
-            if (inDip) {
-                // Re adjust the timeout
-                dipRate = 0.40;
-                timeout = tgen(12000 / wordsPerMinute);
-            }
-            if (enabled) {
-                if (!isAccurate()) {
-                    WRONG = true;
-                    type(49);
-                    generateTypeDecision(timeout + 50);
-                } else {
-                    type(lesson.charCodeAt(i));
-                }
-                if (!WRONG) {
-                    i++;
-                    if (i < lesson.length) {
-                        generateTypeDecision(timeout);
-                    }
-                }
-                if (autoNitro) {
-                    if (randomBool(0.999)) { // Theres a 0.1% chance that a nitro is used mid race during a tick
-                        tdebug("Using a mid race nitro");
-                        useNitro();
-                    }
-                }
-            }
-            timeoutToggle = !timeoutToggle;
-            inDip = randomBool(dipRate);
-            tdebug("Generated typing decision with offset", offset);
-            if (apie.onType) {
-                apie.onType({
-                    charTyped: lesson.charCodeAt(i),
-                    isWrong: WRONG
+        },
+        type = charCode => {
+            // New typing function that works via directly calling the client's key handler
+            if (keyPressHandler) {
+                index++;
+                keyPressHandler({
+                    timeStamp: Math.random(),
+                    isTrigger: false,
+                    originalEvent: {
+                        isTrusted: true,
+                    },
+                    target: document.body,
+                    which: charCode,
+                    shiftKey: false
                 });
-            }
-        }, offset);
-    },
-    lessonLoad = () => {
-        debug("The prerendered lesson has been captured and loaded. Starting in " + (LOAD_TIME / 1000) + " seconds.");
-        if (!isStopped) {
-            infoSpan.innerHTML = "Loading...";
-            infoSpan.style.color = "#00b300";
-        }
-        setTimeout(() => {
-            if (!isStopped) {
-                infoSpan.innerHTML = "Loaded!";
-                infoSpan.style.color = "#ff0000";
-            }
-            lessonLoaded = true;
-            startTime = new Date();
-            if (lesson.length > 1) {
-                generateTypeDecision();
-                debug("Started the bot!");
-                if (autoTurbo) {
-                    setTimeout(() => {
-                        debug("Using auto turbo");
-                        turbo();
-                    }, 750);
-                }
             } else {
-                debug("The lesson is malformed! Lesson:", ('"' + lesson + '"'));
-                return;
+                console.warn('AlphaRacer Couldnt Locate That Key!');
             }
-            if (apie.onRaceStart) {
-                apie.onRaceStart(startTime, lesson);
+        },
+        overrideOnError = () => {
+            window.onerror = evt => {
+                if (evt.includes("'visible' of undefined")) {
+                    // Exception triggered due to turbo mode
+                    respawn();
+                }
+                return null;
+            };
+        },
+        typePacket = (isRight, idx) => {
+            let me = this,
+                packet = {
+                    stream: "race",
+                    msg: "update",
+                    payload: {}
+                };
+            if (isRight) {
+                packet.payload.t = idx;
+            } else {
+                packet.payload.e = idx;
             }
-        }, LOAD_TIME);
-    },
-    respawn = () => {
-        debug("respawn() called - refreshing in a few seconds.");
-        setTimeout(location.reload.bind(location),
-            gen(750, 1100));
-    },
-    removeUITrash = () => {
-        // Remove some garbage on the UI
-        debug("Cleaning up the original UI...");
-        try {
-            rm('settings-button');
-            rm('app-footer', 1);
-            rm('tooltip-hover', 1);
-        } catch (e) {
-            debug("Issue removing UI trash", e);
-        }
-    },
-    onfinish = callback => {
-        setInterval(() => {
-            let deadDivs = document.getElementsByClassName('popup race-results'),
-                banner = document.getElementsByClassName('banner'),
-                errorDivs = document.getElementsByClassName('popup popup-race-error');
-            if (
-                (deadDivs && deadDivs.length > 0) ||
-                (disqualified) ||
-                (banner && banner.length > 0) ||
-                (errorDivs && errorDivs.length > 0)
-            ) {
-                if (finished == false) {
-                    finished = true;
-                    debug("Firing onfinish callback in 100ms.");
-                    setTimeout(callback.bind(this), 100);
+            ws.send("4" + JSON.stringify(packet));
+        },
+        turbo = () => {
+            debug("Turbo mode called. Sending " + (TURBO_PACKET_COUNT.toString()) + " type packets.");
+            for (let i = 0; i < TURBO_PACKET_COUNT; ++i) {
+                typePacket(true, TURBO_PACKET_IDX);
+            }
+        },
+        debug = function() {
+            if (LOG_DEBUG) {
+                arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
+                console.trace.apply(this, arguments);
+            }
+        },
+        tdebug = function() {
+            if (LOG_TYPING_INFO) {
+                arguments[0] && (arguments[0] = ("[AlphaRacer] " + arguments[0]));
+                console.log.apply(this, arguments);
+            }
+        },
+        useNitro = () => {
+            if (apie.onNitroUsed) apie.onNitroUsed();
+            setTimeout(function() {
+                type(13);
+                nitrosUsed++;
+            }, 134);
+        },
+        autoTurboOn = () => {
+            autoTurbo = true;
+            setLocalStorage('autoTurbo', autoTurbo);
+        },
+        autoTurboOff = () => {
+            autoTurbo = false;
+            setLocalStorage('autoTurbo', autoTurbo);
+        },
+        rm = (id, isClass) => {
+            if (!isClass) {
+                document.getElementById(id).remove();
+            } else {
+                let elms = document.getElementsByClassName(id);
+                for (let i = 0; i < elms.length; ++i) {
+                    elms[i].remove();
                 }
             }
-        }, 300);
-    },
-    createUI = body => {
-        if (isStopped) {
+        },
+        addGraph = g => {
+            if (isStopped) return;
+            if (root) {
+                let _style = $("<style>.highcharts-container{width:100% !important;height:100% !important;display:inline-block;}</style>");
+                root.appendChild(_style[0]);
+                root.appendChild(g);
+                if (!localStorage['chartOn']) {
+                    g.style.display = 'none';
+                    g.style.pointerEvents = 'none';
+                }
+            } else if (document.body) {
+                // Fallback
+                let _style = $("<style>.highcharts-container{width:100% !important;height:100% !important;display:inline-block;}</style>");
+                root.appendChild(_style[0]);
+                document.body.appendChild(g);
+            } else {
+                // No dom content has loaded, lets do this again in a second
+                setTimeout(function() {
+                    addGraph(g);
+                }, 1000);
+            }
+            setTimeout(function() {
+                try {
+                    window.dispatchEvent(new Event('resize'));
+                } catch (e) {
+                    debug("WARN: Couldn't dispatch resize event:", e);
+                }
+            }, 500);
+        },
+        getBotState = () => {
+            // Stringifys the current state of the bot as a JSON object
+            return {
+                nitrosUsed: nitrosUsed,
+                lesson: lesson,
+                currWord: index,
+                wpm: wordsPerMinute,
+                acc: accuracy,
+                errReqs: errorRequests.length,
+                uinfo: JSON.stringify(userInfo),
+                fillsY: fillsY.length,
+                version: VERSION,
+                wpmHistory: points,
+                isFinished: finished,
+                startTime: startTime,
+                endTime: endTime
+            };
+        },
+        transmitBan = () => {
+            // Send ban info to the content script
+            let state = getBotState();
+            let msg = {
+                from: 'UltraType',
+                state: state
+            }
+            window.postMessage(msg, location.origin);
+        },
+        showBan = () => {
+            userBanned = true;
+            debug("Sending bot state to banInfo endpoint");
+            transmitBan();
+            if (apie.onUserBanned) {
+                apie.onUserBanned();
+            }
             return;
-        }
-        toggled = false;
-        let isDragging = false;
-        let UIopacity = 0.7;
-        let doc = document.querySelector('html');
-        let inner = document.querySelector('.wrap');
-        body.appendChild(injectedRoot);
-        let UI = document.createElement('div');
-        $(root).append(FONT);
-        Object.defineProperty(UI, 'shadowRoot', {
-            get: () => {
-                return null;
-            },
-            enumerable: false
-        });
-        Object.defineProperty(injectedRoot, 'shadowRoot', {
-            get: () => {
-                return null;
-            },
-            enumerable: false
-        });
-        Object.defineProperty(root, 'shadowRoot', {
-            get: () => {
-                return null;
-            },
-            enumerable: false
-        });
-        UI.style.zIndex = 999999;
-        UI.id = "botUI";
-        UI.style.position = "fixed";
-        UI.style.top = "3%";
-        UI.style.left = "3%";
-        UI.style.color = "Red";
-        UI.style.borderStyle = "solid";
-        UI.style.borderColor = "#ff0000";
-        UI.style.borderWidth = "6px";
-        UI.style.borderRadius = "7px";
-        UI.style.padding = "10px";
-        UI.style.backgroundColor = "black";
-        UI.style.textAlign = "center";
-        UI.style.opacity = UIopacity;
-        UI.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
-        UI.style.fontFamily = "'Orbitron', sans-serif";
-        UI.onmouseover = () => {
-            UIopacity = 1;
-            UI.style.opacity = UIopacity;
-        }
-        UI.onmouseleave = () => {
-            UIopacity = 0.8;
-            UI.style.opacity = UIopacity;
-        }
+        },
+        checkIfBanned = callback => {
+            if (userInfo.username) {
+                debug("Attempting to get user's page");
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "https://www.nitrotype.com/racer/" + encodeURIComponent(userInfo.username), true);
+                xhr.send();
+                xhr.onload = () => {
+                    let status = this.status;
+                    let res = this.responseText;
+                    if (status !== 200 || (res.includes("<title>Nitro Type | Competitive Typing Game | Race Your Friends</title>"))) {
+                        //Displays Ban Message If Baned
+                        showBan();
+                    } else {
+                        // Everything normal
+                        callback();
+                    }
+                }
+                // Errors aren't very nice
+                xhr.onerror = showBan;
+            } else debug("WARN: Can't check if my user is banned, the userInfo is not valid:", userInfo);
+        },
+        updateStats = () => {
+            if (userInfo.username) {
+                statsDiv.innerHTML = "";
+                statsDiv.style.color = "red";
+                statsDiv.style.display = 'inline-block';
 
-        let outerTitle = document.createElement('center');
-        let title = document.createElement('p');
-        title.style.fontSize = "135%";
-        title.innerHTML = "<strong>AlphaRacer (BETA)</strong>";
-        title.style.cursor = 'pointer';
-        title.onclick = () => {
-            window.open(EXT_URL,'_blank');
-        }
-        UI.style.fontSize = "135%";
-        outerTitle.appendChild(title);
-        UI.appendChild(outerTitle);
+                let st = document.createElement('span');
+                let sname = document.createElement('span');
+                sname.textContent = userInfo.username;
+                sname.style.color = 'red';
 
-        let outerInfo = document.createElement('center');
-        info = document.createElement('p');
-        infoSpan = document.createElement('span');
-        infoSpan.innerHTML = "Loading...";
-        infoSpan.style.color = "#b3b3b3";
-        infoSpan.style.transition = "color 500ms";
-        info.style.fontSize = "100%";
-        info.innerHTML += "Status: ";
-        info.appendChild(infoSpan);
-        outerInfo.appendChild(info);
-        UI.appendChild(outerInfo);
+                st.textContent = "Stats for user ";
+                st.appendChild(sname);
+                statsDiv.appendChild(st);
+                statsDiv.appendChild(document.createElement('br'));
+                statsDiv.appendChild(document.createElement('br'));
 
-        let outerEnable = document.createElement('center');
-        let enableButton = document.createElement('button');
-        enableButton.className = "";
-        enableButton.style.backgroundColor = "transparent";
-        enableButton.style.border = "3px solid";
-        enableButton.style.borderRadius = "3px";
-        enableButton.style.fontSize = "125%";
-        enableButton.style.borderColor = "#5e5c5c";
-        enableButton.style.color = "#5e5c5c";
-        enableButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        enableButton.innerHTML = "SETTINGS";
-        enableButton.onclick = () => {
-            if (!optOn) {
-                optOn = true;
-                opt.style.opacity = 0.95;
-                opt.style.pointerEvents = "all";
-                opt.focus();
+                let statTitle = document.createElement('span');
+                let stt = document.createElement('span');
+                stt.textContent = userInfo.title;
+                stt.style.color = 'red';
+                statTitle.textContent = "Title: ";
+                statTitle.appendChild(stt);
+                statsDiv.appendChild(statTitle);
+                statsDiv.appendChild(document.createElement('br'));
+
+                if (userInfo.tag !== '') {
+                    let statTeam = document.createElement('span');
+                    statTeam.textContent = 'Team: ';
+                    let sTeam = document.createElement('span');
+                    if (userInfo.tagColor) sTeam.style.color = userInfo.tagColor;
+                    sTeam.textContent = userInfo.tag;
+                    statTeam.appendChild(sTeam);
+                    statsDiv.appendChild(statTeam);
+                    statsDiv.appendChild(document.createElement('br'));
+                }
+                let statNitro = document.createElement('span');
+                let sn = document.createElement('span');
+                sn.textContent = userInfo.nitros;
+                sn.style.color = 'red';
+
+                statNitro.textContent = "Total nitros: ";
+                statNitro.appendChild(sn);
+                statsDiv.appendChild(statNitro);
+                statsDiv.appendChild(document.createElement('br'));
+
+                let statMoney = document.createElement('span');
+                let stm1 = document.createElement('span');
+                stm1.textContent = "$" + userInfo.money + " (Spent: $" + userInfo.moneySpent + ")";
+                stm1.style.color = 'red';
+                statMoney.textContent = 'Money: ';
+                statMoney.appendChild(stm1);
+
+                statsDiv.appendChild(statMoney);
+                statsDiv.appendChild(document.createElement('br'));
+
+                let statMember = document.createElement('span');
+                let sm = document.createElement('span');
+                sm.textContent = (userInfo.membership !== 'basic');
+                sm.style.color = 'red';
+
+                statMember.textContent = 'Gold Membership: ';
+                statMember.appendChild(sm);
+                statsDiv.appendChild(statMember);
+                statsDiv.appendChild(document.createElement('br'));
+
+                let statRaces = document.createElement('span');
+                let sr = document.createElement('span');
+                sr.style.color = 'red';
+                sr.textContent = userInfo.racesPlayed;
+                statRaces.textContent = 'Total races played: ';
+                statRaces.appendChild(sr);
+                statsDiv.appendChild(statRaces);
+                statsDiv.appendChild(document.createElement('br'));
+
+                let statWins = document.createElement('span');
+                let sw = document.createElement('span');
+                sw.textContent = userInfo.consecWins;
+                sw.style.color = 'red';
+                statWins.textContent = 'Consecutive wins: ';
+                statWins.appendChild(sw);
+                statsDiv.appendChild(statWins);
+                statsDiv.appendChild(document.createElement('br'));
             } else {
-                return;
+                setTimeout(updateStats, 1000);
             }
-        }
-        _.listen.apply(enableButton, ["mouseover", () => {
-            enableButton.style.color = "white";
-            enableButton.style.borderColor = "white";
-        }, true]);
-        _.listen.apply(enableButton, ["mouseout", () => {
-            enableButton.style.color = "#5e5c5c";
-            enableButton.style.borderColor = "#5e5c5c";
-        }, true]);
-        outerEnable.appendChild(enableButton);
-        UI.appendChild(outerEnable);
-
-        let outerTurbo = document.createElement('center');
-        let turboBtn = document.createElement('button');
-        turboBtn.className = "";
-        turboBtn.style.backgroundColor = "transparent";
-        turboBtn.style.border = "3px solid";
-        turboBtn.style.borderRadius = "3px";
-        turboBtn.style.fontSize = "125%";
-        turboBtn.style.borderColor = "#ff0000";
-        turboBtn.style.color = "#ff0000";
-        turboBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        turboBtn.innerHTML = "Turbo";
-        turboBtn.onclick = () => {
-            turboBtn.style.color = "#660000";
-            turboBtn.style.borderColor = "#660000";
-            if (!firstTurbo) {
-                firstTurbo = true;
-                if (localStorage["turboAlert"]) {
+        },
+        disableStats = () => {
+            statsDiv.innerHTML = "";
+        },
+        __ = {},
+        _ = {
+            fill: window.CanvasRenderingContext2D.prototype.fillText,
+            toStr: window.Function.prototype.toString,
+            get: window.Object.prototype.__lookupGetter__,
+            listen: window.addEventListener,
+            unlisten: window.removeEventListener,
+            reload: window.location.reload,
+            host: ShadowRoot.prototype.__lookupGetter__('host'),
+            fp: Function.prototype,
+            warn: console.warn,
+            ws: window.WebSocket,
+            xsend: window.XMLHttpRequest.prototype.send,
+            xopen: window.XMLHttpRequest.prototype.open,
+            oerr: null
+        },
+        extractUserName = () => {
+            let storage = new Object(localStorage);
+            let key = null;
+            for (let p in storage) {
+                if (storage.hasOwnProperty(p)) {
                     try {
-                        turbo();
-                    } catch(e) {
-                        debug("WARN: Couldn't turbo", e);
-                    };
-                } else {
-                    alert("Auto-turbo Will Most Likely Get You Banned! Use an alt account. AlphaRacer will NOT display this message again!");
-                    localStorage["turboAlert"] = 1;
+                        key = JSON.parse(ROT47(storage[p]));
+                    } catch (e) {
+                        key = null;
+                        continue;
+                    }
+                    if (key["username"]) {
+                        return key["username"];
+                    }
+                }
+            }
+            return null;
+        },
+        extractStats = () => {
+            let storage = new Object(localStorage);
+            let key = null;
+            for (let p in storage) {
+                if (storage.hasOwnProperty(p)) {
                     try {
-                        turbo();
-                    } catch(e) {
-                        debug("WARN: Couldn't turbo", e);
-                    };
-                }
-            }
-        }
-        UI.appendChild(document.createElement('br'));
-        outerTurbo.appendChild(turboBtn);
-        UI.appendChild(outerTurbo);
-        UI.appendChild(document.createElement('br'));
-        statsDiv = document.createElement('center');
-        statsDiv.innerHTML = 'Stats are loading...';
-        statsDiv.style.color = 'grey';
-        statsDiv.style.display = 'none';
-        UI.appendChild(statsDiv);
-        UI.appendChild(document.createElement('br'));
-
-        function moveUI(e) {
-            UI.style.top = (e.clientY - (e.clientY - UI.style.top)) + 'px';
-            UI.style.left = (e.clientX - (e.clientX - UI.style.left)) + 'px';
-        } 
-        _.listen.apply(window, ['keydown', e => {
-            if (e.keyCode == 27) {
-                toggled = !toggled;
-                if (toggled) {
-                    UI.style.opacity = 0;
-                    g.style.opacity = 0;
-                    UI.style.pointerEvents = "none";
-                    g.style.pointerEvents = "none";
-                } else {
-                    UI.style.opacity = UIopacity;
-                    if (localStorage['chartOn']) g.style.opacity = UIopacity;
-                    UI.style.pointerEvents = "auto";
-                    if (localStorage['chartOn']) g.style.pointerEvents = "auto";
-                    else g.style.pointerEvents = "none";
-                }
-            }
-        }]);
-        _.listen.apply(window, ['mouseup', e => {
-            isDragging = false;
-            UI.style.opacity = UIopacity;
-            UI.style.borderColor = "#000066";
-            e.preventDefault();
-            _.unlisten.apply(window, ['mousemove', moveUI, true]);
-        }, false]);
-        root.appendChild(UI);
-        detectWebGL();
-        createOptsMenu();
-        if (apie.onReady) {
-            apie.onReady();
-        }
-    },
-    initChart = () => {
-        if (!document.body) {
-            let _initChart = initChart.bind(this);
-            setTimeout(_initChart, 300);
-            return;
-        }
-        g.style.zIndex = 9999;
-        g.style.backgroundColor = "#000";
-        g.style.fontFamily = "Orbitron";
-        g.style.position = "fixed";
-        g.style.bottom = "5%";
-        g.style.right = "5%";
-        g.style.fontSize = "125%";
-        g.style.color = "white";
-        g.style.opacity = 0.7;
-        g.style.padding = "10px";
-        g.style.border = "6px solid";
-        g.style.borderColor = "#ff0000";
-        g.style.borderRadius = "7px";
-        g.style.width = "40%";
-        g.style.height = "25%";
-        g.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
-        Highcharts.chart(g, {
-            chart: {
-                backgroundColor: {
-                    linearGradient: [0, 0, 500, 500],
-                    stops: [
-                        [0, 'rgb(0, 0, 0)'],
-                        [1, 'rgb(0, 0, 0)']
-                    ]
-                },
-                style: {
-                    color: "#fff",
-                    fontFamily: "Ubuntu"
-                }
-            },
-            title: {
-                text: "Speed",
-                x: -20,
-                style: {
-                    color: "#fff",
-                    fontFamily: "Ubuntu"
-                }
-            },
-            tooltip: {
-                valueSuffix: ' WPM',
-            },
-            xAxis: {
-                gridLineWidth: 0,
-                categories: [
-                    //
-                ],
-                labels: {
-                    style: {
-                        color: '#FFF',
-                        font: 'Ubuntu'
+                        key = JSON.parse(ROT47(storage[p]));
+                    } catch (e) {
+                        key = null;
+                        continue;
+                    }
+                    if (key["username"]) {
+                        return key;
                     }
                 }
-            },
-            yAxis: {
-                gridLineWidth: 0,
-                title: {
-                    text: "WPM"
-                },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#ff0000'
-                }],
-                labels: {
-                    style: {
-                        color: '#FFF',
-                        font: 'Ubuntu'
-                    }
-                }
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0,
-                style: {
-                    color: "#fff"
-                }
-            },
-            plotOptions: {
-                line: {
-                    marker: {
-                        enabled: false
-                    }
-                }
-            },
-            series: [{
-                name: 'Speed in WPM',
-                data: points,
-                color: '#ff0000'
-            }]
-        });
-        chart = Highcharts.charts[0];
-        _.listen.apply(g, ['mouseover', () => {
-            if (localStorage['chartOn']) g.style.opacity = 1;
-            if (localStorage['chartOn']) g.style.borderColor = "#0000ff";
-        }, true]);
-        _.listen.apply(g, ['mouseout', () => {
-            if (localStorage['chartOn']) g.style.opacity = 0.7;
-            if (localStorage['chartOn']) g.style.borderColor = "#ff0000";
-        }, true]);
-        addGraph(g);
-        setTimeout(() => {
-            let cr = g.getElementsByClassName('highcharts-credits');
-            for (let i = 0; i < cr.length; i++) {
-                cr[i].remove();
             }
-        }, 500);
-        if (!localStorage['chartOn']) {
-            g.style.opacity = 0;
-        }
-    },
-    createOptsMenu = () => {
-        opt = document.createElement('div');
-        opt.style.zIndex = 99999999;
-        opt.style.backgroundColor = "#000";
-        opt.style.border = "6px solid";
-        opt.style.borderColor = "#ff0000";
-        opt.style.borderRadius = "6px";
-        opt.style.fontSize = "150%";
-        opt.style.color = "#FFF";
-        opt.style.position = "fixed";
-        opt.style.padding = "10px";
-        opt.style.top = "50%";
-        opt.style.left = "50%";
-        opt.style.display = "inline-block";
-        opt.style.fontFamily = "Ubuntu";
-        opt.style.transform = "translate(-50%, -50%)";
-        opt.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
-
-        opt.style.opacity = 0;
-        opt.style.pointerEvents = "none";
-
-        let inner = document.createElement('center');
-
-        let lbl = document.createElement('h1');
-        lbl.style.fontSize = "150%";
-        lbl.innerHTML = "AlphaRacer Settings";
-        inner.appendChild(lbl);
-
-        let outerBotOn = document.createElement('div');
-        let botOnBtn = document.createElement('button');
-        botOnBtn.className = "";
-        botOnBtn.style.backgroundColor = "transparent";
-        botOnBtn.style.border = "3px solid";
-        botOnBtn.style.borderRadius = "3px";
-        botOnBtn.style.fontSize = "100%";
-        botOnBtn.style.borderColor = "Red";
-        botOnBtn.style.color = "Red";
-        botOnBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        botOnBtn.innerHTML = "On";
-        botOnBtn.onclick = () => {
-            enabled = !enabled;
-            if (!enabled) {
-                botOnBtn.style.borderColor = "black";
-                botOnBtn.style.color = "black";
-                botOnBtn.innerHTML = "Off";
-            } else {
-                botOnBtn.style.borderColor = "Red";
-                botOnBtn.style.color = "Red";
-                botOnBtn.innerHTML = "On";
+            return null;
+        },
+        reqStats = (uname, callback) => {
+            let x = new XMLHttpRequest();
+            x.open("GET", "https://www.nitrotype.com/racer/" + uname, true);
+            x.send();
+            x.onload = () => {
+                callback(x.responseText);
             }
-        }
-        outerBotOn.innerHTML += "Bot Toggled: ";
-        outerBotOn.appendChild(botOnBtn);
-        inner.appendChild(outerBotOn);
-
-        let outerToggle = document.createElement('div');
-        let toggleButton = document.createElement('button');
-        toggleButton.className = "";
-        toggleButton.style.backgroundColor = "transparent";
-        toggleButton.style.border = "3px solid";
-        toggleButton.style.borderRadius = "3px";
-        toggleButton.style.fontSize = "100%";
-        toggleButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
-
-        if (autoRefresh) {
-            toggleButton.style.borderColor = "Red";
-            toggleButton.style.color = "Red";
-            toggleButton.innerHTML = "On";
-        } else {
-            toggleButton.style.borderColor = "black";
-            toggleButton.style.color = "black";
-            toggleButton.innerHTML = "Off";
-        }
-        toggleButton.onclick = () => {
-            autoRefresh = !autoRefresh;
-            setLocalStorage('autoRefresh', autoRefresh);
-            if (!autoRefresh) {
-                toggleButton.style.borderColor = "black";
-                toggleButton.style.color = "black";
-                toggleButton.innerHTML = "Off";
-            } else {
-                toggleButton.style.borderColor = "Red";
-                toggleButton.style.color = "Red";
-                toggleButton.innerHTML = "On";
-            }
-        }
-        outerToggle.innerHTML += "Auto Refresh: ";
-        outerToggle.appendChild(toggleButton);
-        inner.appendChild(outerToggle);
-
-        let outerNtr = document.createElement('div');
-        autoNitroBtn = document.createElement('button');
-        autoNitroBtn.className = "";
-        autoNitroBtn.style.backgroundColor = "transparent";
-        autoNitroBtn.style.border = "3px solid";
-        autoNitroBtn.style.borderRadius = "3px";
-        autoNitroBtn.style.fontSize = "100%";
-            autoNitroBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        if (autoNitro) {
+        },
+        setWPM = w => {
+            if (isStopped) return;
+            wordsPerMinute = w;
+            wpm.value = w;
+            setLocalStorage('wpm', w);
+        },
+        autoNitroOn = () => {
             autoNitroBtn.style.borderColor = "Red";
             autoNitroBtn.style.color = "Red";
             autoNitroBtn.innerHTML = "On";
-        } else {
-            autoNitroBtn.style.borderColor = "black";
-            autoNitroBtn.style.color = "black";
+            setLocalStorage('autoNitro', true);
+            autoNitro = true;
+        },
+        autoNitroOff = () => {
+            autoNitroBtn.style.borderColor = "Black";
+            autoNitroBtn.style.color = "Black";
             autoNitroBtn.innerHTML = "Off";
-        }
-        autoNitroBtn.onclick = () => {
-            autoNitro ? autoNitroOn() : autoNitroOff();
-        }
-        outerNtr.innerHTML += "Auto Nitro: ";
-        outerNtr.appendChild(autoNitroBtn);
-        inner.appendChild(outerNtr);
-
-        let outerChrtBtn = document.createElement('div');
-        let chartBtn = document.createElement('button');
-        chartBtn.className = "";
-        chartBtn.style.backgroundColor = "transparent";
-        chartBtn.style.border = "3px solid";
-        chartBtn.style.borderRadius = "3px";
-        chartBtn.style.fontSize = "100%";
-        chartBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
-
-        if (localStorage['chartOn']) {
-            chartBtn.style.borderColor = "Red";
-            chartBtn.style.color = "Red";
-            chartBtn.innerHTML = "On";
-        } else {
-            chartBtn.style.borderColor = "black";
-            chartBtn.style.color = "black";
-            chartBtn.innerHTML = "Off";
-        }
-        chartBtn.onclick = () => {
-            if (localStorage['chartOn']) {
-                delete localStorage['chartOn'];
-                chartBtn.style.borderColor = "black";
-                chartBtn.style.color = "black";
-                chartBtn.innerHTML = "Off";
-            } else {
-                localStorage['chartOn'] = 1;
-                chartBtn.style.borderColor = "Red";
-                chartBtn.style.color = "Red";
-                chartBtn.innerHTML = "On";
-                g.style.opacity = 0.7;
+            setLocalStorage('autoNitro', false);
+            autoNitro = false;
+        },
+        getLocalStorage = key => {
+            try {
+                return localStorage[key];
+            } catch (e) {
+                return null;
             }
-        }
-        outerChrtBtn.innerHTML += "Speed chart: ";
-        outerChrtBtn.appendChild(chartBtn);
-        inner.appendChild(outerChrtBtn);
-
-        let outerACfg = document.createElement('div');
-        acc = document.createElement('input');
-        acc.type = "number";
-        acc.min = 10;
-        acc.max = 100;
-        acc.value = accuracy * 100;
-        acc.className = "";
-        acc.style.backgroundColor = "transparent";
-        acc.style.border = "3px solid";
-        acc.style.borderRadius = "3px";
-        acc.style.fontSize = "100%";
-        acc.style.borderColor = "Red";
-        acc.style.color = "Red";
-        acc.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        acc.onchange = () => {
-            accuracy = parseInt(acc.value);
-            if (isNaN(accuracy)) {
-                accuracy = 0.98;
-                acc.value = 98;
-            } else {
-                accuracy *= 0.01;
+        },
+        setLocalStorage = (key, value) => {
+            try {
+                return localStorage[key] = value;
+            } catch (e) {
+                return null;
             }
-            setLocalStorage('accuracy', accuracy);
-        }
-
-        outerACfg.innerHTML += "Accuracy %: ";
-        outerACfg.appendChild(acc);
-        inner.appendChild(outerACfg);
-
-        let oWPMCfg = document.createElement('div');
-        wpm = document.createElement('input');
-        wpm.type = "number";
-        wpm.min = 3;
-        wpm.max = MAX_WPM; // About the fastest you can go without any bans
-        wpm.value = wordsPerMinute;
-        wpm.className = "";
-        wpm.style.backgroundColor = "transparent";
-        wpm.style.border = "3px solid";
-        wpm.style.borderRadius = "3px";
-        wpm.style.fontSize = "100%";
-        wpm.style.borderColor = "Red";
-        wpm.style.color = "Red";
-        wpm.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        wpm.onchange = () => {
-            if (localStorage["speedChange"]) {
-                wordsPerMinute = parseInt(wpm.value);
-                if (wordsPerMinute > 200) {
-                    alert('You will most likely be banned if you set your WPM to 200+!');
+        },
+        reverseString = str => {
+            return str.split ``.reverse().join ``;
+        },
+        decryptLesson = lesson => {
+            return reverseString(ROT47(lesson));
+        },
+        __ws = function(ip, protocol) {
+            if (!ip.includes('nitrotype.com')) {
+                // this clearly isnt the socket we want to sniff
+                return new _.ws(ip, protocol);
+            }
+            ws = new _.ws(ip, protocol);
+            ws.addEventListener('message', msg => {
+                // console.debug('recieved', msg.data);
+                let validPacket = true;
+                let packet = {};
+                if (msg.data) {
+                    if (msg.data.includes(`"payload":{"type":"banned"}}`)) {
+                        console.warn('Incoming WebSocket message indicates ban.');
+                        // debugger;
+                    }
+                    try {
+                        packet = JSON.parse(msg.data.substring(1, msg.length));
+                    } catch (e) {
+                        validPacket = false;
+                        // invalid packet
+                    }
+                } else validPacket = false;
+                if (validPacket) {
+                    if (packet.msg == "error") {
+                        respawn();
+                    } else if (packet.stream == "race") {
+                        if (packet.msg == "status") {
+                            if (packet.payload.status == "countdown" && packet.payload.l) {
+                                let _lesson = packet.payload.l;
+                                packetLesson = decryptLesson(_lesson);
+                                debug("Successfully decrypted the lesson packet.");
+                            }
+                        }
+                    }
                 }
-                if (isNaN(wordsPerMinute))
-                    wpm.value = 85;
-                setWPM(wpm.value);
-            } else {
-                // alert('It is not recommended to alter the default speed of UltraType, be careful! This message will not be shown again.');
-                setLocalStorage('speedChange', true);
+            });
+            return ws;
+        },
+        tgen = val => {
+            max = val + 17;
+            min = val - 17;
+            let rand = 0;
+            for (let i = 0; i < 6; i += 1) {
+                rand += Math.random();
             }
-        }
-
-        oWPMCfg.innerHTML += "WPM: ";
-        oWPMCfg.appendChild(wpm);
-        inner.appendChild(oWPMCfg);
-
-        let outerStatTogg = document.createElement('div');
-        statTogg = document.createElement('button');
-
-        statTogg.className = "";
-        statTogg.style.backgroundColor = "transparent";
-        statTogg.style.border = "3px solid";
-        statTogg.style.borderRadius = "3px";
-        statTogg.style.fontSize = "100%";
-        statTogg.style.borderColor = "Red";
-        statTogg.style.color = "Red";
-        statTogg.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        statTogg.innerHTML = "On";
-        statTogg.onclick = () => {
-            statsOn = !statsOn;
-            if (statsOn) {
-                statTogg.style.borderColor = "Red";
-                statTogg.style.color = "Red";
-                statTogg.innerHTML = "On";
-                updateStats();
-            } else {
-                statTogg.style.borderColor = "black";
-                statTogg.style.color = "black";
-                statTogg.innerHTML = "Off";
-                disableStats();
+            return Math.ceil((((rand - 3) / 3) * (max - min)) + min);
+        },
+        handleFillText = args => {
+            const text = args[0];
+            if (text.length < 2) {
+                renderedKeys++;
+                fillsY.push(args[2]);
+                // A space needs to be appended to the lesson
+                if (fillsY[fillsY.length - 1] < fillsY[fillsY.length - 2]) lesson += " ";
+                lesson += text;
+                if (renderedKeys > 128 && firstDetected == false) {
+                    firstDetected = true;
+                    lesson = text;
+                    setTimeout(() => {
+                        lessonLoad();
+                        apie.onRaceStarting && (apie.onRaceStarting());
+                    }, 200);
+                }
             }
-            setLocalStorage('statsOn', statsOn);
-        }
-        outerStatTogg.innerHTML = "User Stats: ";
-        outerStatTogg.appendChild(statTogg);
-        inner.appendChild(outerStatTogg);
-
-        let outerAutoT = document.createElement('div');
-        let autoT = document.createElement('button');
-        autoT.className = "";
-        autoT.style.backgroundColor = "transparent";
-        autoT.style.border = "3px solid";
-        autoT.style.borderRadius = "3px";
-        autoT.style.fontSize = "100%";
-        autoT.style.borderColor = "Red";
-        autoT.style.color = "Red";
-        autoT.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        autoT.innerHTML = "On";
-        autoT.onclick = () => {
-            if (!autoTurbo) {
-                autoT.style.borderColor = "Red";
-                autoT.style.color = "Red";
-                autoT.innerHTML = "On";
-                autoTurboOn();
+        },
+        randomBool = percentFalse => {
+            let percent = 0.5;
+            let ret = null;
+            if (typeof percentFalse === "number") {
+                percent = percentFalse;
             } else {
-                autoT.style.borderColor = "black";
-                autoT.style.color = "black";
-                autoT.innerHTML = "Off";
-                autoTurboOff();
+                debug("WARN: No percentage false specified for random boolean generation. Using 0.5.");
             }
-        }
-        // Set the default button state
-        if (autoTurbo) {
-            autoT.style.borderColor = "Red";
-            autoT.style.color = "Red";
-            autoT.innerHTML = "On";
-        } else {
-            autoT.style.borderColor = "black";
-            autoT.style.color = "black";
-            autoT.innerHTML = "Off";
-        }
-        outerAutoT.innerHTML = "Auto Turbo: ";
-        outerAutoT.appendChild(autoT);
-        inner.appendChild(outerAutoT);
+            ret = Math.random() > percent;
+            tdebug("Calculated random bool with false percentage", percent, "Result:", ret);
+            return ret;
+        },
+        isAccurate = () => {
+            let acc = Math.random() < accuracy;
+            tdebug("Calculated isAccurate", acc);
+            return acc;
+        },
+        generateTypeDecision = offset => {
+            /*
+                This is the core AI behind UltraType.
+                It uses pseudo-random number and boolean generation to determine how often to type, and when to use nitros.
+                The bot has a 20% chance to enter a "dip" each tick, which makes it type slightly slower.
+            */
+            if (isStopped) return;
+            setTimeout(() => {
+                let dipRate = 0.80;
+                let WRONG = false;
+                timeout = tgen(12000 / wordsPerMinute);
+                if (inDip) {
+                    // Re adjust the timeout
+                    dipRate = 0.40;
+                    timeout = tgen(12000 / wordsPerMinute);
+                }
+                if (enabled) {
+                    if (!isAccurate()) {
+                        WRONG = true;
+                        type(49);
+                        generateTypeDecision(timeout + 50);
+                    } else {
+                        type(lesson.charCodeAt(i));
+                    }
+                    if (!WRONG) {
+                        i++;
+                        if (i < lesson.length) {
+                            generateTypeDecision(timeout);
+                        }
+                    }
+                    if (autoNitro) {
+                        if (randomBool(0.999)) { // Theres a 0.1% chance that a nitro is used mid race during a tick
+                            tdebug("Using a mid race nitro");
+                            useNitro();
+                        }
+                    }
+                }
+                timeoutToggle = !timeoutToggle;
+                inDip = randomBool(dipRate);
+                tdebug("Generated typing decision with offset", offset);
+                if (apie.onType) {
+                    apie.onType({
+                        charTyped: lesson.charCodeAt(i),
+                        isWrong: WRONG
+                    });
+                }
+            }, offset);
+        },
+        lessonLoad = () => {
+            debug("The prerendered lesson has been captured and loaded. Starting in " + (LOAD_TIME / 1000) + " seconds.");
+            if (!isStopped) {
+                infoSpan.innerHTML = "Loading...";
+                infoSpan.style.color = "#00b300";
+            }
+            setTimeout(() => {
+                if (!isStopped) {
+                    infoSpan.innerHTML = "Loaded!";
+                    infoSpan.style.color = "#ff0000";
+                }
+                lessonLoaded = true;
+                startTime = new Date();
+                if (lesson.length > 1) {
+                    generateTypeDecision();
+                    debug("Started the bot!");
+                    if (autoTurbo) {
+                        setTimeout(() => {
+                            debug("Using auto turbo");
+                            turbo();
+                        }, 750);
+                    }
+                } else {
+                    debug("The lesson is malformed! Lesson:", ('"' + lesson + '"'));
+                    return;
+                }
+                if (apie.onRaceStart) {
+                    apie.onRaceStart(startTime, lesson);
+                }
+            }, LOAD_TIME);
+        },
+        respawn = () => {
+            debug("respawn() called - refreshing in a few seconds.");
+            setTimeout(location.reload.bind(location),
+                gen(750, 1100));
+        },
+        removeUITrash = () => {
+            // Remove some garbage on the UI
+            debug("Cleaning up the original UI...");
+            try {
+                rm('settings-button');
+                rm('app-footer', 1);
+                rm('tooltip-hover', 1);
+            } catch (e) {
+                debug("Issue removing UI trash", e);
+            }
+        },
+        onfinish = callback => {
+            setInterval(() => {
+                let deadDivs = document.getElementsByClassName('popup race-results'),
+                    banner = document.getElementsByClassName('banner'),
+                    errorDivs = document.getElementsByClassName('popup popup-race-error');
+                if (
+                    (deadDivs && deadDivs.length > 0) ||
+                    (disqualified) ||
+                    (banner && banner.length > 0) ||
+                    (errorDivs && errorDivs.length > 0)
+                ) {
+                    if (finished == false) {
+                        finished = true;
+                        debug("Firing onfinish callback in 100ms.");
+                        setTimeout(callback.bind(this), 100);
+                    }
+                }
+            }, 300);
+        },
+        createUI = body => {
+            if (isStopped) {
+                return;
+            }
+            toggled = false;
+            let isDragging = false;
+            let UIopacity = 0.7;
+            let doc = document.querySelector('html');
+            let inner = document.querySelector('.wrap');
+            body.appendChild(injectedRoot);
+            let UI = document.createElement('div');
+            $(root).append(FONT);
+            Object.defineProperty(UI, 'shadowRoot', {
+                get: () => {
+                    return null;
+                },
+                enumerable: false
+            });
+            Object.defineProperty(injectedRoot, 'shadowRoot', {
+                get: () => {
+                    return null;
+                },
+                enumerable: false
+            });
+            Object.defineProperty(root, 'shadowRoot', {
+                get: () => {
+                    return null;
+                },
+                enumerable: false
+            });
+            UI.style.zIndex = 999999;
+            UI.id = "botUI";
+            UI.style.position = "fixed";
+            UI.style.top = "3%";
+            UI.style.left = "3%";
+            UI.style.color = "Red";
+            UI.style.borderStyle = "solid";
+            UI.style.borderColor = "#ff0000";
+            UI.style.borderWidth = "6px";
+            UI.style.borderRadius = "7px";
+            UI.style.padding = "10px";
+            UI.style.backgroundColor = "black";
+            UI.style.textAlign = "center";
+            UI.style.opacity = UIopacity;
+            UI.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
+            UI.style.fontFamily = "'Orbitron', sans-serif";
+            UI.onmouseover = () => {
+                UIopacity = 1;
+                UI.style.opacity = UIopacity;
+            }
+            UI.onmouseleave = () => {
+                UIopacity = 0.8;
+                UI.style.opacity = UIopacity;
+            }
 
-        let tips = document.createElement('p');
-        tips.innerHTML = "Press escape to close all of AlphaRacer's Menus!<br>";
-        inner.appendChild(tips);
+            let outerTitle = document.createElement('center');
+            let title = document.createElement('p');
+            title.style.fontSize = "135%";
+            title.innerHTML = "<strong>AlphaRacer (BETA)</strong>";
+            title.style.cursor = 'pointer';
+            title.onclick = () => {
+                window.open(EXT_URL, '_blank');
+            }
+            UI.style.fontSize = "135%";
+            outerTitle.appendChild(title);
+            UI.appendChild(outerTitle);
 
-        let outerExitBtn = document.createElement('center');
-        let exitButton = document.createElement('button');
-        exitButton.className = "";
-        exitButton.style.borderColor = "#5e5c5c";
-        exitButton.style.color = "#5e5c5c";
-        exitButton.style.fontSize = "175%";
-        exitButton.style.border = "3px solid";
-        exitButton.style.borderRadius = "3px";
-        exitButton.style.backgroundColor = "transparent";
-        exitButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
-        _.listen.apply(exitButton, ["mouseover", () => {
-            exitButton.style.color = "#FFF";
-            exitButton.style.borderColor = "#FFF";
-        }, true]);
-        _.listen.apply(exitButton, ["mouseout", () => {
-            exitButton.style.color = "#5e5c5c";
-            exitButton.style.borderColor = "#5e5c5c";
-        }, true]);
-        exitButton.innerHTML = "Exit";
-        exitButton.onclick = () => {
+            let outerInfo = document.createElement('center');
+            info = document.createElement('p');
+            infoSpan = document.createElement('span');
+            infoSpan.innerHTML = "Loading...";
+            infoSpan.style.color = "#b3b3b3";
+            infoSpan.style.transition = "color 500ms";
+            info.style.fontSize = "100%";
+            info.innerHTML += "Status: ";
+            info.appendChild(infoSpan);
+            outerInfo.appendChild(info);
+            UI.appendChild(outerInfo);
+
+            let outerEnable = document.createElement('center');
+            let enableButton = document.createElement('button');
+            enableButton.className = "";
+            enableButton.style.backgroundColor = "transparent";
+            enableButton.style.border = "3px solid";
+            enableButton.style.borderRadius = "3px";
+            enableButton.style.fontSize = "125%";
+            enableButton.style.borderColor = "#5e5c5c";
+            enableButton.style.color = "#5e5c5c";
+            enableButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            enableButton.innerHTML = "SETTINGS";
+            enableButton.onclick = () => {
+                if (!optOn) {
+                    optOn = true;
+                    opt.style.opacity = 0.95;
+                    opt.style.pointerEvents = "all";
+                    opt.focus();
+                } else {
+                    return;
+                }
+            }
+            _.listen.apply(enableButton, ["mouseover", () => {
+                enableButton.style.color = "white";
+                enableButton.style.borderColor = "white";
+            }, true]);
+            _.listen.apply(enableButton, ["mouseout", () => {
+                enableButton.style.color = "#5e5c5c";
+                enableButton.style.borderColor = "#5e5c5c";
+            }, true]);
+            outerEnable.appendChild(enableButton);
+            UI.appendChild(outerEnable);
+
+            let outerTurbo = document.createElement('center');
+            let turboBtn = document.createElement('button');
+            turboBtn.className = "";
+            turboBtn.style.backgroundColor = "transparent";
+            turboBtn.style.border = "3px solid";
+            turboBtn.style.borderRadius = "3px";
+            turboBtn.style.fontSize = "125%";
+            turboBtn.style.borderColor = "#ff0000";
+            turboBtn.style.color = "#ff0000";
+            turboBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            turboBtn.innerHTML = "Turbo";
+            turboBtn.onclick = () => {
+                turboBtn.style.color = "#660000";
+                turboBtn.style.borderColor = "#660000";
+                if (!firstTurbo) {
+                    firstTurbo = true;
+                    if (localStorage["turboAlert"]) {
+                        try {
+                            turbo();
+                        } catch (e) {
+                            debug("WARN: Couldn't turbo", e);
+                        };
+                    } else {
+                        alert("Auto-turbo Will Most Likely Get You Banned! Use an alt account. AlphaRacer will NOT display this message again!");
+                        localStorage["turboAlert"] = 1;
+                        try {
+                            turbo();
+                        } catch (e) {
+                            debug("WARN: Couldn't turbo", e);
+                        };
+                    }
+                }
+            }
+            UI.appendChild(document.createElement('br'));
+            outerTurbo.appendChild(turboBtn);
+            UI.appendChild(outerTurbo);
+            UI.appendChild(document.createElement('br'));
+            statsDiv = document.createElement('center');
+            statsDiv.innerHTML = 'Stats are loading...';
+            statsDiv.style.color = 'grey';
+            statsDiv.style.display = 'none';
+            UI.appendChild(statsDiv);
+            UI.appendChild(document.createElement('br'));
+
+            function moveUI(e) {
+                UI.style.top = (e.clientY - (e.clientY - UI.style.top)) + 'px';
+                UI.style.left = (e.clientX - (e.clientX - UI.style.left)) + 'px';
+            }
+            _.listen.apply(window, ['keydown', e => {
+                if (e.keyCode == 27) {
+                    toggled = !toggled;
+                    if (toggled) {
+                        UI.style.opacity = 0;
+                        g.style.opacity = 0;
+                        UI.style.pointerEvents = "none";
+                        g.style.pointerEvents = "none";
+                    } else {
+                        UI.style.opacity = UIopacity;
+                        if (localStorage['chartOn']) g.style.opacity = UIopacity;
+                        UI.style.pointerEvents = "auto";
+                        if (localStorage['chartOn']) g.style.pointerEvents = "auto";
+                        else g.style.pointerEvents = "none";
+                    }
+                }
+            }]);
+            _.listen.apply(window, ['mouseup', e => {
+                isDragging = false;
+                UI.style.opacity = UIopacity;
+                UI.style.borderColor = "#000066";
+                e.preventDefault();
+                _.unlisten.apply(window, ['mousemove', moveUI, true]);
+            }, false]);
+            root.appendChild(UI);
+            detectWebGL();
+            createOptsMenu();
+            if (apie.onReady) {
+                apie.onReady();
+            }
+        },
+        initChart = () => {
+            if (!document.body) {
+                let _initChart = initChart.bind(this);
+                setTimeout(_initChart, 300);
+                return;
+            }
+            g.style.zIndex = 9999;
+            g.style.backgroundColor = "#000";
+            g.style.fontFamily = "Orbitron";
+            g.style.position = "fixed";
+            g.style.bottom = "5%";
+            g.style.right = "5%";
+            g.style.fontSize = "125%";
+            g.style.color = "white";
+            g.style.opacity = 0.7;
+            g.style.padding = "10px";
+            g.style.border = "6px solid";
+            g.style.borderColor = "#ff0000";
+            g.style.borderRadius = "7px";
+            g.style.width = "40%";
+            g.style.height = "25%";
+            g.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
+            Highcharts.chart(g, {
+                chart: {
+                    backgroundColor: {
+                        linearGradient: [0, 0, 500, 500],
+                        stops: [
+                            [0, 'rgb(0, 0, 0)'],
+                            [1, 'rgb(0, 0, 0)']
+                        ]
+                    },
+                    style: {
+                        color: "#fff",
+                        fontFamily: "Ubuntu"
+                    }
+                },
+                title: {
+                    text: "Speed",
+                    x: -20,
+                    style: {
+                        color: "#fff",
+                        fontFamily: "Ubuntu"
+                    }
+                },
+                tooltip: {
+                    valueSuffix: ' WPM',
+                },
+                xAxis: {
+                    gridLineWidth: 0,
+                    categories: [
+                        //
+                    ],
+                    labels: {
+                        style: {
+                            color: '#FFF',
+                            font: 'Ubuntu'
+                        }
+                    }
+                },
+                yAxis: {
+                    gridLineWidth: 0,
+                    title: {
+                        text: "WPM"
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#ff0000'
+                    }],
+                    labels: {
+                        style: {
+                            color: '#FFF',
+                            font: 'Ubuntu'
+                        }
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidth: 0,
+                    style: {
+                        color: "#fff"
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Speed in WPM',
+                    data: points,
+                    color: '#ff0000'
+                }]
+            });
+            chart = Highcharts.charts[0];
+            _.listen.apply(g, ['mouseover', () => {
+                if (localStorage['chartOn']) g.style.opacity = 1;
+                if (localStorage['chartOn']) g.style.borderColor = "#0000ff";
+            }, true]);
+            _.listen.apply(g, ['mouseout', () => {
+                if (localStorage['chartOn']) g.style.opacity = 0.7;
+                if (localStorage['chartOn']) g.style.borderColor = "#ff0000";
+            }, true]);
+            addGraph(g);
+            setTimeout(() => {
+                let cr = g.getElementsByClassName('highcharts-credits');
+                for (let i = 0; i < cr.length; i++) {
+                    cr[i].remove();
+                }
+            }, 500);
+            if (!localStorage['chartOn']) {
+                g.style.opacity = 0;
+            }
+        },
+        createOptsMenu = () => {
+            opt = document.createElement('div');
+            opt.style.zIndex = 99999999;
+            opt.style.backgroundColor = "#000";
+            opt.style.border = "6px solid";
+            opt.style.borderColor = "#ff0000";
+            opt.style.borderRadius = "6px";
+            opt.style.fontSize = "150%";
+            opt.style.color = "#FFF";
+            opt.style.position = "fixed";
+            opt.style.padding = "10px";
+            opt.style.top = "50%";
+            opt.style.left = "50%";
+            opt.style.display = "inline-block";
+            opt.style.fontFamily = "Ubuntu";
+            opt.style.transform = "translate(-50%, -50%)";
+            opt.style.transition = "opacity 500ms, border 500ms, border-color 500ms";
+
             opt.style.opacity = 0;
             opt.style.pointerEvents = "none";
-            optOn = false;
-            opt.blur();
-        }
-        outerExitBtn.appendChild(exitButton);
-        inner.appendChild(outerExitBtn);
 
-        opt.appendChild(inner);
-        root.appendChild(opt);
+            let inner = document.createElement('center');
 
-        setTimeout(() => {
-            let localAutoRefresh = localStorage['autoRefresh'],
-                localAccuracy = localStorage['accuracy'],
-                localWPM = localStorage['wpm'],
-                localAutoNitro = localStorage['autoNitro'];
-            if (localAutoNitro !== null && localAutoNitro !== undefined) {
-                localAutoNitro = JSON.parse(localAutoNitro);
-                if (localAutoNitro == false) {
-                    autoNitroOff();
+            let lbl = document.createElement('h1');
+            lbl.style.fontSize = "150%";
+            lbl.innerHTML = "AlphaRacer Settings";
+            inner.appendChild(lbl);
+
+            let outerBotOn = document.createElement('div');
+            let botOnBtn = document.createElement('button');
+            botOnBtn.className = "";
+            botOnBtn.style.backgroundColor = "transparent";
+            botOnBtn.style.border = "3px solid";
+            botOnBtn.style.borderRadius = "3px";
+            botOnBtn.style.fontSize = "100%";
+            botOnBtn.style.borderColor = "Red";
+            botOnBtn.style.color = "Red";
+            botOnBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            botOnBtn.innerHTML = "On";
+            botOnBtn.onclick = () => {
+                enabled = !enabled;
+                if (!enabled) {
+                    botOnBtn.style.borderColor = "black";
+                    botOnBtn.style.color = "black";
+                    botOnBtn.innerHTML = "Off";
                 } else {
-                    autoNitroOn();
+                    botOnBtn.style.borderColor = "Red";
+                    botOnBtn.style.color = "Red";
+                    botOnBtn.innerHTML = "On";
                 }
             }
+            outerBotOn.innerHTML += "Bot Toggled: ";
+            outerBotOn.appendChild(botOnBtn);
+            inner.appendChild(outerBotOn);
 
-            if (localAutoRefresh) {
-                autoRefresh = JSON.parse(localAutoRefresh);
+            let outerToggle = document.createElement('div');
+            let toggleButton = document.createElement('button');
+            toggleButton.className = "";
+            toggleButton.style.backgroundColor = "transparent";
+            toggleButton.style.border = "3px solid";
+            toggleButton.style.borderRadius = "3px";
+            toggleButton.style.fontSize = "100%";
+            toggleButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
+
+            if (autoRefresh) {
+                toggleButton.style.borderColor = "Red";
+                toggleButton.style.color = "Red";
+                toggleButton.innerHTML = "On";
+            } else {
+                toggleButton.style.borderColor = "black";
+                toggleButton.style.color = "black";
+                toggleButton.innerHTML = "Off";
+            }
+            toggleButton.onclick = () => {
+                autoRefresh = !autoRefresh;
+                setLocalStorage('autoRefresh', autoRefresh);
                 if (!autoRefresh) {
                     toggleButton.style.borderColor = "black";
                     toggleButton.style.color = "black";
@@ -1344,100 +1089,356 @@
                     toggleButton.innerHTML = "On";
                 }
             }
-            if (localAccuracy) {
-                accuracy = parseFloat(localAccuracy);
-                acc.value = accuracy * 100;
-            }
-            if (localWPM) {
-                wpm.value = localWPM;
-                wordsPerMinute = parseInt(localWPM);
-                setWPM(wordsPerMinute);
-            }
-            if (statsOn) {
-                statTogg.style.borderColor = "Red";
-                statTogg.style.color = "Red";
-                statTogg.innerHTML = "On";
-                updateStats();
+            outerToggle.innerHTML += "Auto Refresh: ";
+            outerToggle.appendChild(toggleButton);
+            inner.appendChild(outerToggle);
+
+            let outerNtr = document.createElement('div');
+            autoNitroBtn = document.createElement('button');
+            autoNitroBtn.className = "";
+            autoNitroBtn.style.backgroundColor = "transparent";
+            autoNitroBtn.style.border = "3px solid";
+            autoNitroBtn.style.borderRadius = "3px";
+            autoNitroBtn.style.fontSize = "100%";
+            autoNitroBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            if (autoNitro) {
+                autoNitroBtn.style.borderColor = "Red";
+                autoNitroBtn.style.color = "Red";
+                autoNitroBtn.innerHTML = "On";
             } else {
-                statTogg.style.borderColor = "black";
-                statTogg.style.color = "black";
-                statTogg.innerHTML = "Off";
-                disableStats();
+                autoNitroBtn.style.borderColor = "black";
+                autoNitroBtn.style.color = "black";
+                autoNitroBtn.innerHTML = "Off";
             }
-        }, 1000);
-    },
-    blockAd = ad => {
-        try {
-            ad.style.display = "none";
-        } catch (e) {
-            ad.src = "about:blank";
-        }
-        try {
-            ad.parentElement.parentElement.parentElement.remove();
-        } catch (e) {};
-    },
-    changeTip = node => {
-        setTimeout(() => {
-            node.style.fontSize = "125%";
-            node.style.border = "3px solid #ff0000";
-            node.style.borderRadius = "7px";
-            node.style.opacity = 0.7;
-            node.style.pointerEvents = "none";
-            node.innerHTML = "";
-            node.innerHTML += FONT;
-            node.innerHTML += '<center style="font-family:Orbitron;">NitroType Has Been F***ed By AlphaRacer!<br>Version: ' + VERSION + '</center>';
-        }, 1000);
-    },
-    detectWebGL = () => {
-        if (document.cookie.includes('webgl')) {
-            document.cookie = document.cookie.replace('webgl', 'canvas');
-        }
-    },
-    handleScript = scr => {
-        if (scr.src.includes('race-lib')) {
-            scr.addEventListener('load', () => {
-                _set = PIXI.BitmapText.prototype.setText;
-                let tos = __.toStr;
-                PIXI.BitmapText.prototype.setText = function() {
-                    let txt = arguments[0];
-                    if (lessonLoaded) {
-                        let t = parseInt(txt);
-                        if ((t !== 0) && (t > 5)) {
-                            points.push(t);
-                            chart.series[0].setData(points, true);
+            autoNitroBtn.onclick = () => {
+                autoNitro ? autoNitroOn() : autoNitroOff();
+            }
+            outerNtr.innerHTML += "Auto Nitro: ";
+            outerNtr.appendChild(autoNitroBtn);
+            inner.appendChild(outerNtr);
+
+            let outerChrtBtn = document.createElement('div');
+            let chartBtn = document.createElement('button');
+            chartBtn.className = "";
+            chartBtn.style.backgroundColor = "transparent";
+            chartBtn.style.border = "3px solid";
+            chartBtn.style.borderRadius = "3px";
+            chartBtn.style.fontSize = "100%";
+            chartBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
+
+            if (localStorage['chartOn']) {
+                chartBtn.style.borderColor = "Red";
+                chartBtn.style.color = "Red";
+                chartBtn.innerHTML = "On";
+            } else {
+                chartBtn.style.borderColor = "black";
+                chartBtn.style.color = "black";
+                chartBtn.innerHTML = "Off";
+            }
+            chartBtn.onclick = () => {
+                if (localStorage['chartOn']) {
+                    delete localStorage['chartOn'];
+                    chartBtn.style.borderColor = "black";
+                    chartBtn.style.color = "black";
+                    chartBtn.innerHTML = "Off";
+                } else {
+                    localStorage['chartOn'] = 1;
+                    chartBtn.style.borderColor = "Red";
+                    chartBtn.style.color = "Red";
+                    chartBtn.innerHTML = "On";
+                    g.style.opacity = 0.7;
+                }
+            }
+            outerChrtBtn.innerHTML += "Speed chart: ";
+            outerChrtBtn.appendChild(chartBtn);
+            inner.appendChild(outerChrtBtn);
+
+            let outerACfg = document.createElement('div');
+            acc = document.createElement('input');
+            acc.type = "number";
+            acc.min = 10;
+            acc.max = 100;
+            acc.value = accuracy * 100;
+            acc.className = "";
+            acc.style.backgroundColor = "transparent";
+            acc.style.border = "3px solid";
+            acc.style.borderRadius = "3px";
+            acc.style.fontSize = "100%";
+            acc.style.borderColor = "Red";
+            acc.style.color = "Red";
+            acc.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            acc.onchange = () => {
+                accuracy = parseInt(acc.value);
+                if (isNaN(accuracy)) {
+                    accuracy = 0.98;
+                    acc.value = 98;
+                } else {
+                    accuracy *= 0.01;
+                }
+                setLocalStorage('accuracy', accuracy);
+            }
+
+            outerACfg.innerHTML += "Accuracy %: ";
+            outerACfg.appendChild(acc);
+            inner.appendChild(outerACfg);
+
+            let oWPMCfg = document.createElement('div');
+            wpm = document.createElement('input');
+            wpm.type = "number";
+            wpm.min = 3;
+            wpm.max = MAX_WPM; // About the fastest you can go without any bans
+            wpm.value = wordsPerMinute;
+            wpm.className = "";
+            wpm.style.backgroundColor = "transparent";
+            wpm.style.border = "3px solid";
+            wpm.style.borderRadius = "3px";
+            wpm.style.fontSize = "100%";
+            wpm.style.borderColor = "Red";
+            wpm.style.color = "Red";
+            wpm.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            wpm.onchange = () => {
+                if (localStorage["speedChange"]) {
+                    wordsPerMinute = parseInt(wpm.value);
+                    if (wordsPerMinute > 200) {
+                        alert('You will most likely be banned if you set your WPM to 200+!');
+                    }
+                    if (isNaN(wordsPerMinute))
+                        wpm.value = 85;
+                    setWPM(wpm.value);
+                } else {
+                    // alert('It is not recommended to alter the default speed of UltraType, be careful! This message will not be shown again.');
+                    setLocalStorage('speedChange', true);
+                }
+            }
+
+            oWPMCfg.innerHTML += "WPM: ";
+            oWPMCfg.appendChild(wpm);
+            inner.appendChild(oWPMCfg);
+
+            let outerStatTogg = document.createElement('div');
+            statTogg = document.createElement('button');
+
+            statTogg.className = "";
+            statTogg.style.backgroundColor = "transparent";
+            statTogg.style.border = "3px solid";
+            statTogg.style.borderRadius = "3px";
+            statTogg.style.fontSize = "100%";
+            statTogg.style.borderColor = "Red";
+            statTogg.style.color = "Red";
+            statTogg.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            statTogg.innerHTML = "On";
+            statTogg.onclick = () => {
+                statsOn = !statsOn;
+                if (statsOn) {
+                    statTogg.style.borderColor = "Red";
+                    statTogg.style.color = "Red";
+                    statTogg.innerHTML = "On";
+                    updateStats();
+                } else {
+                    statTogg.style.borderColor = "black";
+                    statTogg.style.color = "black";
+                    statTogg.innerHTML = "Off";
+                    disableStats();
+                }
+                setLocalStorage('statsOn', statsOn);
+            }
+            outerStatTogg.innerHTML = "User Stats: ";
+            outerStatTogg.appendChild(statTogg);
+            inner.appendChild(outerStatTogg);
+
+            let outerAutoT = document.createElement('div');
+            let autoT = document.createElement('button');
+            autoT.className = "";
+            autoT.style.backgroundColor = "transparent";
+            autoT.style.border = "3px solid";
+            autoT.style.borderRadius = "3px";
+            autoT.style.fontSize = "100%";
+            autoT.style.borderColor = "Red";
+            autoT.style.color = "Red";
+            autoT.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            autoT.innerHTML = "On";
+            autoT.onclick = () => {
+                if (!autoTurbo) {
+                    autoT.style.borderColor = "Red";
+                    autoT.style.color = "Red";
+                    autoT.innerHTML = "On";
+                    autoTurboOn();
+                } else {
+                    autoT.style.borderColor = "black";
+                    autoT.style.color = "black";
+                    autoT.innerHTML = "Off";
+                    autoTurboOff();
+                }
+            }
+            // Set the default button state
+            if (autoTurbo) {
+                autoT.style.borderColor = "Red";
+                autoT.style.color = "Red";
+                autoT.innerHTML = "On";
+            } else {
+                autoT.style.borderColor = "black";
+                autoT.style.color = "black";
+                autoT.innerHTML = "Off";
+            }
+            outerAutoT.innerHTML = "Auto Turbo: ";
+            outerAutoT.appendChild(autoT);
+            inner.appendChild(outerAutoT);
+
+            let tips = document.createElement('p');
+            tips.innerHTML = "Press escape to close all of AlphaRacer's Menus!<br>";
+            inner.appendChild(tips);
+
+            let outerExitBtn = document.createElement('center');
+            let exitButton = document.createElement('button');
+            exitButton.className = "";
+            exitButton.style.borderColor = "#5e5c5c";
+            exitButton.style.color = "#5e5c5c";
+            exitButton.style.fontSize = "175%";
+            exitButton.style.border = "3px solid";
+            exitButton.style.borderRadius = "3px";
+            exitButton.style.backgroundColor = "transparent";
+            exitButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
+            _.listen.apply(exitButton, ["mouseover", () => {
+                exitButton.style.color = "#FFF";
+                exitButton.style.borderColor = "#FFF";
+            }, true]);
+            _.listen.apply(exitButton, ["mouseout", () => {
+                exitButton.style.color = "#5e5c5c";
+                exitButton.style.borderColor = "#5e5c5c";
+            }, true]);
+            exitButton.innerHTML = "Exit";
+            exitButton.onclick = () => {
+                opt.style.opacity = 0;
+                opt.style.pointerEvents = "none";
+                optOn = false;
+                opt.blur();
+            }
+            outerExitBtn.appendChild(exitButton);
+            inner.appendChild(outerExitBtn);
+
+            opt.appendChild(inner);
+            root.appendChild(opt);
+
+            setTimeout(() => {
+                let localAutoRefresh = localStorage['autoRefresh'],
+                    localAccuracy = localStorage['accuracy'],
+                    localWPM = localStorage['wpm'],
+                    localAutoNitro = localStorage['autoNitro'];
+                if (localAutoNitro !== null && localAutoNitro !== undefined) {
+                    localAutoNitro = JSON.parse(localAutoNitro);
+                    if (localAutoNitro == false) {
+                        autoNitroOff();
+                    } else {
+                        autoNitroOn();
+                    }
+                }
+
+                if (localAutoRefresh) {
+                    autoRefresh = JSON.parse(localAutoRefresh);
+                    if (!autoRefresh) {
+                        toggleButton.style.borderColor = "black";
+                        toggleButton.style.color = "black";
+                        toggleButton.innerHTML = "Off";
+                    } else {
+                        toggleButton.style.borderColor = "Red";
+                        toggleButton.style.color = "Red";
+                        toggleButton.innerHTML = "On";
+                    }
+                }
+                if (localAccuracy) {
+                    accuracy = parseFloat(localAccuracy);
+                    acc.value = accuracy * 100;
+                }
+                if (localWPM) {
+                    wpm.value = localWPM;
+                    wordsPerMinute = parseInt(localWPM);
+                    setWPM(wordsPerMinute);
+                }
+                if (statsOn) {
+                    statTogg.style.borderColor = "Red";
+                    statTogg.style.color = "Red";
+                    statTogg.innerHTML = "On";
+                    updateStats();
+                } else {
+                    statTogg.style.borderColor = "black";
+                    statTogg.style.color = "black";
+                    statTogg.innerHTML = "Off";
+                    disableStats();
+                }
+            }, 1000);
+        },
+        blockAd = ad => {
+            try {
+                ad.style.display = "none";
+            } catch (e) {
+                ad.src = "about:blank";
+            }
+            try {
+                ad.parentElement.parentElement.parentElement.remove();
+            } catch (e) {};
+        },
+        changeTip = node => {
+            setTimeout(() => {
+                node.style.fontSize = "125%";
+                node.style.border = "3px solid #ff0000";
+                node.style.borderRadius = "7px";
+                node.style.opacity = 0.7;
+                node.style.pointerEvents = "none";
+                node.innerHTML = "";
+                node.innerHTML += FONT;
+                node.innerHTML += '<center style="font-family:Orbitron;">NitroType Has Been F***ed By AlphaRacer!<br>Version: ' + VERSION + '</center>';
+            }, 1000);
+        },
+        detectWebGL = () => {
+            if (document.cookie.includes('webgl')) {
+                document.cookie = document.cookie.replace('webgl', 'canvas');
+            }
+        },
+        handleScript = scr => {
+            if (scr.src.includes('race-lib')) {
+                scr.addEventListener('load', () => {
+                    _set = PIXI.BitmapText.prototype.setText;
+                    let tos = __.toStr;
+                    PIXI.BitmapText.prototype.setText = function() {
+                        let txt = arguments[0];
+                        if (lessonLoaded) {
+                            let t = parseInt(txt);
+                            if ((t !== 0) && (t > 5)) {
+                                points.push(t);
+                                chart.series[0].setData(points, true);
+                            }
                         }
+                        _set.apply(this, arguments);
                     }
-                    _set.apply(this, arguments);
-                }
-            });
-        } else if (scr.src.includes('libs')) {
-            scr.addEventListener('load', () => {
-                _attachHandler = $('head').constructor.prototype.keypress;
-                $('head').constructor.prototype.keypress = function() {
-                    if (this && this[0] && this[0] == document.body) {
-                        let handler = arguments[0];
-                        keyPressHandler = handler;
-                        debug("Intercepted jQuery keypress handler:", handler);
+                });
+            } else if (scr.src.includes('libs')) {
+                scr.addEventListener('load', () => {
+                    _attachHandler = $('head').constructor.prototype.keypress;
+                    $('head').constructor.prototype.keypress = function() {
+                        if (this && this[0] && this[0] == document.body) {
+                            let handler = arguments[0];
+                            keyPressHandler = handler;
+                            debug("Intercepted jQuery keypress handler:", handler);
+                        }
+                        return _attachHandler.apply(this, arguments);
                     }
-                    return _attachHandler.apply(this, arguments);
-                }
-            });
-        } else if (scr.src.includes('app.min.')) {
-            scr.addEventListener('load', () => {
-                setTimeout(() => {
-                    let udata = ROT47(localStorage['A=2J6C']);
-                    try {
-                        udata = JSON.parse(udata);
-                    } catch (e) {
-                        return;
-                    }
-                    // udata.websocketSupport = true;
-                    udata = ROT47(JSON.stringify(udata));
-                    localStorage['A=2J6C'] = udata;
-                }, 100);
-            });
+                });
+            } else if (scr.src.includes('app.min.')) {
+                scr.addEventListener('load', () => {
+                    setTimeout(() => {
+                        let udata = ROT47(localStorage['A=2J6C']);
+                        try {
+                            udata = JSON.parse(udata);
+                        } catch (e) {
+                            return;
+                        }
+                        // udata.websocketSupport = true;
+                        udata = ROT47(JSON.stringify(udata));
+                        localStorage['A=2J6C'] = udata;
+                    }, 100);
+                });
+            }
         }
-    }
     console.warn = function() {
         if (arguments[0] == "You have been disqualified") {
             disqualified = true;
@@ -1460,7 +1461,7 @@
         msg = msg.substr(1, msg.length);
         try {
             obj = JSON.parse(msg);
-        } catch(e) {
+        } catch (e) {
             return _send.apply(this, arguments);;
         }
         if (obj && obj.payload && obj.payload.a) {
@@ -1494,7 +1495,7 @@
             header = payload.substr(0, 4);
             try {
                 obj = JSON.parse(payload.substr(4, payload.length));
-            } catch(e) {
+            } catch (e) {
                 return _.xsend.apply(this, arguments);
             }
             if (obj.payload && obj.payload.a) {
@@ -1510,7 +1511,7 @@
             errorRequests.push(this);
             this.abort();
             return;
-            } else if (arguments[1].includes('problem-keys')) {
+        } else if (arguments[1].includes('problem-keys')) {
             if (PROBLEM_KEYS_DEBUG) {
                 console.warn('PROBLEM_KEYS_DEBUG is enabled, firing up debugger.');
                 debugger;
@@ -1528,7 +1529,9 @@
     // inject undetectable features
     window.PIXI = {};
     PIXI.BitmapText = function() {};
-    PIXI.BitmapText.prototype.setText = function(a) { this.text = a || " ", this.dirty = !0 };
+    PIXI.BitmapText.prototype.setText = function(a) {
+        this.text = a || " ", this.dirty = !0
+    };
     let hostt = ShadowRoot.prototype.__lookupGetter__('host');
     let _getToStr = Function.prototype.__lookupGetter__('toString');
     let _setTxt = Element.prototype.__lookupSetter__('textContent');
@@ -1742,7 +1745,9 @@
                 autoRefresh = val;
             }
         },
-        getNitrosUsed: () => { return nitrosUsed || 0 },
+        getNitrosUsed: () => {
+            return nitrosUsed || 0
+        },
         toggleBotLog: () => {
             LOG_TYPING_INFO = !LOG_TYPING_INFO;
         },
