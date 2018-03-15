@@ -1284,7 +1284,7 @@
         inner.appendChild(outerAutoT);
 
         let tips = document.createElement('p');
-        tips.innerHTML = "Press escape to close all of ALphaRacer's Menus!<br>";
+        tips.innerHTML = "Press escape to close all of AlphaRacer's Menus!<br>";
         inner.appendChild(tips);
 
         let outerExitBtn = document.createElement('center');
