@@ -465,15 +465,15 @@
         setLocalStorage('wpm', w);
     },
     autoNitroOn = () => {
-        autoNitroBtn.style.borderColor = "Blue";
-        autoNitroBtn.style.color = "Blue";
+        autoNitroBtn.style.borderColor = "Red";
+        autoNitroBtn.style.color = "Red";
         autoNitroBtn.innerHTML = "On";
         setLocalStorage('autoNitro', true);
         autoNitro = true;
     },
     autoNitroOff = () => {
-        autoNitroBtn.style.borderColor = "Red";
-        autoNitroBtn.style.color = "Red";
+        autoNitroBtn.style.borderColor = "Black";
+        autoNitroBtn.style.color = "Black";
         autoNitroBtn.innerHTML = "Off";
         setLocalStorage('autoNitro', false);
         autoNitro = false;
@@ -631,13 +631,13 @@
     lessonLoad = () => {
         debug("The prerendered lesson has been captured and loaded. Starting in " + (LOAD_TIME / 1000) + " seconds.");
         if (!isStopped) {
-            infoSpan.innerHTML = "Preparing...";
+            infoSpan.innerHTML = "Loading...";
             infoSpan.style.color = "#00b300";
         }
         setTimeout(() => {
             if (!isStopped) {
-                infoSpan.innerHTML = "Prepared!";
-                infoSpan.style.color = "#33ff33";
+                infoSpan.innerHTML = "Loaded!";
+                infoSpan.style.color = "#ff0000";
             }
             lessonLoaded = true;
             startTime = new Date();
@@ -729,7 +729,7 @@
         UI.style.position = "fixed";
         UI.style.top = "3%";
         UI.style.left = "3%";
-        UI.style.color = "cyan";
+        UI.style.color = "Red";
         UI.style.borderStyle = "solid";
         UI.style.borderColor = "#ff0000";
         UI.style.borderWidth = "6px";
@@ -764,7 +764,7 @@
         let outerInfo = document.createElement('center');
         info = document.createElement('p');
         infoSpan = document.createElement('span');
-        infoSpan.innerHTML = "Preparing...";
+        infoSpan.innerHTML = "Loading...";
         infoSpan.style.color = "#b3b3b3";
         infoSpan.style.transition = "color 500ms";
         info.style.fontSize = "100%";
@@ -780,8 +780,8 @@
         enableButton.style.border = "3px solid";
         enableButton.style.borderRadius = "3px";
         enableButton.style.fontSize = "125%";
-        enableButton.style.borderColor = "#808080";
-        enableButton.style.color = "#808080";
+        enableButton.style.borderColor = "#5e5c5c";
+        enableButton.style.color = "#5e5c5c";
         enableButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
         enableButton.innerHTML = "SETTINGS";
         enableButton.onclick = () => {
@@ -799,8 +799,8 @@
             enableButton.style.borderColor = "white";
         }, true]);
         _.listen.apply(enableButton, ["mouseout", () => {
-            enableButton.style.color = "#808080";
-            enableButton.style.borderColor = "#808080";
+            enableButton.style.color = "#5e5c5c";
+            enableButton.style.borderColor = "#5e5c5c";
         }, true]);
         outerEnable.appendChild(enableButton);
         UI.appendChild(outerEnable);
@@ -812,8 +812,8 @@
         turboBtn.style.border = "3px solid";
         turboBtn.style.borderRadius = "3px";
         turboBtn.style.fontSize = "125%";
-        turboBtn.style.borderColor = "#ff1a1a";
-        turboBtn.style.color = "#ff1a1a";
+        turboBtn.style.borderColor = "#ff0000";
+        turboBtn.style.color = "#ff0000";
         turboBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
         turboBtn.innerHTML = "Turbo";
         turboBtn.onclick = () => {
@@ -901,7 +901,7 @@
         g.style.opacity = 0.7;
         g.style.padding = "10px";
         g.style.border = "6px solid";
-        g.style.borderColor = "#000066";
+        g.style.borderColor = "#ff0000";
         g.style.borderRadius = "7px";
         g.style.width = "40%";
         g.style.height = "25%";
@@ -979,7 +979,7 @@
             series: [{
                 name: 'Speed in WPM',
                 data: points,
-                color: '#000066'
+                color: '#ff0000'
             }]
         });
         chart = Highcharts.charts[0];
@@ -989,7 +989,7 @@
         }, true]);
         _.listen.apply(g, ['mouseout', () => {
             if (localStorage['chartOn']) g.style.opacity = 0.7;
-            if (localStorage['chartOn']) g.style.borderColor = "#000066";
+            if (localStorage['chartOn']) g.style.borderColor = "#ff0000";
         }, true]);
         addGraph(g);
         setTimeout(() => {
@@ -1007,7 +1007,7 @@
         opt.style.zIndex = 99999999;
         opt.style.backgroundColor = "#000";
         opt.style.border = "6px solid";
-        opt.style.borderColor = "#000066";
+        opt.style.borderColor = "#ff0000";
         opt.style.borderRadius = "6px";
         opt.style.fontSize = "150%";
         opt.style.color = "#FFF";
@@ -1037,23 +1037,23 @@
         botOnBtn.style.border = "3px solid";
         botOnBtn.style.borderRadius = "3px";
         botOnBtn.style.fontSize = "100%";
-        botOnBtn.style.borderColor = "LimeGreen";
-        botOnBtn.style.color = "LimeGreen";
+        botOnBtn.style.borderColor = "Red";
+        botOnBtn.style.color = "Red";
         botOnBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
         botOnBtn.innerHTML = "On";
         botOnBtn.onclick = () => {
             enabled = !enabled;
             if (!enabled) {
-                botOnBtn.style.borderColor = "red";
-                botOnBtn.style.color = "red";
+                botOnBtn.style.borderColor = "black";
+                botOnBtn.style.color = "black";
                 botOnBtn.innerHTML = "Off";
             } else {
-                botOnBtn.style.borderColor = "LimeGreen";
-                botOnBtn.style.color = "LimeGreen";
+                botOnBtn.style.borderColor = "Red";
+                botOnBtn.style.color = "Red";
                 botOnBtn.innerHTML = "On";
             }
         }
-        outerBotOn.innerHTML += "Bot enabled: ";
+        outerBotOn.innerHTML += "Bot Toggled: ";
         outerBotOn.appendChild(botOnBtn);
         inner.appendChild(outerBotOn);
 
@@ -1067,24 +1067,24 @@
         toggleButton.style.transition = "border 500ms, border-color 500ms, color 500ms";
 
         if (autoRefresh) {
-            toggleButton.style.borderColor = "LimeGreen";
-            toggleButton.style.color = "LimeGreen";
+            toggleButton.style.borderColor = "Red";
+            toggleButton.style.color = "Red";
             toggleButton.innerHTML = "On";
         } else {
-            toggleButton.style.borderColor = "red";
-            toggleButton.style.color = "red";
+            toggleButton.style.borderColor = "black";
+            toggleButton.style.color = "black";
             toggleButton.innerHTML = "Off";
         }
         toggleButton.onclick = () => {
             autoRefresh = !autoRefresh;
             setLocalStorage('autoRefresh', autoRefresh);
             if (!autoRefresh) {
-                toggleButton.style.borderColor = "red";
-                toggleButton.style.color = "red";
+                toggleButton.style.borderColor = "black";
+                toggleButton.style.color = "black";
                 toggleButton.innerHTML = "Off";
             } else {
-                toggleButton.style.borderColor = "LimeGreen";
-                toggleButton.style.color = "LimeGreen";
+                toggleButton.style.borderColor = "Red";
+                toggleButton.style.color = "Red";
                 toggleButton.innerHTML = "On";
             }
         }
@@ -1101,12 +1101,12 @@
         autoNitroBtn.style.fontSize = "100%";
             autoNitroBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
         if (autoNitro) {
-            autoNitroBtn.style.borderColor = "LimeGreen";
-            autoNitroBtn.style.color = "LimeGreen";
+            autoNitroBtn.style.borderColor = "Red";
+            autoNitroBtn.style.color = "Red";
             autoNitroBtn.innerHTML = "On";
         } else {
-            autoNitroBtn.style.borderColor = "red";
-            autoNitroBtn.style.color = "red";
+            autoNitroBtn.style.borderColor = "black";
+            autoNitroBtn.style.color = "black";
             autoNitroBtn.innerHTML = "Off";
         }
         autoNitroBtn.onclick = () => {
@@ -1126,24 +1126,24 @@
         chartBtn.style.transition = "border 500ms, border-color 500ms, color 500ms";
 
         if (localStorage['chartOn']) {
-            chartBtn.style.borderColor = "LimeGreen";
-            chartBtn.style.color = "LimeGreen";
+            chartBtn.style.borderColor = "Red";
+            chartBtn.style.color = "Red";
             chartBtn.innerHTML = "On";
         } else {
-            chartBtn.style.borderColor = "red";
-            chartBtn.style.color = "red";
+            chartBtn.style.borderColor = "black";
+            chartBtn.style.color = "black";
             chartBtn.innerHTML = "Off";
         }
         chartBtn.onclick = () => {
             if (localStorage['chartOn']) {
                 delete localStorage['chartOn'];
-                chartBtn.style.borderColor = "red";
-                chartBtn.style.color = "red";
+                chartBtn.style.borderColor = "black";
+                chartBtn.style.color = "black";
                 chartBtn.innerHTML = "Off";
             } else {
                 localStorage['chartOn'] = 1;
-                chartBtn.style.borderColor = "LimeGreen";
-                chartBtn.style.color = "LimeGreen";
+                chartBtn.style.borderColor = "Red";
+                chartBtn.style.color = "Red";
                 chartBtn.innerHTML = "On";
                 g.style.opacity = 0.7;
             }
@@ -1163,8 +1163,8 @@
         acc.style.border = "3px solid";
         acc.style.borderRadius = "3px";
         acc.style.fontSize = "100%";
-        acc.style.borderColor = "LimeGreen";
-        acc.style.color = "LimeGreen";
+        acc.style.borderColor = "Red";
+        acc.style.color = "Red";
         acc.style.transition = "border 500ms, border-color 500ms, color 500ms";
         acc.onchange = () => {
             accuracy = parseInt(acc.value);
@@ -1192,8 +1192,8 @@
         wpm.style.border = "3px solid";
         wpm.style.borderRadius = "3px";
         wpm.style.fontSize = "100%";
-        wpm.style.borderColor = "LimeGreen";
-        wpm.style.color = "LimeGreen";
+        wpm.style.borderColor = "Red";
+        wpm.style.color = "Red";
         wpm.style.transition = "border 500ms, border-color 500ms, color 500ms";
         wpm.onchange = () => {
             if (localStorage["speedChange"]) {
@@ -1222,20 +1222,20 @@
         statTogg.style.border = "3px solid";
         statTogg.style.borderRadius = "3px";
         statTogg.style.fontSize = "100%";
-        statTogg.style.borderColor = "LimeGreen";
-        statTogg.style.color = "LimeGreen";
+        statTogg.style.borderColor = "Red";
+        statTogg.style.color = "Red";
         statTogg.style.transition = "border 500ms, border-color 500ms, color 500ms";
         statTogg.innerHTML = "On";
         statTogg.onclick = () => {
             statsOn = !statsOn;
             if (statsOn) {
-                statTogg.style.borderColor = "LimeGreen";
-                statTogg.style.color = "LimeGreen";
+                statTogg.style.borderColor = "Red";
+                statTogg.style.color = "Red";
                 statTogg.innerHTML = "On";
                 updateStats();
             } else {
-                statTogg.style.borderColor = "red";
-                statTogg.style.color = "red";
+                statTogg.style.borderColor = "black";
+                statTogg.style.color = "black";
                 statTogg.innerHTML = "Off";
                 disableStats();
             }
@@ -1252,31 +1252,31 @@
         autoT.style.border = "3px solid";
         autoT.style.borderRadius = "3px";
         autoT.style.fontSize = "100%";
-        autoT.style.borderColor = "LimeGreen";
-        autoT.style.color = "LimeGreen";
+        autoT.style.borderColor = "Red";
+        autoT.style.color = "Red";
         autoT.style.transition = "border 500ms, border-color 500ms, color 500ms";
         autoT.innerHTML = "On";
         autoT.onclick = () => {
             if (!autoTurbo) {
-                autoT.style.borderColor = "LimeGreen";
-                autoT.style.color = "LimeGreen";
+                autoT.style.borderColor = "Red";
+                autoT.style.color = "Red";
                 autoT.innerHTML = "On";
                 autoTurboOn();
             } else {
-                autoT.style.borderColor = "red";
-                autoT.style.color = "red";
+                autoT.style.borderColor = "black";
+                autoT.style.color = "black";
                 autoT.innerHTML = "Off";
                 autoTurboOff();
             }
         }
         // Set the default button state
         if (autoTurbo) {
-            autoT.style.borderColor = "LimeGreen";
-            autoT.style.color = "LimeGreen";
+            autoT.style.borderColor = "Red";
+            autoT.style.color = "Red";
             autoT.innerHTML = "On";
         } else {
-            autoT.style.borderColor = "red";
-            autoT.style.color = "red";
+            autoT.style.borderColor = "black";
+            autoT.style.color = "black";
             autoT.innerHTML = "Off";
         }
         outerAutoT.innerHTML = "Auto Turbo: ";
@@ -1290,8 +1290,8 @@
         let outerExitBtn = document.createElement('center');
         let exitButton = document.createElement('button');
         exitButton.className = "";
-        exitButton.style.borderColor = "#808080";
-        exitButton.style.color = "#808080";
+        exitButton.style.borderColor = "#5e5c5c";
+        exitButton.style.color = "#5e5c5c";
         exitButton.style.fontSize = "175%";
         exitButton.style.border = "3px solid";
         exitButton.style.borderRadius = "3px";
@@ -1302,8 +1302,8 @@
             exitButton.style.borderColor = "#FFF";
         }, true]);
         _.listen.apply(exitButton, ["mouseout", () => {
-            exitButton.style.color = "#808080";
-            exitButton.style.borderColor = "#808080";
+            exitButton.style.color = "#5e5c5c";
+            exitButton.style.borderColor = "#5e5c5c";
         }, true]);
         exitButton.innerHTML = "Exit";
         exitButton.onclick = () => {
@@ -1335,12 +1335,12 @@
             if (localAutoRefresh) {
                 autoRefresh = JSON.parse(localAutoRefresh);
                 if (!autoRefresh) {
-                    toggleButton.style.borderColor = "red";
-                    toggleButton.style.color = "red";
+                    toggleButton.style.borderColor = "black";
+                    toggleButton.style.color = "black";
                     toggleButton.innerHTML = "Off";
                 } else {
-                    toggleButton.style.borderColor = "LimeGreen";
-                    toggleButton.style.color = "LimeGreen";
+                    toggleButton.style.borderColor = "Red";
+                    toggleButton.style.color = "Red";
                     toggleButton.innerHTML = "On";
                 }
             }
@@ -1354,13 +1354,13 @@
                 setWPM(wordsPerMinute);
             }
             if (statsOn) {
-                statTogg.style.borderColor = "LimeGreen";
-                statTogg.style.color = "LimeGreen";
+                statTogg.style.borderColor = "Red";
+                statTogg.style.color = "Red";
                 statTogg.innerHTML = "On";
                 updateStats();
             } else {
-                statTogg.style.borderColor = "red";
-                statTogg.style.color = "red";
+                statTogg.style.borderColor = "black";
+                statTogg.style.color = "black";
                 statTogg.innerHTML = "Off";
                 disableStats();
             }
@@ -1379,7 +1379,7 @@
     changeTip = node => {
         setTimeout(() => {
             node.style.fontSize = "125%";
-            node.style.border = "3px solid #000066";
+            node.style.border = "3px solid #ff0000";
             node.style.borderRadius = "7px";
             node.style.opacity = 0.7;
             node.style.pointerEvents = "none";
