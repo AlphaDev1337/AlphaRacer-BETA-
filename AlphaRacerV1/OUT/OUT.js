@@ -320,7 +320,7 @@
                 sname.textContent = userInfo.username;
                 sname.style.color = 'red';
 
-                st.textContent = "Stats for user ";
+                st.textContent = "User Stats: ";
                 st.appendChild(sname);
                 statsDiv.appendChild(st);
                 statsDiv.appendChild(document.createElement('br'));
@@ -330,7 +330,7 @@
                 let stt = document.createElement('span');
                 stt.textContent = userInfo.title;
                 stt.style.color = 'red';
-                statTitle.textContent = "Title: ";
+                statTitle.textContent = "Racing title: ";
                 statTitle.appendChild(stt);
                 statsDiv.appendChild(statTitle);
                 statsDiv.appendChild(document.createElement('br'));
@@ -370,7 +370,7 @@
                 sm.textContent = (userInfo.membership !== 'basic');
                 sm.style.color = 'red';
 
-                statMember.textContent = 'Gold Membership: ';
+                statMember.textContent = 'NitroType Gold: ';
                 statMember.appendChild(sm);
                 statsDiv.appendChild(statMember);
                 statsDiv.appendChild(document.createElement('br'));
@@ -379,7 +379,7 @@
                 let sr = document.createElement('span');
                 sr.style.color = 'red';
                 sr.textContent = userInfo.racesPlayed;
-                statRaces.textContent = 'Total races played: ';
+                statRaces.textContent = 'Carrer Races: ';
                 statRaces.appendChild(sr);
                 statsDiv.appendChild(statRaces);
                 statsDiv.appendChild(document.createElement('br'));
@@ -388,7 +388,7 @@
                 let sw = document.createElement('span');
                 sw.textContent = userInfo.consecWins;
                 sw.style.color = 'red';
-                statWins.textContent = 'Consecutive wins: ';
+                statWins.textContent = 'Win Streak: ';
                 statWins.appendChild(sw);
                 statsDiv.appendChild(statWins);
                 statsDiv.appendChild(document.createElement('br'));
@@ -1386,7 +1386,7 @@
                 node.style.pointerEvents = "none";
                 node.innerHTML = "";
                 node.innerHTML += FONT;
-                node.innerHTML += '<center style="font-family:Orbitron;">NitroType Has Been F***ed By AlphaRacer!<br>Version: ' + VERSION + '</center>';
+                node.innerHTML += '<center style="font-family:Orbitron;">AlphaRacer Has Ruined NitroType! :)<br>Version: BETA</center>';
             }, 1000);
         },
         detectWebGL = () => {
