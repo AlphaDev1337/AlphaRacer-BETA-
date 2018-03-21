@@ -1,8 +1,7 @@
 // ==UserScript==
-// @name         UltraType Aggresive Turbo Mode
+// @name         AlphaRacer Turbo
 // @version      1
-// @description  Instantly wins any NitroType race without fail, extremely quickly. REQUIRES THE ULTRATYPE CHROME EXTENSION
-// @author       UltraTypeBot
+// @author       Alpha
 // @match        https://www.nitrotype.com/race/*
 // @grant        unsafeWindow
 // @run-at       document-start
@@ -14,7 +13,7 @@
         UltraTypeCore.on('raceStart', () => {
             setTimeout(() => {
                 // Send an insanely mutated type packet that instantly wins the race
-                UltraTypeCore.sendTypePacket(true, 99999);
+                UltraTypeCore.sendTypePacket(true, 15);
             }, 100);
         }).on('raceFinish', () => {
             // Auto refresh the page
